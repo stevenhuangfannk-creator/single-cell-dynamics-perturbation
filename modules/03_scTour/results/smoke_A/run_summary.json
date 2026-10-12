@@ -1,0 +1,24 @@
+{
+  "status": "RUN_OK",
+  "smoke": true,
+  "n_cells_inferred": 200,
+  "hvg": 500,
+  "percent": 0.8,
+  "epochs": 3,
+  "training_seconds": 14.272627800004557,
+  "random_state": 0,
+  "manual_reverse": true,
+  "automatic_time_reverse": true,
+  "developmental_median_rho_before": -0.7,
+  "ptime_median_by_celltype": {
+    "nIPC": 0.4403035044670105,
+    "Neuroblast_1": 0.44068634510040283,
+    "Neuroblast_2": 0.43860456347465515,
+    "Granule-immature": 0.4496272802352905,
+    "Granule-mature": 0.4597640633583069
+  },
+  "roundtrip_max_ptime_difference": 0.0,
+  "final_train_loss": 227.6136688232422,
+  "final_validation_loss": 193.8006134033203,
+  "reason": "完成真实计算；与原图逐项比较及稳健性评估决定最终复现状态。"
+}

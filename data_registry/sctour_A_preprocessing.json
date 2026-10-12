@@ -1,0 +1,26 @@
+{
+  "dataset": "A",
+  "original_cells": 5454,
+  "lineage_cells": 4007,
+  "genes_before": 14545,
+  "genes_after_min20": 11819,
+  "hvg": 500,
+  "celltype_counts": {
+    "nIPC": 88,
+    "Neuroblast_1": 97,
+    "Neuroblast_2": 777,
+    "Granule-immature": 1333,
+    "Granule-mature": 1712
+  },
+  "counts_validation": "PASS",
+  "hvg_input": "raw counts, seurat_v3",
+  "sources": [
+    {
+      "file": "GSE95315_10X_expression_data_v2.tab.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE95nnn/GSE95315/suppl/GSE95315_10X_expression_data_v2.tab.gz",
+      "bytes": 8545287,
+      "sha256": "d2d2975854e07f1bf6ead0d57e94524de1ba987e83b165981b435c7901ec7aa6",
+      "gzip_crc": "PASS"
+    }
+  ]
+}

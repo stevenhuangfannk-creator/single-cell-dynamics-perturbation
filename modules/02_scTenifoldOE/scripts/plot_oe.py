@@ -97,6 +97,7 @@ def main():
                          "meaning": meaning, "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
                          "analysis_script": rel + ("scripts/enrich_compare.py" if number == "08" else "scripts/run_oe.py"),
                          "plot_script": rel + "scripts/plot_oe.py",
+                         "redraw_command": f"& ./work/oe-env/Scripts/python.exe ./{rel}scripts/plot_oe.py --figure {number} --dpi 600",
                          "png": rel + "figures/" + stem + ".png", "pdf": rel + "figures/" + stem + ".pdf", "svg": rel + "figures/" + stem + ".svg",
                          "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"})
 

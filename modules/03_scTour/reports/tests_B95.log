@@ -1,0 +1,8 @@
+test_actual_saved_inference (test_sctour_data.TestCounts.test_actual_saved_inference) ... ok
+test_integer_counts_accepted (test_sctour_data.TestCounts.test_integer_counts_accepted) ... ok
+test_invalid_input_rejected (test_sctour_data.TestCounts.test_invalid_input_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.586s
+
+OK

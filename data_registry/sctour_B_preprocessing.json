@@ -1,0 +1,34 @@
+{
+  "dataset": "B",
+  "original_cells": 24185,
+  "lineage_cells": 15174,
+  "genes_before": 27933,
+  "genes_after_min20": 15015,
+  "hvg": 2000,
+  "celltype_counts": {
+    "nIPC": 821,
+    "Neuroblast": 1381,
+    "Immature-Pyr": 4520,
+    "Immature-GC": 2419,
+    "GC-juv": 3420,
+    "GC-adult": 2613
+  },
+  "counts_validation": "PASS",
+  "hvg_input": "raw counts, seurat_v3",
+  "sources": [
+    {
+      "file": "GSE104323_10X_expression_data_V2.tab.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE104nnn/GSE104323/suppl/GSE104323_10X_expression_data_V2.tab.gz",
+      "bytes": 47690117,
+      "sha256": "06046d4591e36a4b4bf4ceb6e9dd3212e639291e49438ec2d2500602241e9910",
+      "gzip_crc": "PASS"
+    },
+    {
+      "file": "GSE104323_metadata_barcodes_24185cells.txt.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE104nnn/GSE104323/suppl/GSE104323_metadata_barcodes_24185cells.txt.gz",
+      "bytes": 474825,
+      "sha256": "3e2587ceb8c556632462481328c0337fd3eaf2b683972de107818e60a8554ff4",
+      "gzip_crc": "PASS"
+    }
+  ]
+}

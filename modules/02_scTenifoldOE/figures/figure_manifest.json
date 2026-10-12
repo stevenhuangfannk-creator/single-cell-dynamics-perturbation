@@ -19,7 +19,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 01 --dpi 600"
   },
   {
     "number": "02",
@@ -41,7 +42,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 02 --dpi 600"
   },
   {
     "number": "03",
@@ -62,7 +64,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 03 --dpi 600"
   },
   {
     "number": "04",
@@ -84,7 +87,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 04 --dpi 600"
   },
   {
     "number": "05",
@@ -105,7 +109,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 05 --dpi 600"
   },
   {
     "number": "06",
@@ -126,7 +131,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 06 --dpi 600"
   },
   {
     "number": "07",
@@ -149,7 +155,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 07 --dpi 600"
   },
   {
     "number": "08",
@@ -170,7 +177,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 08 --dpi 600"
   },
   {
     "number": "09",
@@ -191,7 +199,8 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 09 --dpi 600"
   },
   {
     "number": "10",
@@ -215,6 +224,7 @@
     "png": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.png",
     "pdf": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.pdf",
     "svg": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.svg",
-    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。",
+    "redraw_command": "& ./work/oe-env/Scripts/python.exe ./modules/02_scTenifoldOE/scripts/plot_oe.py --figure 10 --dpi 600"
   }
 ]

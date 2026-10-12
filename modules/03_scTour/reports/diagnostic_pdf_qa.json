@@ -1,0 +1,72 @@
+[
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\A90_seed0_Figure2a.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 12,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2b.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 5.0,
+    "text_run_count": 7,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2c.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 9.0,
+    "text_run_count": 1,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2d.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 5.0,
+    "text_run_count": 3,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2e.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 12,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2f.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 5.0,
+    "text_run_count": 7,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2g.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 5.0,
+    "text_run_count": 3,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  }
+]

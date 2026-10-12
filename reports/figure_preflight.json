@@ -1,0 +1,1021 @@
+[
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "source",
+    "returncode": 0,
+    "report": {
+      "source": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\scripts\\plot_figures.py",
+      "backend": "python",
+      "summary": {
+        "ready": true,
+        "strict": false,
+        "counts": {
+          "PASS": 15,
+          "WARN": 5,
+          "FAIL": 0
+        }
+      },
+      "findings": [
+        {
+          "check_id": "SOURCE-SYNTAX",
+          "level": "PASS",
+          "message": "Python source parses successfully",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-FAMILY",
+          "level": "PASS",
+          "message": "A publication-safe sans-serif family is configured",
+          "evidence": [
+            "Arial",
+            "sans-serif"
+          ]
+        },
+        {
+          "check_id": "FONT-SIZE",
+          "level": "PASS",
+          "message": "All detected text sizes are at least 5 pt (minimum 7 pt)",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-GLYPH-FLOOR",
+          "level": "PASS",
+          "message": "No mathtext superscript/subscript expression detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LEGEND-LABEL-CASE",
+          "level": "PASS",
+          "message": "Detected literal legend labels start with display-style capitalization",
+          "evidence": []
+        },
+        {
+          "check_id": "COLOR-MAP",
+          "level": "PASS",
+          "message": "No rainbow/jet/hsv color mapping detected",
+          "evidence": []
+        },
+        {
+          "check_id": "EDITABLE-TEXT",
+          "level": "PASS",
+          "message": "SVG and PDF editable-text settings are configured",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-VECTOR",
+          "level": "PASS",
+          "message": "Both SVG and PDF exports are present",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-RASTER",
+          "level": "WARN",
+          "message": "PNG preview is present but no TIFF submission raster was found",
+          "evidence": []
+        },
+        {
+          "check_id": "RASTER-DPI",
+          "level": "WARN",
+          "message": "No explicit raster DPI/resolution found",
+          "evidence": []
+        },
+        {
+          "check_id": "FINAL-WIDTH",
+          "level": "WARN",
+          "message": "Detected width 139.7 mm is not near the common 89/183 mm defaults; verify the target journal",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-SAMPLING",
+          "level": "PASS",
+          "message": "No high-confidence row-sampling operation detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-EXCLUSION",
+          "level": "PASS",
+          "message": "No high-confidence missing-data exclusion detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DEMO-DATA",
+          "level": "PASS",
+          "message": "No obvious simulated-data generator detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LOG-GUARD",
+          "level": "WARN",
+          "message": "Logarithmic operation found without an obvious positivity/pseudocount guard",
+          "evidence": [
+            "np.log10(",
+            "log10("
+          ]
+        },
+        {
+          "check_id": "INTERP-MONOTONIC",
+          "level": "PASS",
+          "message": "No NumPy interpolation requiring an increasing x-grid detected",
+          "evidence": []
+        },
+        {
+          "check_id": "UNCERTAINTY-ENCODING",
+          "level": "WARN",
+          "message": "Seed/fold/split aggregates are present without an obvious error bar or uncertainty band",
+          "evidence": [
+            "seed",
+            "mean"
+          ]
+        },
+        {
+          "check_id": "ROTATION-ANCHOR",
+          "level": "PASS",
+          "message": "Every detected rotated text call uses anchor-based placement",
+          "evidence": [
+            "line 121: rotation=..."
+          ]
+        },
+        {
+          "check_id": "ANNOTATION-WORKAROUND",
+          "level": "PASS",
+          "message": "No high-risk hard-coded label height or opaque white text mask detected",
+          "evidence": []
+        },
+        {
+          "check_id": "BACKEND-EXCLUSIVE",
+          "level": "PASS",
+          "message": "No obvious cross-backend plotting reference found for python",
+          "evidence": []
+        }
+      ]
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure01.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure01.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 34,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure02.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure02.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 34,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure03.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure03.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 34,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure04.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure04.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 36,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure05.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure05.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 24,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure06.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure06.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 19,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure07.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure07.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 60,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure08.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure08.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 47,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure09.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure09.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 51,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure10.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure10.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 58,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "01_scTenifoldKnk",
+    "type": "pdf",
+    "file": "modules\\01_scTenifoldKnk\\figures\\Knk_Figure11.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure11.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 7.0,
+      "text_run_count": 42,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "source",
+    "returncode": 0,
+    "report": {
+      "source": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\scripts\\plot_oe.py",
+      "backend": "python",
+      "summary": {
+        "ready": true,
+        "strict": false,
+        "counts": {
+          "PASS": 18,
+          "WARN": 2,
+          "FAIL": 0
+        }
+      },
+      "findings": [
+        {
+          "check_id": "SOURCE-SYNTAX",
+          "level": "PASS",
+          "message": "Python source parses successfully",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-FAMILY",
+          "level": "PASS",
+          "message": "A publication-safe sans-serif family is configured",
+          "evidence": [
+            "Arial",
+            "sans-serif"
+          ]
+        },
+        {
+          "check_id": "FONT-SIZE",
+          "level": "PASS",
+          "message": "All detected text sizes are at least 5 pt (minimum 6 pt)",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-GLYPH-FLOOR",
+          "level": "PASS",
+          "message": "No mathtext superscript/subscript expression detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LEGEND-LABEL-CASE",
+          "level": "PASS",
+          "message": "No auditable literal legend labels detected",
+          "evidence": []
+        },
+        {
+          "check_id": "COLOR-MAP",
+          "level": "PASS",
+          "message": "No rainbow/jet/hsv color mapping detected",
+          "evidence": []
+        },
+        {
+          "check_id": "EDITABLE-TEXT",
+          "level": "PASS",
+          "message": "SVG and PDF editable-text settings are configured",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-VECTOR",
+          "level": "PASS",
+          "message": "Both SVG and PDF exports are present",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-RASTER",
+          "level": "WARN",
+          "message": "PNG preview is present but no TIFF submission raster was found",
+          "evidence": []
+        },
+        {
+          "check_id": "RASTER-DPI",
+          "level": "WARN",
+          "message": "No explicit raster DPI/resolution found",
+          "evidence": []
+        },
+        {
+          "check_id": "FINAL-WIDTH",
+          "level": "PASS",
+          "message": "Detected width 182.9 mm matches a common journal column width",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-SAMPLING",
+          "level": "PASS",
+          "message": "No high-confidence row-sampling operation detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-EXCLUSION",
+          "level": "PASS",
+          "message": "No high-confidence missing-data exclusion detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DEMO-DATA",
+          "level": "PASS",
+          "message": "No obvious simulated-data generator detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LOG-GUARD",
+          "level": "PASS",
+          "message": "A logarithmic transform/axis and a positivity or pseudocount guard were both detected",
+          "evidence": [
+            "clip(lower="
+          ]
+        },
+        {
+          "check_id": "INTERP-MONOTONIC",
+          "level": "PASS",
+          "message": "No NumPy interpolation requiring an increasing x-grid detected",
+          "evidence": []
+        },
+        {
+          "check_id": "UNCERTAINTY-ENCODING",
+          "level": "PASS",
+          "message": "No stochastic aggregate requiring a variability audit was inferred",
+          "evidence": []
+        },
+        {
+          "check_id": "ROTATION-ANCHOR",
+          "level": "PASS",
+          "message": "Every detected rotated text call uses anchor-based placement",
+          "evidence": [
+            "line 114: rotation=..."
+          ]
+        },
+        {
+          "check_id": "ANNOTATION-WORKAROUND",
+          "level": "PASS",
+          "message": "No high-risk hard-coded label height or opaque white text mask detected",
+          "evidence": []
+        },
+        {
+          "check_id": "BACKEND-EXCLUSIVE",
+          "level": "PASS",
+          "message": "No obvious cross-backend plotting reference found for python",
+          "evidence": []
+        }
+      ]
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure01_Virtual_OE_Network.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure01_Virtual_OE_Network.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 21,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure02_Network_Difference.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure02_Network_Difference.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 50,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure03_Perturbation_Ranking.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure03_Perturbation_Ranking.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 33,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure04_Regulatory_Network.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure04_Regulatory_Network.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 21,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure05_Strength_Sensitivity.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure05_Strength_Sensitivity.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 27,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure06_KO_OE_Comparison.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure06_KO_OE_Comparison.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 27,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure07_Shared_Specific_Responses.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure07_Shared_Specific_Responses.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 14,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure08_Pathway_Enrichment.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure08_Pathway_Enrichment.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 41,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure09_Response_Heatmap.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure09_Response_Heatmap.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 36,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "02_scTenifoldOE",
+    "type": "pdf",
+    "file": "modules\\02_scTenifoldOE\\figures\\OE_Figure10_Regulatory_Landscape.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\02_scTenifoldOE\\figures\\OE_Figure10_Regulatory_Landscape.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 31,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "source",
+    "returncode": 0,
+    "report": {
+      "source": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\scripts\\plot_figure2.py",
+      "backend": "python",
+      "summary": {
+        "ready": true,
+        "strict": false,
+        "counts": {
+          "PASS": 18,
+          "WARN": 2,
+          "FAIL": 0
+        }
+      },
+      "findings": [
+        {
+          "check_id": "SOURCE-SYNTAX",
+          "level": "PASS",
+          "message": "Python source parses successfully",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-FAMILY",
+          "level": "PASS",
+          "message": "A publication-safe sans-serif family is configured",
+          "evidence": [
+            "Arial",
+            "sans-serif"
+          ]
+        },
+        {
+          "check_id": "FONT-SIZE",
+          "level": "PASS",
+          "message": "All detected text sizes are at least 5 pt (minimum 5 pt)",
+          "evidence": []
+        },
+        {
+          "check_id": "FONT-GLYPH-FLOOR",
+          "level": "PASS",
+          "message": "No mathtext superscript/subscript expression detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LEGEND-LABEL-CASE",
+          "level": "PASS",
+          "message": "No auditable literal legend labels detected",
+          "evidence": []
+        },
+        {
+          "check_id": "COLOR-MAP",
+          "level": "PASS",
+          "message": "No rainbow/jet/hsv color mapping detected",
+          "evidence": []
+        },
+        {
+          "check_id": "EDITABLE-TEXT",
+          "level": "PASS",
+          "message": "SVG and PDF editable-text settings are configured",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-VECTOR",
+          "level": "PASS",
+          "message": "Both SVG and PDF exports are present",
+          "evidence": []
+        },
+        {
+          "check_id": "EXPORT-RASTER",
+          "level": "WARN",
+          "message": "PNG preview is present but no TIFF submission raster was found",
+          "evidence": []
+        },
+        {
+          "check_id": "RASTER-DPI",
+          "level": "PASS",
+          "message": "A raster export of at least 600 dpi is configured",
+          "evidence": [
+            "600"
+          ]
+        },
+        {
+          "check_id": "FINAL-WIDTH",
+          "level": "WARN",
+          "message": "Detected width 304.8 mm is not near the common 89/183 mm defaults; verify the target journal",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-SAMPLING",
+          "level": "PASS",
+          "message": "No high-confidence row-sampling operation detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DATA-EXCLUSION",
+          "level": "PASS",
+          "message": "No high-confidence missing-data exclusion detected",
+          "evidence": []
+        },
+        {
+          "check_id": "DEMO-DATA",
+          "level": "PASS",
+          "message": "No obvious simulated-data generator detected",
+          "evidence": []
+        },
+        {
+          "check_id": "LOG-GUARD",
+          "level": "PASS",
+          "message": "No logarithmic transform or axis detected",
+          "evidence": []
+        },
+        {
+          "check_id": "INTERP-MONOTONIC",
+          "level": "PASS",
+          "message": "No NumPy interpolation requiring an increasing x-grid detected",
+          "evidence": []
+        },
+        {
+          "check_id": "UNCERTAINTY-ENCODING",
+          "level": "PASS",
+          "message": "No stochastic aggregate requiring a variability audit was inferred",
+          "evidence": []
+        },
+        {
+          "check_id": "ROTATION-ANCHOR",
+          "level": "PASS",
+          "message": "No rotated Matplotlib text detected",
+          "evidence": []
+        },
+        {
+          "check_id": "ANNOTATION-WORKAROUND",
+          "level": "PASS",
+          "message": "No high-risk hard-coded label height or opaque white text mask detected",
+          "evidence": []
+        },
+        {
+          "check_id": "BACKEND-EXCLUSIVE",
+          "level": "PASS",
+          "message": "No obvious cross-backend plotting reference found for python",
+          "evidence": []
+        }
+      ]
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\A90_seed0_Figure2a.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\A90_seed0_Figure2a.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 12,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2b.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2b.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2c.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2c.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 9.0,
+      "text_run_count": 1,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2d.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2d.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 3,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2e.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2e.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 12,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2f.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2f.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2g.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2g.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 3,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2a.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2a.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 15,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2b.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2b.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2c.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2c.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 9.0,
+      "text_run_count": 1,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2d.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2d.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2e.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2e.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 12,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2f.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2f.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2g.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2g.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2i.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2i.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 10,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  }
+]

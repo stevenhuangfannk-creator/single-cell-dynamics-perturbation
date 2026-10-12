@@ -1,0 +1,27 @@
+{
+  "python": "3.11.11",
+  "cpu_count": 32,
+  "host_ram_bytes": 16849256448,
+  "available_ram_bytes_at_start": 1483198464,
+  "cuda_available": true,
+  "torch_cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "gpu_memory_bytes": 8585216000,
+  "versions": {
+    "sctour": "1.0.0",
+    "torch": "2.5.1+cu121",
+    "scanpy": "1.9.8",
+    "anndata": "0.10.8",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "pandas": "2.2.3",
+    "matplotlib": "3.8.4",
+    "torchdiffeq": "0.2.5"
+  },
+  "actual_model_device": "cuda",
+  "compute_scope": "official encoder/decoder on model device; official ODE on CPU",
+  "peak_process_working_set_bytes": 1324638208,
+  "process_rss_bytes_at_end": 503693312,
+  "torch_peak_allocated_bytes": 48850432,
+  "total_run_seconds": 598.3270608000457
+}

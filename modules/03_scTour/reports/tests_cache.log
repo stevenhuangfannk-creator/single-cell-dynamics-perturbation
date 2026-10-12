@@ -1,0 +1,6 @@
+test_same_counts_changed_annotations_are_rejected (test_sctour_cache.TestOldCache.test_same_counts_changed_annotations_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.177s
+
+OK

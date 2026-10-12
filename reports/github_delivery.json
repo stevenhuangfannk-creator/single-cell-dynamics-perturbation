@@ -1,0 +1,20 @@
+{
+  "repository_url": "https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation",
+  "private": true,
+  "local_head": "f2950e8934f6d7f57b560d3faae07da22c0f7d96",
+  "remote_head": "f2950e8934f6d7f57b560d3faae07da22c0f7d96",
+  "local_tree": "f13542409e239ebe465a583dd05b8a39e3ce1766",
+  "remote_tree": "f13542409e239ebe465a583dd05b8a39e3ce1766",
+  "file_trees_identical": true,
+  "head_actions": [
+    {
+      "id": 38250096020,
+      "name": "输入与代码检查 / Input checks",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation/actions/runs/38250096020",
+      "head_sha": "f2950e8934f6d7f57b560d3faae07da22c0f7d96"
+    }
+  ],
+  "publication_transport": "Initial GitHub REST Git objects; ordinary Git transport recovered and local main aligned without changing files. Original local validation history retained in local-validation-history-20261012."
+}

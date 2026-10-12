@@ -1,0 +1,9 @@
+{
+  "status": "RUN_OK",
+  "cells_checked": 4007,
+  "hvg_checked": 500,
+  "counts_values_checked": 2003500,
+  "cell_labels_exact_match": true,
+  "source_count_entries_exact_match": true,
+  "interpretation": "排除预处理细胞标签错配及训练HVG计数错位；这不证明模型发育排序正确。"
+}

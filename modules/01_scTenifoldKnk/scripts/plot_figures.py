@@ -169,6 +169,11 @@ def main():
         plt.close(fig)
         root="modules/01_scTenifoldKnk"
         entries.append(dict(id=f"Knk-{i:02d}",title_cn=TITLES[i],meaning=MEANINGS[i],dataset="10x PBMC3k, 480 CD14+ monocytes, 600 selected genes"+("; 1200-gene sensitivity" if i==10 else ""),reference="https://doi.org/10.1016/j.patter.2022.100434",analysis_script=f"{root}/scripts/"+("enrich.py" if i==7 else "run_pbmc.R"),plot_script=f"{root}/scripts/plot_figures.py",redraw_command=f"python {root}/scripts/plot_figures.py --figure {i:02d}",png=f"{root}/figures/{base}.png",pdf=f"{root}/figures/{base}.pdf",svg=f"{root}/figures/{base}.svg",status="RUN_OK / PARTIAL",validity="真实计算输出；seed/subsample稳定性差，探索性候选结果，未实验验证。"))
+        if i==10:
+            entries[-1].update(analysis_scripts=[f"{root}/scripts/run_pbmc.R",f"{root}/scripts/run_sensitivity.R"],
+                               source_tables=["results/stability_summary.csv",
+                                              "results/sensitivity1200/parameter_sensitivity_summary.csv",
+                                              "results/sensitivity1200/within_1200_seed_spearman.csv"])
     manifest_path=figures/"figure_manifest.json"
     if manifest_path.exists() and args.figure!="all":
         old=json.loads(manifest_path.read_text(encoding="utf-8")); entries=[e for e in old if e["id"] not in {v["id"] for v in entries}]+entries

@@ -147,7 +147,16 @@
     "svg": "modules/01_scTenifoldKnk/figures/Knk_Figure10.svg",
     "status": "RUN_OK / PARTIAL",
     "validity": "真实计算输出；seed/subsample稳定性差，探索性候选结果，未实验验证。",
-    "redraw_command": "python modules/01_scTenifoldKnk/scripts/plot_figures.py --figure 10"
+    "redraw_command": "python modules/01_scTenifoldKnk/scripts/plot_figures.py --figure 10",
+    "analysis_scripts": [
+      "modules/01_scTenifoldKnk/scripts/run_pbmc.R",
+      "modules/01_scTenifoldKnk/scripts/run_sensitivity.R"
+    ],
+    "source_tables": [
+      "results/stability_summary.csv",
+      "results/sensitivity1200/parameter_sensitivity_summary.csv",
+      "results/sensitivity1200/within_1200_seed_spearman.csv"
+    ]
   },
   {
     "id": "Knk-11",

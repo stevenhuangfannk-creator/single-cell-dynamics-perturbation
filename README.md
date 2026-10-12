@@ -1,6 +1,6 @@
 # 单细胞动力学与虚拟基因扰动方法库 / Single-cell dynamics and virtual perturbation
 
-本仓库以真实公开数据和官方软件为基础，保存 scTenifoldKnk、Experimental OE 和 scTour 的独立分析流程、完整统计表、真实图件及中文解释。当前总体状态为 **PARTIAL**：KO/OE 软件运行已验证，但 KO 生物学排名不稳定；scTour 的 B 主模型已完成，抽样模型与 A 诊断仍在执行。运行状态以各模块报告为准，不能把 Smoke Test 当作论文复现。
+本仓库以真实公开数据和官方软件为基础，保存 scTenifoldKnk、Experimental OE 和 scTour 的独立分析流程、完整统计表、真实图件及中文解释。当前总体状态为 **PARTIAL**：KO/OE 软件运行已验证，但 KO 生物学排名不稳定；scTour 的 A20/B20 主模型已完成，A20 发育排序非单调，B 的剩余抽样模型仍在执行。运行状态以各模块报告为准，不能把 Smoke Test 当作论文复现。
 
 An evidence-grounded collection of reproducible single-cell regulatory perturbation and dynamics workflows. Experimental outputs are computational hypotheses, not validated perturbation or lineage experiments.
 
@@ -18,7 +18,7 @@ An evidence-grounded collection of reproducible single-cell regulatory perturbat
 |---|---|---|
 | scTenifoldKnk | 官方100基因模拟示例；真实480个CD14+ Monocytes、600基因网络；SPI1、SPI1+CEBPB、9候选heat筛查、9组稳定性/敏感性、GO/KEGG/Reactome；11图 | `RUN_OK / PARTIAL`。不同seed及细胞抽样下排名不稳定，扩大1200基因/10网络后仍未改善，不能宣称稳健SPI1机制 |
 | Experimental OE | 同一WT、SPI1、1/1.5/2/3强度、KO/OE共享与特异响应、三库富集；第三方原生API另行验证；10图 | `RUN_OK / PARTIAL`。同WT强度排序稳定，不等于跨WT或真实实验准确；上游pandas3错误已隔离；固定pandas2.2.3 |
-| scTour | 原始GSE95315/GSE104323，论文对应4007/15174细胞；500/2000HVG；400epochs；官方模型重载及高维VF | `PARTIAL`。B95%主模型运行成功；A90%两个种子排序非单调，保留失败并按论文20%设计诊断；h/i尚在计算 |
+| scTour | 原始GSE95315/GSE104323，论文对应4007/15174细胞；500/2000HVG；400epochs；官方模型重载及高维VF；主a–g/i与诊断图已输出 | `PARTIAL`。A20(seed0)与A90(seed0/1)均非单调；B20与B95排序相关0.9815，B1终末两阶段次序偏差保留；h与完整组合图待其余抽样模型完成 |
 
 浏览 [真实图件画廊](gallery/FIGURE_INDEX_CN.md)，每张图均对应实际分析、输入表、独立绘图入口和 PNG/PDF/SVG。只调整图参数时读取结果重新绘制，不重跑网络或模型。
 

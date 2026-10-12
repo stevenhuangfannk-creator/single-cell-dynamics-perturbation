@@ -1,0 +1,170 @@
+[
+  {
+    "figure": "scTour_Figure2a",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 15,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      7200,
+      1560
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2b",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2c",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 9.0,
+      "text_run_count": 1,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2d",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2e",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 6.0,
+      "text_run_count": 12,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2f",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 7,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2g",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2i",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 10,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  }
+]

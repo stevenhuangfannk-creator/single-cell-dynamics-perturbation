@@ -1,0 +1,19 @@
+[
+  {
+    "file": "oa_record_v2.xml",
+    "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC10290357",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "supplementary_archive.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10290357/supplementaryFiles",
+    "error": "The read operation timed out"
+  },
+  {
+    "file": "S2_pmc.xlsx",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/10290357/bin/13059_2023_2988_MOESM3_ESM.xlsx",
+    "bytes": 1817,
+    "zip_header": false,
+    "head": "\n\n\n\n<html>\n  <head>\n    <meta name=\"viewport\" cont"
+  }
+]

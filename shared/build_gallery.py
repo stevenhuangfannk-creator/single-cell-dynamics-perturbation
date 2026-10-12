@@ -28,12 +28,19 @@ def build():
             path = ROOT / (item[key].split(' ', 1)[0] if key.endswith('script') else item[key])
             if not path.is_file() or not path.stat().st_size:
                 raise FileNotFoundError(f'{item["id"]}: {key} {path}')
+        analysis_scripts = item.get('analysis_scripts', [item['analysis_script']])
+        for script in analysis_scripts:
+            if not (ROOT / script).is_file():
+                raise FileNotFoundError(f'{item["id"]}: analysis script {script}')
         def clean(value):
             return str(value).replace('|', '\\|').replace('\n', '<br>')
         analysis = item['analysis_script'].split(' ', 1)[0]
         plotting = item['plot_script'].split(' ', 1)[0]
         method = item.get('method', 'scTenifoldKnk' if '01_scTenifoldKnk' in analysis else 'scTour')
-        left = f'**{clean(item["id"])} · {clean(item["title_cn"])}**<br>{clean(method)}<br>[分析](../{analysis}) · [重绘](../{plotting})<br><code>{clean(item["plot_script"])}</code><br>[参考来源]({item["reference"]})'
+        command = item.get('redraw_command', item['plot_script'])
+        analysis_links = ' · '.join(f'[分析{index if len(analysis_scripts) > 1 else ""}](../{script})'
+                                    for index, script in enumerate(analysis_scripts, 1))
+        left = f'**{clean(item["id"])} · {clean(item["title_cn"])}**<br>{clean(method)}<br>{analysis_links} · [重绘](../{plotting})<br><code>{clean(command)}</code><br>[参考来源]({item["reference"]})'
         middle = f'{clean(item["dataset"])}<br>{clean(item["meaning"])}<br>**{item["status"]}**：{clean(item["validity"])}'
         right = f'<img src="../{item["png"]}" width="260" alt="{clean(item["id"])}"><br>[PNG](../{item["png"]}) · [PDF](../{item["pdf"]}) · [SVG](../{item["svg"]})'
         lines.append(f'| {left} | {middle} | {right} |')

@@ -1,0 +1,186 @@
+{
+  "audit_date": "2026-10-12",
+  "audit_type": "Independent read-only source/API and saved-metadata inspection",
+  "source_line_numbers_scope_cn": "行号对应2026-10-12本次审计所读取的源码版本；后续修改可能使行号偏移，以记录的源码SHA256定位审计版本。",
+  "repository_source_snapshot_sha256": {
+    "modules/03_scTour/scripts/run_sctour.py": "9fef45bac6a252e1dc41feed5d4df3ce2486ef92ad68859d76f7209cb0ba8570",
+    "modules/03_scTour/scripts/plot_figure2.py": "3999cd199b45ea0632f1b970b098f01e69fe489917f3d5f84bf9249ea84ce89d"
+  },
+  "audit_status": "RUN_OK",
+  "scientific_status": "PARTIAL",
+  "confirmed_wrapper_or_api_error": false,
+  "root_cause": "UNKNOWN",
+  "conclusion_cn": "本轮未确认可解释A20阶段非单调性的错轴、错序、额外归一化、重复时间缩放或反号调用错误。根因未知；不能由此证明模型正确，也不推断局部最优或收敛原因。",
+  "scope": {
+    "training_executed": false,
+    "checkpoint_loaded": false,
+    "full_count_audit_repeated": false,
+    "large_count_matrix_loaded": false,
+    "figures_redrawn": false,
+    "newly_read": [
+      "Repository runner and plotting source",
+      "Installed official train.py, model.py, module.py and data.py source",
+      "Downloaded official source and tutorial notebook source",
+      "Saved A QC/train/inferred HDF5 IDs, dimensions, QC columns and small embedding/time arrays",
+      "Cached paper XML Methods and Figure 2 text"
+    ],
+    "reused": [
+      "Existing source-to-count/label audit result; not rerun",
+      "A20 execution summary and recorded checkpoint time roundtrip; not reexecuted"
+    ]
+  },
+  "path_scopes": {
+    "repository_relative": "modules/03_scTour/",
+    "installed_package_relative": "sctour/",
+    "installed_package_root_relative_to_repository_on_this_host": "../../work/sctour/.venv/Lib/site-packages/sctour/",
+    "official_source_root_relative_to_repository_on_this_host": "../../work/sctour/sctour-main/",
+    "execution_work_root_relative_to_repository_on_this_host": "../../work/sctour/"
+  },
+  "source_identity": {
+    "official_revision_recorded_by_module": "4d26abb936b7872706e6540f38bab6251159a475",
+    "fresh_network_revision_lookup_performed": false,
+    "installed_vs_downloaded_exact_matches": {
+      "train.py": {
+        "equal_bytes": true,
+        "sha256": "6509339cab1dc22f59bb4b6735fdec9a093c1ea73512841b80a697156df0b8d4"
+      },
+      "model.py": {
+        "equal_bytes": true,
+        "sha256": "52d38528a1a3e0580a1d07aaaef08a80ced0451f02d80d26cdfbbe532391008e"
+      },
+      "module.py": {
+        "equal_bytes": true,
+        "sha256": "583295cf7ab3319c6fb3aa81328eb3d9205326ff62962158767a8f7cfe4fd4b3"
+      }
+    },
+    "data_py_difference": {
+      "installed_line": "X = X.A",
+      "downloaded_line": "X = X.toarray()",
+      "context": "MakeDataset dense conversion after NB/ZINB log1p",
+      "interpretation_cn": "本环境SciPy1.13.1的sparse .A属性直接return self.toarray()，此差异不改变输入轴、细胞顺序或数值。",
+      "scipy_source": "scipy/sparse/_base.py",
+      "scipy_lines": [320, 332]
+    }
+  },
+  "api_checks": [
+    {
+      "check": "Time/latent/vector-field invocation order",
+      "repository_source": "modules/03_scTour/scripts/run_sctour.py",
+      "lines": [88, 99, 103],
+      "calls": [
+        "trainer.get_time()",
+        "trainer.get_latentsp(alpha_z=0.2, alpha_predz=0.8)",
+        "trainer.get_vector_field(original_time, mix)"
+      ],
+      "result": "Matches the official post-inference tutorial API order"
+    },
+    {
+      "check": "Time encoder input/order/scaling",
+      "installed_source": "sctour/train.py",
+      "lines": [349, 351, 352, 355, 367, 509, 515],
+      "encoder_source": "sctour/module.py",
+      "encoder_lines": [88, 93],
+      "result_cn": "NB输入在官方get_time内log1p一次；_get_time按原adata.X行序直接编码并ravel。时间为sigmoid输出及可选1-t，无外部排序或min-max缩放。"
+    },
+    {
+      "check": "Automatic/manual direction and vector-field sign",
+      "installed_source": "sctour/train.py",
+      "lines": [355, 365, 557, 560],
+      "ode_source": "sctour/module.py",
+      "ode_lines": [30, 49],
+      "plot_source": "modules/03_scTour/scripts/plot_figure2.py",
+      "plot_lines": [53, 55, 74],
+      "result_cn": "官方按完整QC基因检出数决定time_reverse，并在VF函数内部反号。A20无额外manual reverse。当前官方ODEfunc是自治函数，接收但不使用t；传入官方get_time的时间与教程一致。"
+    },
+    {
+      "check": "Latent inverse mapping and mixture",
+      "installed_source": "sctour/train.py",
+      "lines": [621, 626, 667, 668, 670],
+      "result_cn": "np.unique时间后的ODE结果使用sort_ridx映回原细胞序，再计算alpha_z*z+alpha_predz*zt；没有把排序后的潜空间直接赋给原细胞。"
+    },
+    {
+      "check": "Plot normalization does not alter NB training counts",
+      "repository_source": "modules/03_scTour/scripts/run_sctour.py",
+      "lines": [36, 66, 67, 137, 145],
+      "result_cn": "训练器读取原始counts的adata；后续normalize_total/log1p/scale仅作用于adata.copy()生成的plot副本。"
+    }
+  ],
+  "new_saved_metadata_checks": {
+    "objects": [
+      {
+        "work_relative_path": "prepared/A_qc_counts.h5ad",
+        "shape_cells_by_genes": [4007, 11819]
+      },
+      {
+        "work_relative_path": "prepared/A_train_counts.h5ad",
+        "shape_cells_by_genes": [4007, 500]
+      },
+      {
+        "work_relative_path": "full_A20/inferred.h5ad",
+        "shape_cells_by_genes": [4007, 500]
+      }
+    ],
+    "same_cell_ids_and_order_across_qc_train_inferred": true,
+    "full_qc_n_genes_by_counts_preserved_across_objects": true,
+    "ptime_min": 0.0004608631134033203,
+    "ptime_max": 0.9685912132263184,
+    "automatic_time_reverse": true,
+    "manual_reverse": false,
+    "max_abs_ptime_minus_ptime_before_manual": 0.0,
+    "latent_mixture_formula": "X_TNODE = 0.2 * X_z + 0.8 * X_zt",
+    "max_abs_latent_mixture_residual": 0.0,
+    "embedding_shapes": {
+      "X_TNODE": [4007, 5],
+      "X_z": [4007, 5],
+      "X_zt": [4007, 5],
+      "X_VF": [4007, 5],
+      "X_umap_pca": [4007, 2],
+      "X_umap_latent": [4007, 2]
+    }
+  },
+  "reused_existing_evidence": {
+    "source_identity_audit": {
+      "repository_path": "modules/03_scTour/results/A_source_identity_audit.json",
+      "cells_checked": 4007,
+      "hvg_checked": 500,
+      "counts_values_checked": 2003500,
+      "cell_labels_exact_match": true,
+      "source_count_entries_exact_match": true,
+      "rerun_in_this_audit": false
+    },
+    "execution_summary": {
+      "repository_path": "modules/03_scTour/results/A20_seed0/run_summary.json",
+      "percent": 0.2,
+      "epochs": 400,
+      "random_state": 0,
+      "recorded_roundtrip_max_ptime_difference": 0.0,
+      "developmental_median_rho_before": 0.09999999999999999,
+      "developmental_medians_strictly_increasing": false,
+      "checkpoint_roundtrip_rerun_in_this_audit": false
+    }
+  },
+  "paper_vs_tutorial": {
+    "paper_cached_path_relative_to_repository": "../../work/sctour/paper.xml",
+    "paper_section": "Methods: dentate gyrus datasets used in Figure 2",
+    "paper_A": {
+      "cells": 4007,
+      "min_detected_cells_per_gene": 20,
+      "hvg": 500,
+      "alpha_z": 0.2,
+      "alpha_predz": 0.8,
+      "pca_components": 40
+    },
+    "official_tutorial_source": "docs/source/notebook/scTour_inference_PostInference_adjustment.ipynb",
+    "tutorial_hvg_code_cell_index": 15,
+    "tutorial_api_code_cell_index": 20,
+    "tutorial_manual_reversal_code_cell_index": 27,
+    "tutorial_hvg": 2000,
+    "interpretation_cn": "500HVG来自论文A Methods，2000HVG来自同数据的官方后处理教程；两者分别保留，不能混为同一配置。未公开全部主图种子、精确模型检查点及完整UMAP细节，仍不能声称逐点复现。"
+  },
+  "limits_cn": [
+    "源码/API及保存对象核查排查了指定调用错误，不能穷尽全部环境或模型问题。",
+    "没有重新训练、比较新超参数、加载checkpoint或挑选更符合预期的seed。",
+    "没有据loss、UMAP外观或本次审计推断非单调性的具体根因。",
+    "A20的软件执行成功与发育阶段顺序未通过同时成立，科学状态维持PARTIAL。"
+  ]
+}
