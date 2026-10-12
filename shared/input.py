@@ -6,7 +6,7 @@ import anndata as ad
 import numpy as np
 import pandas as pd
 from scipy import sparse
-from scipy.io import mmread
+from scipy.io import mmread, mmwrite
 
 
 def validate_counts(adata, min_cells=1, targets=()):
@@ -99,3 +99,16 @@ def assess_pi(adata, cell_type_key, condition_key, batch_key, donor_key, targets
 def save_json(report, path):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+def export_mex(adata, path):
+    """Export audited counts as genes × cells with one-column IDs for R."""
+    validate_counts(adata)
+    path = Path(path)
+    path.mkdir(parents=True, exist_ok=True)
+    matrix = sparse.coo_matrix(adata.X.T)
+    matrix.data = np.rint(matrix.data).astype(np.int64)
+    mmwrite(path / 'matrix.mtx', matrix, field='integer')
+    (path / 'genes.tsv').write_text('\n'.join(adata.var_names) + '\n', encoding='utf-8')
+    (path / 'barcodes.tsv').write_text('\n'.join(adata.obs_names) + '\n', encoding='utf-8')
+    adata.obs.to_csv(path / 'metadata.tsv', sep='\t')

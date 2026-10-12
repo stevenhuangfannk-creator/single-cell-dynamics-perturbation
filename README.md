@@ -57,9 +57,9 @@ scTour图g读取保存的 `inferred.h5ad`，修改 `config/plot.json` 后调用 
 
 `modules/` 保存三个方法各自配置、脚本、对象说明、结果、图件、报告；`shared/` 保存counts审查、Seurat导出和PI入口；`data_registry/` 保存下载证据；`environments/` 保存实际环境与安装；`tests/` 与 `.github/workflows/` 验证输入和代码；`gallery/` 为图件索引；`reports/` 为统一验证记录。
 
-本机验证为 Windows 11、R 4.3.1、Python 3.13通用输��环境、Python 3.11模型环境、RTX4070 Laptop GPU 8GB、15.69GiB内存。scTour官方ODE部分仍在CPU；训练耗时以实际日志为准。CPU入口已提供，全部正式模型的CPU重训未完成，不能把GPU结果描述为CPU验证。
+本机验证为 Windows 11、R 4.3.1、Python 3.13通用输入环境、Python 3.11模型环境、RTX4070 Laptop GPU 8GB、15.69GiB内存。scTour官方ODE部分仍在CPU；训练耗时以实际日志为准。CPU入口已提供，全部正式模型的CPU重训未完成，不能把GPU结果描述为CPU验证。
 
-GitHub轻量CI检查不下载完整GEO，也不代表科学结果复现。`RUN_OK`、`REPRODUCED`、`PARTIAL`、`BLOCKED` 的定义见 [方法比较与状态说明](docs/METHOD_COMPARISON_CN.md)。
+GitHub轻量CI检查输入、保存的KO/OE结果不变量、画廊路径及源码编译，不下载完整GEO，也不代表科学结果复现。`shared.lock.txt`记录本机版本，含安装器本地路径，仅供追溯；新建共享环境使用`shared-requirements.txt`。`RUN_OK`、`REPRODUCED`、`PARTIAL`、`BLOCKED` 的定义见 [方法比较与状态说明](docs/METHOD_COMPARISON_CN.md)。
 
 ## 科学边界 / Interpretation
 

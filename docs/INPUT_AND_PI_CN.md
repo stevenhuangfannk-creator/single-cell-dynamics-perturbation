@@ -22,6 +22,15 @@ Linux/macOS 将 `.venv\Scripts\python` 替换为 `.venv/bin/python`。先复制�
 
 10x MEX 的 `input` 指向含 matrix.mtx、features.tsv/genes.tsv、barcodes.tsv 的目录，均可 gzip。metadata 为首列细胞 ID 的 TSV，必须覆盖全部输入细胞；已有注释列遇到重名会报错，以避免覆写。
 
+已完成全转录组QC、限定单细胞类型及合理基因面板后，可加 `--export-mex` 将经过审查的 AnnData/10x 输入导出为 R 入口使用的基因×细胞 counts：
+
+```powershell
+.venv\Scripts\python shared/prepare_input.py --config shared/pi_input.example.yaml --output data/pi_checked --assess-pi --export-mex
+Rscript modules/01_scTenifoldKnk/scripts/run_custom.R data/pi_checked/mex/matrix.mtx data/pi_checked/mex/genes.tsv data/pi_checked/mex/barcodes.tsv work/my_KO SPI1
+```
+
+第二条命令是未来模型入口，本次未对用户数据执行。导出不会自动筛选细胞类型/HVG或完成单细胞QC；必须先在来源对象中完成上述处理。`genes.tsv`为单列分析ID，不能将三列`features.tsv`直接作为`run_custom.R`的基因名文件。导出整数计数时仅允许既有整数检查容差内的浮点舍入。
+
 Seurat 可先转换为 MEX，并保持 metadata 行顺序：
 
 ```powershell
@@ -29,6 +38,8 @@ Rscript shared/export_seurat.R data/input.rds data/my_counts RNA
 ```
 
 导出依赖 SeuratObject 和 Matrix。Seurat v5 有多个 counts layer 时须先审核样本并明确 JoinLayers；脚本拒绝擅自合并。这一 Seurat 导出入口的版本兼容性须在实际用户对象上再检查，不能视为已分析其私有数据。
+
+Seurat导出同时保存标准三列`features.tsv`和通用R入口所需的单列`genes.tsv`；细胞ID使用`barcodes.tsv`。新增加的AnnData→MEX桥接已用轴方向、counts数值、细胞顺序和基因ID的往返测试验证；Seurat对象导出仍未在真实Seurat对象上运行。
 
 ## 细胞类型与设计 / Study design
 

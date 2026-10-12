@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 from scipy.io import mmwrite
-from shared.input import read_input, validate_counts, assess_pi
+from shared.input import read_input, validate_counts, assess_pi, export_mex
 
 
 class InputContract(unittest.TestCase):
@@ -56,6 +56,16 @@ class InputContract(unittest.TestCase):
                 read_input(path)
             result = read_input(path, counts_layer='X')
             self.assertEqual(validate_counts(result)['count_sum'], 6)
+
+    def test_audited_export_roundtrip_preserves_axes_counts_and_ids(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = self.counts()
+            export_mex(source, directory)
+            restored = read_input(directory)
+            np.testing.assert_array_equal(restored.X.toarray(), source.X.toarray())
+            self.assertEqual(list(restored.obs_names), ['c2', 'c1'])
+            self.assertEqual(list(restored.var_names), ['G1', 'G2'])
+            self.assertEqual(validate_counts(restored)['count_sum'], 6)
 
     def test_pi_assessment_is_not_time_inference(self):
         data = self.counts()

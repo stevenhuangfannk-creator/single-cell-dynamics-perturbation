@@ -15,6 +15,7 @@ if (packageVersion("SeuratObject") >= "5.0.0") {
 stopifnot(!anyDuplicated(rownames(counts)), !anyDuplicated(colnames(counts)))
 dir.create(args[2], recursive = TRUE, showWarnings = FALSE)
 writeMM(as(counts, "sparseMatrix"), file.path(args[2], "matrix.mtx"))
+writeLines(rownames(counts), file.path(args[2], "genes.tsv"))
 write.table(data.frame(rownames(counts), rownames(counts), "Gene Expression"), file.path(args[2], "features.tsv"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
 write.table(colnames(counts), file.path(args[2], "barcodes.tsv"), quote = FALSE, row.names = FALSE, col.names = FALSE)
 write.table(obj[[]][colnames(counts), , drop = FALSE], file.path(args[2], "metadata.tsv"), sep = "\t", quote = FALSE, col.names = NA)

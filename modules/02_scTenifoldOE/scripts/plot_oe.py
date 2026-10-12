@@ -69,6 +69,7 @@ def main():
     parser.add_argument("--dpi", type=int, default=600)
     args = parser.parse_args()
     root = args.module
+    (root / "figures").mkdir(parents=True, exist_ok=True)
     meta = json.loads((root / "reports" / "run_metadata.json").read_text(encoding="utf-8-sig"))
     target = meta["target"]
     wt = pd.read_csv(root / "objects" / "WT.csv", index_col=0)

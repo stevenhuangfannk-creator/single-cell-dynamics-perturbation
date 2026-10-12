@@ -5,12 +5,13 @@ import sys
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from shared.input import read_input, validate_counts, assess_pi, save_json
+from shared.input import read_input, validate_counts, assess_pi, save_json, export_mex
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--config', required=True)
 parser.add_argument('--output', required=True)
 parser.add_argument('--assess-pi', action='store_true')
+parser.add_argument('--export-mex', action='store_true', help='Also export genes × cells MEX with one-column IDs')
 args = parser.parse_args()
 config = yaml.safe_load(Path(args.config).read_text(encoding='utf-8'))
 adata = read_input(config['input'], config.get('counts_layer', 'counts'), config.get('metadata'), config.get('gene_id', 'symbol'))
@@ -21,4 +22,6 @@ output = Path(args.output)
 output.mkdir(parents=True, exist_ok=True)
 adata.write_h5ad(output / 'validated_counts.h5ad')
 save_json(report, output / 'input_audit.json')
+if args.export_mex:
+    export_mex(adata, output / 'mex')
 print(f'Validated {adata.n_obs} cells × {adata.n_vars} genes; audit saved to {output}')

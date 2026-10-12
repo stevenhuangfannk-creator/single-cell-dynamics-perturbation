@@ -41,6 +41,8 @@ $Py = (Resolve-Path work/oe-env/Scripts/python.exe).Path
 
 `--folds 1` 是无扰动负对照，1.5/2/3 是网络剂量敏感性。MA 固定 `d=2,nCores=1`、seed 1，统计为 `empiricalNull=FALSE,direction=NULL`。`--output` 可指定另一个完整模块目录，避免覆盖既有结果；`plot_oe.py --module` 应读取同一路径。`config/pbmc_cd14.json` 保存本次参数记录；脚本运行参数为真实入口，配置文件不伪称被自动读取。
 
+完整10图与富集套件固定读取1/1.5/2/3，运行整套时保留这四个强度。`run_oe.py`可单独计算其他强度，但缺少这些默认表时不能直接调用现有完整绘图/富集套件。自定义输出后，富集也要使用`enrich_compare.py --module 同一路径`。图件manifest和部分中文图注为本次PBMC/SPI1示例；更换数据或靶点时须同步修订来源和注释，不能沿用PBMC登记。
+
 运行导出 `objects/{WT,KO,OE_1,OE_1.5,OE_2,OE_3}.csv`、每个条件的 `_alignment.csv` 与 `_dr.csv`、RDS 对象、运行版本/哈希/耗时、强度汇总、KO/OE 共同与特异基因以及 GO/KEGG/Reactome ORA 全检验表。RDS 与原始矩阵按项目规则不上传，可由脚本重建；CSV 和图件保留供检查和重绘。
 
 ## 第三方公开 API 验证 / Published API execution
