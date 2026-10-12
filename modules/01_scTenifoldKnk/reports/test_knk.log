@@ -1,6 +1,7 @@
 test_bounded_screen_has_expected_axes (test_knk_results.KnkResultTests.test_bounded_screen_has_expected_axes) ... ok
 test_dr_fc_is_squared_network_distance_not_expression_fc (test_knk_results.KnkResultTests.test_dr_fc_is_squared_network_distance_not_expression_fc) ... ok
 test_figure_manifest_outputs (test_knk_results.KnkResultTests.test_figure_manifest_outputs) ... ok
+test_generic_smoke_has_real_resource_checks (test_knk_results.KnkResultTests.test_generic_smoke_has_real_resource_checks) ... ok
 test_ko_changes_only_target_outgoing_row (test_knk_results.KnkResultTests.test_ko_changes_only_target_outgoing_row) ... ok
 test_negative_control (test_knk_results.KnkResultTests.test_negative_control) ... ok
 test_ora_background_and_statistics (test_knk_results.KnkResultTests.test_ora_background_and_statistics) ... ok
@@ -8,6 +9,6 @@ test_raw_input_provenance_and_target_selection (test_knk_results.KnkResultTests.
 test_unstable_runs_preserved (test_knk_results.KnkResultTests.test_unstable_runs_preserved) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.248s
+Ran 9 tests in 0.305s
 
 OK

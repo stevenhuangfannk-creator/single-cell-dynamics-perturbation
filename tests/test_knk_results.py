@@ -113,4 +113,18 @@ class KnkResultTests(unittest.TestCase):
                 self.assertTrue(path.exists(),str(path)); self.assertGreater(path.stat().st_size,1000)
             self.assertIn("PARTIAL",entry["status"])
 
+    def test_generic_smoke_has_real_resource_checks(self):
+        summary=json.loads((MODULE/"reports/custom_smoke_summary.json").read_text(encoding="utf-8"))
+        self.assertEqual(summary["status"],"RUN_OK")
+        for mode in ("single","joint"):
+            run=summary[mode]
+            self.assertEqual((run["genes"],run["cells"]),(80,150))
+            self.assertEqual(run["scientific_status"],"UNVALIDATED")
+            check=run["resource_check"]
+            self.assertEqual(check["minimum_available_gib"],0.25)
+            self.assertGreaterEqual(check["available_before_counts_bytes"],0.25*1024**3)
+            self.assertEqual(check["raw_tensor_bytes"],8*80*80*3)
+        self.assertEqual(summary["single_exit_code"],0)
+        self.assertGreater(summary["observed_single_Rterm_peak_rss_bytes"],50*1024**2)
+
 if __name__=="__main__": unittest.main()

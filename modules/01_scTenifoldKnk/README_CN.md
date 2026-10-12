@@ -85,13 +85,15 @@ Rscript modules/01_scTenifoldKnk/scripts/run_sensitivity.R
 
 未来 Seurat 应导出原始 counts，AnnData 应明确 `layers['counts']` 而不是 scaled `.X`，10x MEX/h5ad可通过 [统一输入脚本](../../shared/prepare_input.py) 检查轴、整数性、唯一 ID、目标、细胞数；[统一 Seurat 导出](../../shared/export_seurat.R) 和 [PI 数据配置](../../shared/pi_input.example.yaml) 提供入口。`own_data.template.json` 是要求蓝图，尚未实现从该 JSON 自动运行分析；不得把蓝图状态写成已运行。
 
-通过审计、限定单细胞类型及合理gene panel后，通用 [run_custom.R](scripts/run_custom.R) 可直接读取genes × cells的MEX与对应唯一ID文件，单目标或逗号分隔联合目标均可。此入口要求新/空output目录，不覆盖历史；默认最多3000genes、20networks、4cores，先验证输入与目标≥5%检出。输入QC需此前在全转录组完成，默认不再重复QC。
+通过审计、限定单细胞类型及合理gene panel后，通用 [run_custom.R](scripts/run_custom.R) 可直接读取genes × cells的MEX与对应唯一ID文件，单目标或逗号分隔联合目标均可。此入口要求新/空output目录，不覆盖历史；默认最多3000genes、20networks、4cores，先验证输入与目标≥5%检出。输入QC需此前在全转录组完成，默认不再重复QC。真实资源门槛按输入规模区分：≤100genes且≤200cells的tiny运行需≥0.25GiB availableRAM，其他需≥0.8GiB；在R包加载前后分别检查，记录实际available值和raw double tensor估计（非峰值）。
 
 ```powershell
 Rscript modules/01_scTenifoldKnk/scripts/run_custom.R audited_counts.mtx genes.tsv cells.tsv work/my_KO SPI1,CEBPB
 # 可选第6个参数只覆盖共有模型参数，例如已有pbmc.json。
 Rscript modules/01_scTenifoldKnk/scripts/run_custom.R audited_counts.mtx genes.tsv cells.tsv work/my_KO_single SPI1 modules/01_scTenifoldKnk/config/pbmc.json
 ```
+
+通用入口已用真实PBMC子集80genes×150cells分别验证SPI1单KO、SPI1+CEBPB联合KO（3nets×100cells、seed7、MA2），输出对象/维度/finite距离及非target行不变检查通过，详情见 [custom_smoke_summary.json](reports/custom_smoke_summary.json)。这是API smoke，不补强正式PBMC稳定性或构成用户样本验证。直接Rterm进程50ms采样观察峰值RSS约258MiB，不能据此推断更大panel峰值。
 
 输出完整`output.rds`、WT/KO、DR、MA、参数/版本/检测率/边数；状态`UNVALIDATED`提醒新样本还需seed及供者稳定性。当前11图脚本专用于PBMC固定文件/目标，新数据可读取generic输出CSV自行改绘图目标/label；本阶段未实现一条命令生成任意输入的完整11图，也未在PI数据运行。
 

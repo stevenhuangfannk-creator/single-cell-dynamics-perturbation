@@ -1,0 +1,29 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Available RAM after packages: 0.38 GiB; minimum for this scale: 0.25 GiB
+'as(<dgTMatrix>, "dgCMatrix")' is deprecated.
+Use 'as(., "CsparseMatrix")' instead.
+See help("Deprecated") and help("Matrix-deprecated").
+Raw double tensor estimate: 153600 bytes; excludes copies and MA objects
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 80 genes x 150 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 3 gene regulatory networks (100 cells each)
+v Network construction complete: 3 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 80 x 80 x 3 (K=3)
+v [X] CP decomposition complete (norm explained: 20.8%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 80 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 80 genes
+v Differential regulation complete: 3/80 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete

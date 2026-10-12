@@ -1,0 +1,104 @@
+{
+  "status": "RUN_OK",
+  "purpose": "Generic API smoke only, not biological evidence",
+  "input_audit": {
+    "status": "INPUT_OK",
+    "genes": 80,
+    "cells": 150,
+    "nnz": 6370,
+    "targets": [
+      "SPI1",
+      "CEBPB"
+    ],
+    "detection_rate": [
+      0.66,
+      0.64
+    ],
+    "selection": "First 80 saved PBMC panel genes and first 150 CD14 cell barcodes; API smoke, not biological analysis"
+  },
+  "single": {
+    "status": "RUN_OK",
+    "scientific_status": "UNVALIDATED",
+    "cells": 150,
+    "genes": 80,
+    "targets": "SPI1",
+    "detection_rate": 0.66,
+    "target_outgoing_edges": 71,
+    "parameters": {
+      "qc": false,
+      "nc_nNet": 3,
+      "nc_nCells": 100,
+      "nc_nComp": 3,
+      "nc_q": 0.9,
+      "nc_lambda": 0,
+      "td_K": 3,
+      "td_maxIter": 1000,
+      "td_maxError": 1e-05,
+      "ma_nDim": 2,
+      "dr_direction": true,
+      "dr_directionRegressLibSize": true,
+      "nCores": 1,
+      "seed": 7
+    },
+    "elapsed_sec": 0.45,
+    "resource_check": {
+      "minimum_available_gib": 0.25,
+      "available_before_packages_bytes": 539324416,
+      "available_before_counts_bytes": 408080384,
+      "raw_tensor_bytes": 153600
+    },
+    "interpretation": "Network perturbation only; inspect stability and independent validation before biological conclusions"
+  },
+  "joint": {
+    "status": "RUN_OK",
+    "scientific_status": "UNVALIDATED",
+    "cells": 150,
+    "genes": 80,
+    "targets": [
+      "SPI1",
+      "CEBPB"
+    ],
+    "detection_rate": [
+      0.66,
+      0.64
+    ],
+    "target_outgoing_edges": [
+      71,
+      75
+    ],
+    "parameters": {
+      "qc": false,
+      "nc_nNet": 3,
+      "nc_nCells": 100,
+      "nc_nComp": 3,
+      "nc_q": 0.9,
+      "nc_lambda": 0,
+      "td_K": 3,
+      "td_maxIter": 1000,
+      "td_maxError": 1e-05,
+      "ma_nDim": 2,
+      "dr_direction": true,
+      "dr_directionRegressLibSize": true,
+      "nCores": 1,
+      "seed": 7
+    },
+    "elapsed_sec": 0.45,
+    "resource_check": {
+      "minimum_available_gib": 0.25,
+      "available_before_packages_bytes": 846008320,
+      "available_before_counts_bytes": 435482624,
+      "raw_tensor_bytes": 153600
+    },
+    "interpretation": "Network perturbation only; inspect stability and independent validation before biological conclusions"
+  },
+  "observed_single_Rterm_peak_rss_bytes": 270700544,
+  "rss_sampling_interval_ms": 50,
+  "single_exit_code": 0,
+  "invariants": [
+    "target row(s) all zero",
+    "all other network rows identical",
+    "DR80 finite distances",
+    "WT80x80 and MA160x2",
+    "saved RDS/CSV objects exist"
+  ]
+}

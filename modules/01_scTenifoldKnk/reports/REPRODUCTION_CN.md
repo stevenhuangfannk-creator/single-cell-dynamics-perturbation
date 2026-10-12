@@ -62,7 +62,9 @@ R4.3.1 Windows11，单核BLAS/OMP。600gene×600gene×8net原始double tensor约
 
 安装初次源编译rjson失败，补R4.3 binary；Knk加载时缺plyr，补binary后源码安装成功。`git clone` / codeload偶发网络连接失败，官方CRAN tarball、GitHub REST/raw与EuropePMC可访问；已用校验登记而未使用未知镜像。R启动提示部分locale=C.UTF-8设置失败，运行实际locale=C，未影响counts/数值；保留日志不隐藏。
 
-复核config数值读取时重复运行600gene流程，在完成single/multi/screen及部分seed后因系统availableRAM降至约0.3GiB终止。初次完整运行的summary、pooled distance与完整日志保留；检查六个单seed DR中599非target distance与初次pooled matrix逐值相同（最大差0），没有用部分重复替换完整稳定性结论。新的通用`run_custom.R`入口已写输入/目标/新目录保护，尚待内存释放后进行独立小规模API验证；未声称已经在用户数据通过。
+复核config数值读取时重复运行600gene流程，在完成single/multi/screen及部分seed后因系统availableRAM降至约0.3GiB终止。初次完整运行的summary、pooled distance与完整日志保留；检查六个单seed DR中599非target distance与初次pooled matrix逐值相同（最大差0），没有用部分重复替换完整稳定性结论。
+
+通用`run_custom.R`独立tiny API smoke现已完成：真实PBMC保存panel前80gene、前150CD14cells，6370nonzero；目标SPI1/CEBPB检测66%/64%，3net×100cells、seed7、MA2。单SPI1与联合KO分别成功，80行DR距离finite、完整WT/KO/MA/RDS保存，非target网络行不变。联合计算0.45s。此前统一0.8GiB门槛两次正确阻止运行；经规模评估，将≤100gene且≤200cell tiny入口门槛设0.25GiB，其余仍0.8GiB，真实包加载前后内存数值记录于`custom_smoke_summary.json`，未stub资源检查。联合after-packages available0.406GiB，rawtensor仅153600bytes；直接Rterm单KO进程每50ms采样观察峰值RSS270700544bytes（约258MiB，采样峰值而非无限精度瞬时峰值）。全部tiny运行位于独立work目录，仅用于验证API，不输出额外生物学图，不替换正式结论，也未运行PI数据。
 
 未完成的是：真实PBMC全转录组KO、对匹配真实KO的生物学准确性评估、独立供者重复与稳定目标确认、完整容器级R dependency lock、用户PI/Healthy正式分析。当前480细胞少于官方约500建议，600gene/8nets是资源受控验证，不能直接用于未审查的新数据研究结论。
 
