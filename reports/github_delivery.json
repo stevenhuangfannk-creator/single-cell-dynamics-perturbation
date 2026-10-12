@@ -1,20 +1,22 @@
 {
   "repository_url": "https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation",
   "private": true,
-  "local_head": "f2950e8934f6d7f57b560d3faae07da22c0f7d96",
-  "remote_head": "f2950e8934f6d7f57b560d3faae07da22c0f7d96",
-  "local_tree": "f13542409e239ebe465a583dd05b8a39e3ce1766",
-  "remote_tree": "f13542409e239ebe465a583dd05b8a39e3ce1766",
+  "verified_at_utc": "2026-10-12T15:39:00.946988+00:00",
+  "local_head": "773e55f478592e8c7ce65b22e97397d4898b8311",
+  "remote_head": "773e55f478592e8c7ce65b22e97397d4898b8311",
+  "local_tree": "9225d6a41c8dd258c25749638e97ebd61dbf9143",
+  "remote_tree": "9225d6a41c8dd258c25749638e97ebd61dbf9143",
   "file_trees_identical": true,
   "head_actions": [
     {
-      "id": 38250096020,
+      "id": 38271576698,
       "name": "输入与代码检查 / Input checks",
       "status": "completed",
       "conclusion": "success",
-      "html_url": "https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation/actions/runs/38250096020",
-      "head_sha": "f2950e8934f6d7f57b560d3faae07da22c0f7d96"
+      "html_url": "https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation/actions/runs/38271576698",
+      "head_sha": "773e55f478592e8c7ce65b22e97397d4898b8311"
     }
   ],
+  "verification_scope_cn": "本快照仅证明记录的SHA及文件树。审计文件随后提交会产生新的SHA；最新HEAD另以--no-save核查，避免审计文件递归修改自身。",
   "publication_transport": "Initial GitHub REST Git objects; ordinary Git transport recovered and local main aligned without changing files. Original local validation history retained in local-validation-history-20261012."
 }
