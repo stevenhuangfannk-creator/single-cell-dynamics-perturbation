@@ -11,7 +11,7 @@ jobs:
           cache: pip
           cache-dependency-path: environments/shared-requirements.txt
       - run: pip install -r environments/shared-requirements.txt
-      - run: python -m unittest tests.test_input tests.test_knk_results tests.test_oe_results tests.test_sctour_cache -v
+      - run: python -m unittest tests.test_input tests.test_knk_results tests.test_oe_results tests.test_oe_csv tests.test_sctour_cache -v
       - run: python shared/build_gallery.py
       - run: python -m compileall -q shared modules
 # 此CI不下载完整GEO，也不代表三种方法或生物学结果已复现。

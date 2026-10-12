@@ -1,0 +1,21 @@
+test_literal_na_target_is_excluded_from_response_count (tests.test_oe_csv.TestNetworkCSV.test_literal_na_target_is_excluded_from_response_count) ... FAIL
+
+======================================================================
+FAIL: test_literal_na_target_is_excluded_from_response_count (tests.test_oe_csv.TestNetworkCSV.test_literal_na_target_is_excluded_from_response_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\tests\test_oe_csv.py", line 64, in test_literal_na_target_is_excluded_from_response_count
+    self.assertEqual(metrics.significant_non_target.tolist(), [1, 1])
+AssertionError: Lists differ: [2, 2] != [1, 1]
+
+First differing element 0:
+2
+1
+
+- [2, 2]
++ [1, 1]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.189s
+
+FAILED (failures=1)

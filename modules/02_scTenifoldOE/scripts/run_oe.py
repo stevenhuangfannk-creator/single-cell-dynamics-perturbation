@@ -15,6 +15,12 @@ import pandas as pd
 MODULE = Path(__file__).resolve().parents[1]
 
 
+def read_network_csv(path):
+    # Preserve analysis IDs such as 001 and literal NA; weights retain numeric parsing.
+    network = pd.read_csv(path, converters={0: str}, keep_default_na=False)
+    return network.set_index(network.columns[0])
+
+
 def validate_network(wt, target):
     if wt.shape[0] != wt.shape[1] or not wt.index.equals(wt.columns):
         raise ValueError("WT must be square, with identical ordered row and column IDs")
@@ -54,8 +60,8 @@ def main():
     parser.add_argument("--max-genes", type=int, default=1000, help="Explicit resource limit; raise only after memory assessment")
     parser.add_argument("--output", type=Path, default=MODULE)
     args = parser.parse_args()
-    wt = pd.read_csv(args.wt, index_col=0)
-    ko = pd.read_csv(args.ko, index_col=0)
+    wt = read_network_csv(args.wt)
+    ko = read_network_csv(args.ko)
     validate_network(wt, args.target)
     if len(wt) > args.max_genes:
         raise ValueError(f"Network has {len(wt)} genes, exceeds --max-genes={args.max_genes}; assess O(genes²) memory first")
@@ -83,7 +89,7 @@ def main():
                             str(wt_path), str(network_path), args.target, str(prefix),
                             args.r_library, str(args.ma_dim), str(args.seed)],
                            stdout=log, stderr=subprocess.STDOUT, check=True)
-        dr = pd.read_csv(f"{prefix}_dr.csv")
+        dr = pd.read_csv(f"{prefix}_dr.csv", converters={"gene": str})
         delta = network.to_numpy() - wt.to_numpy()
         metrics.append({"condition": name, "changed_edges": int(np.count_nonzero(delta)),
                         "delta_frobenius": float(np.linalg.norm(delta)),

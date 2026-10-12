@@ -1,0 +1,25 @@
+{
+  "status": "RUN_OK",
+  "pandas": "2.2.3",
+  "scope": "Read-only matrix comparison; no network fitting or perturbation",
+  "checks": [
+    {
+      "file": "modules/01_scTenifoldKnk/objects/WT.csv",
+      "shape": [
+        600,
+        600
+      ],
+      "ordered_ids_unchanged": true,
+      "numeric_weights_array_equal": true
+    },
+    {
+      "file": "modules/01_scTenifoldKnk/objects/KO.csv",
+      "shape": [
+        600,
+        600
+      ],
+      "ordered_ids_unchanged": true,
+      "numeric_weights_array_equal": true
+    }
+  ]
+}

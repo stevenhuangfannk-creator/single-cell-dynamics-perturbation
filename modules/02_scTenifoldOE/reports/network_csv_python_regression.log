@@ -1,0 +1,8 @@
+test_literal_na_id_survives_read_and_export_roundtrip (tests.test_oe_csv.TestNetworkCSV.test_literal_na_id_survives_read_and_export_roundtrip) ... ok
+test_literal_na_target_is_excluded_from_response_count (tests.test_oe_csv.TestNetworkCSV.test_literal_na_target_is_excluded_from_response_count) ... ok
+test_numeric_ids_keep_leading_zeros_and_numeric_weights (tests.test_oe_csv.TestNetworkCSV.test_numeric_ids_keep_leading_zeros_and_numeric_weights) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.120s
+
+OK

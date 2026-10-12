@@ -1,0 +1,52 @@
+{
+  "status": "REPRODUCED_BEFORE_FIX",
+  "scope": "CSV readers only; no perturbation, network fitting, MA or DR executed",
+  "probes": [
+    {
+      "language": "Python",
+      "input_ids": [
+        "001",
+        "002"
+      ],
+      "parser": "pd.read_csv(path, index_col=0)",
+      "exit_code": 0,
+      "stdout": "{\"pandas\": \"2.2.3\", \"rows\": [\"1\", \"2\"], \"columns\": [\"001\", \"002\"], \"axes_match\": false, \"missing_row_ids\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "language": "R",
+      "input_ids": [
+        "001",
+        "002"
+      ],
+      "parser": "read.csv(path, row.names=1, check.names=FALSE)",
+      "exit_code": 0,
+      "stdout": "[1] \"1\" \"2\"\n[1] \"001\" \"002\"\naxes match: FALSE \n",
+      "stderr": "During startup - Warning messages:\n1: Setting LC_COLLATE=C.UTF-8 failed \n2: Setting LC_CTYPE=C.UTF-8 failed \n3: Setting LC_MONETARY=C.UTF-8 failed \n4: Setting LC_TIME=C.UTF-8 failed \n"
+    },
+    {
+      "language": "Python",
+      "input_ids": [
+        "001",
+        "002",
+        "NA"
+      ],
+      "parser": "pd.read_csv(path, index_col=0)",
+      "exit_code": 0,
+      "stdout": "{\"pandas\": \"2.2.3\", \"rows\": [\"1.0\", \"2.0\", \"nan\"], \"columns\": [\"001\", \"002\", \"NA\"], \"axes_match\": false, \"missing_row_ids\": 1}\n",
+      "stderr": ""
+    },
+    {
+      "language": "R",
+      "input_ids": [
+        "001",
+        "002",
+        "NA"
+      ],
+      "parser": "read.csv(path, row.names=1, check.names=FALSE)",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "During startup - Warning messages:\n1: Setting LC_COLLATE=C.UTF-8 failed \n2: Setting LC_CTYPE=C.UTF-8 failed \n3: Setting LC_MONETARY=C.UTF-8 failed \n4: Setting LC_TIME=C.UTF-8 failed \nError in read.table(file = file, header = header, sep = sep, quote = quote,  : \n  missing values in 'row.names' are not allowed\nCalls: read.csv -> read.table\nExecution halted\n"
+    }
+  ]
+}

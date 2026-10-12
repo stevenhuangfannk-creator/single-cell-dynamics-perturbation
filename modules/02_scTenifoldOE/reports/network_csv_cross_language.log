@@ -1,0 +1,10 @@
+Python 3.11 / pandas 2.2.3
+PASS IDs and exact numeric weights: 001,002 
+PASS IDs and exact numeric weights: 001,002,NA 
+PASS Python-exported CSV -> R: 001,002,NA and exact numeric weights
+RUN_OK: production R CSV reader; no perturbation or MA/DR performed
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
