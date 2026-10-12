@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Actual prepare_custom MEX parser statements; software fixture only, no scientific data/model",
+  "regression": "pandas2 index_col=0 coerced numeric IDs despite dtype=str; corrected by read-then-set_index",
+  "genes": [
+    "001",
+    "NA"
+  ],
+  "cells": [
+    "001",
+    "002"
+  ],
+  "aligned_batches": [
+    "001",
+    "002"
+  ]
+}

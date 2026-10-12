@@ -13,6 +13,7 @@ def export(work_root, module):
                ('A20_seed0', work/'full_A20'), ('smoke_A', work/'smoke_A')]
     folders.extend((p.name, p) for p in sorted((work/'subsamples').glob('B_*')) if p.is_dir())
     rows = []
+    resources = []
     for name, path in folders:
         if not (path/'run_summary.json').exists():
             continue
@@ -29,10 +30,23 @@ def export(work_root, module):
                      ['status', 'n_cells_inferred', 'hvg', 'percent', 'epochs', 'random_state',
                       'training_seconds', 'final_train_loss', 'final_validation_loss',
                       'developmental_median_rho_before', 'manual_reverse', 'roundtrip_max_ptime_difference']}})
+        for partition in ['train', 'validation']:
+            ids = path/f'{partition}_cells.tsv'
+            with ids.open(encoding='utf-8') as handle:
+                rows[-1][f'n_{partition}_cells'] = sum(1 for _ in csv.DictReader(handle, delimiter='\t'))
+        environment = json.loads((path/'environment.json').read_text(encoding='utf-8'))
+        resources.append({'run': name, **{k: environment.get(k) for k in
+                          ['actual_model_device', 'training_seconds', 'total_run_seconds',
+                           'peak_process_working_set_bytes', 'torch_peak_allocated_bytes']}})
+        resources[-1]['training_seconds'] = summary['training_seconds']
     with (results/'run_comparison.tsv').open('w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0]), delimiter='\t')
         writer.writeheader()
         writer.writerows(rows)
+    with (results/'resource_comparison.tsv').open('w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=list(resources[0]), delimiter='\t')
+        writer.writeheader()
+        writer.writerows(resources)
     for dataset in ['A', 'B']:
         with (work/'prepared'/f'{dataset}_gene_qc_hvg.tsv').open(encoding='utf-8') as source:
             reader = csv.DictReader(source, delimiter='\t')

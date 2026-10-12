@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 import scanpy as sc
 import sctour as sct
+from scipy.stats import spearmanr
 
 PALETTES = {
     'A': {'nIPC': '#AC3CFF', 'Neuroblast_1': '#FEBB72', 'Neuroblast_2': '#FF7D00',
@@ -34,7 +35,7 @@ SUBSAMPLING_PERCENTAGES = {1, 5, 10, 20, 40, 60, 80, 95}
 def style(cfg):
     logging.getLogger('fontTools.subset').setLevel(logging.WARNING)
     plt.rcParams.update({'font.family': 'sans-serif', 'font.sans-serif': ['Arial', 'DejaVu Sans'],
-                         'font.size': cfg['font_size'], 'axes.titlesize': 7,
+                         'font.size': cfg['font_size'], 'axes.titlesize': cfg['font_size'],
                          'legend.fontsize': cfg['legend_size'], 'svg.fonttype': 'none',
                          'pdf.fonttype': 42, 'figure.facecolor': 'white', 'axes.facecolor': 'white'})
 
@@ -46,6 +47,8 @@ def clean(ax, title=None):
 
 def load_plot_data(path):
     # Plotting needs observations/embeddings, not duplicate full count matrices in eight models.
+    summary = json.loads(Path(path).with_name('run_summary.json').read_text(encoding='utf-8'))
+    assert summary['epochs'] == 400, 'Figure 2 requires completed formal models, not Smoke Test objects'
     with h5py.File(path, 'r') as source:
         obs = read_elem(source['obs'])
         obsm = {key: read_elem(source['obsm'][key]) for key in
@@ -54,6 +57,7 @@ def load_plot_data(path):
     data = ad.AnnData(obs=obs, obsm=obsm)
     data.uns['manual_reverse'] = reverse
     configuration = json.loads(Path(path).with_name('config_used.json').read_text(encoding='utf-8'))
+    assert configuration['percent'] == summary['percent'] and data.n_obs == summary['n_cells_inferred']
     data.uns['training_percent'] = configuration['percent']
     return data
 
@@ -119,30 +123,37 @@ def ordering(ax, data, cfg):
         rgb[celltypes == c] = colors.to_rgb(PALETTES['B'][c])
         tracks.append(rgb)
     ax.imshow(np.stack(tracks), aspect='auto', interpolation='nearest', extent=(0, len(ix), len(tracks), 0))
-    ax.set_yticks(np.arange(len(tracks)) + .5, ['Pseudotime', 'Batch'] + cats, fontsize=6)
+    ax.set_yticks(np.arange(len(tracks)) + .5, ['Pseudotime', 'Batch'] + cats, fontsize=max(5, cfg['font_size']-1))
     ax.set_xticks([0, len(ix)], ['0', '1'])
-    ax.set_xlabel('Pseudotime rank (all cells)', fontsize=6)
+    ax.set_xlabel('Pseudotime rank (all cells)', fontsize=max(5, cfg['font_size']-1))
     ax.spines[['top', 'right']].set_visible(False)
 
 def robustness(ax, runs, cfg):
     rows = []
     fractions = []
-    for frac, d in sorted(runs.items()):
+    for frac in sorted(SUBSAMPLING_PERCENTAGES):
+        d = runs[frac]
         ix = np.argsort(d.ptime.to_numpy(), kind='stable')
         rows.append(np.array([colors.to_rgb(PALETTES['B'][v]) for v in d.celltype.astype(str).to_numpy()[ix]]))
         fractions.append(f'{frac:g}%')
     ax.imshow(np.stack(rows), aspect='auto', interpolation='nearest')
-    ax.set_yticks(np.arange(len(rows)), fractions, fontsize=6)
+    ax.set_yticks(np.arange(len(rows)), fractions, fontsize=max(5, cfg['font_size']-1))
     ax.set_xticks([0, len(rows[0]) - 1], ['0', '1'])
-    ax.set_xlabel('Pseudotime rank', fontsize=6)
-    ax.set_ylabel('Training cells', fontsize=6)
+    ax.set_xlabel('Pseudotime rank', fontsize=max(5, cfg['font_size']-1))
+    ax.set_ylabel('Training cells', fontsize=max(5, cfg['font_size']-1))
+    ax.text(1.03, -.8, 'ρ vs 95%', transform=ax.get_yaxis_transform(), fontsize=max(5, cfg['font_size']-2))
+    for row, fraction in enumerate(sorted(SUBSAMPLING_PERCENTAGES)):
+        rho = spearmanr(runs[95].ptime, runs[fraction].ptime).statistic
+        ax.text(1.03, row, f'{rho:.3f}', transform=ax.get_yaxis_transform(),
+                fontsize=max(5, cfg['font_size']-2), va='center')
     ax.spines[['top', 'right']].set_visible(False)
 
-def legend(fig, palette, y):
+def legend(fig, palette, y, cfg, ncol=None, small=False):
     handles = [Line2D([], [], marker='o', color=c, linestyle='', markersize=3, label=k)
                for k, c in palette.items()]
     fig.legend(handles=handles, loc='lower center', bbox_to_anchor=(.5, y),
-               ncol=len(handles), frameon=False, handletextpad=.2, columnspacing=.75, fontsize=6)
+               ncol=ncol or len(handles), frameon=False, handletextpad=.2, columnspacing=.75,
+               fontsize=max(5, cfg['legend_size']-1) if small else cfg['legend_size'])
 
 def save(fig, path, cfg):
     for ext in ['png', 'pdf', 'svg']:
@@ -151,6 +162,8 @@ def save(fig, path, cfg):
 
 def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix='scTour'):
     cfg = json.loads(Path(config).read_text(encoding='utf-8'))
+    assert cfg['umap_aspect'] == 'equal', 'UMAP geometry must retain equal aspect; adjust panel dimensions instead'
+    assert cfg['font_size'] >= 5 and cfg['legend_size'] >= 5, 'Rendered text must be at least 5pt'
     style(cfg)
     out = Path(output)
     out.mkdir(parents=True, exist_ok=True)
@@ -162,14 +175,27 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
             p = folder / 'inference.tsv.gz'
             summary = folder / 'run_summary.json'
             if p.exists() and summary.exists():
-                assert json.loads(summary.read_text(encoding='utf-8'))['epochs'] == 400
-                runs[float(folder.name.split('_')[1])] = pd.read_csv(p, sep='\t', usecols=['cell_id', 'celltype', 'ptime'], index_col=0)
+                fraction = float(folder.name.split('_')[1])
+                completed = json.loads(summary.read_text(encoding='utf-8'))
+                assert completed['epochs'] == 400 and completed['percent'] == fraction / 100
+                frame = pd.read_csv(p, sep='\t', usecols=['cell_id', 'celltype', 'ptime'],
+                                    dtype={'cell_id': str, 'celltype': str}, keep_default_na=False).set_index('cell_id')
+                assert frame.index.is_unique and len(frame) == completed['n_cells_inferred']
+                assert np.isfinite(frame.ptime).all() and frame.ptime.between(0, 1).all()
+                if runs:
+                    reference = next(iter(runs.values()))
+                    assert frame.index.equals(reference.index), 'Subsampling cell IDs/order differ'
+                    assert np.array_equal(frame.celltype, reference.celltype), 'Subsampling labels differ'
+                runs[fraction] = frame
     if B is not None and not runs:
         # A main 20% model must never be relabelled as a 95% reference.
         runs[float(B.uns['training_percent']) * 100] = B.obs
     i_path = Path(subsample_dir) / 'B_20' / 'inferred.h5ad' if subsample_dir else None
-    if i_path and i_path.exists():
+    if i_path and i_path.exists() and i_path.with_name('run_summary.json').exists():
+        completed = json.loads(i_path.with_name('run_summary.json').read_text(encoding='utf-8'))
+        assert completed['epochs'] == 400 and completed['percent'] == .2, 'Panel i requires a completed 20% formal model'
         I = B if b_path and Path(b_path).resolve() == i_path.resolve() else load_plot_data(i_path)
+        assert I.uns['training_percent'] == .2 and I.n_obs == completed['n_cells_inferred']
     else:
         I = None
     available = ([] if A is None else ['a']) + ([] if B is None else list('bcdefg'))
@@ -209,30 +235,31 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
         elif p == 'i':
             pseudotime(ax, I, 'X_umap_latent', cfg, stream=True)
             inset(ax, I, 'celltype', PALETTES['B'], cfg)
-        ax.text(-.05, 1.03, p, transform=ax.transAxes, fontsize=9, fontweight='bold')
+        ax.text(-.05, 1.03, p, transform=ax.transAxes, fontsize=cfg['font_size']+2, fontweight='bold')
     entries = []
     for p in requested:
         if p == 'a':
             fig, axs = plt.subplots(1, 6, figsize=(12, 2.6))
             draw(p, list(axs))
             fig.subplots_adjust(bottom=.17, wspace=.12)
-            legend(fig, PALETTES['A'], .01)
+            legend(fig, PALETTES['A'], .01, cfg)
         else:
-            fig, ax = plt.subplots(figsize=(3.3, 3.1))
-            fig.subplots_adjust(left=.23 if p == 'e' else .1, right=.97, top=.93, bottom=.29 if p == 'i' else .17)
+            fig, ax = plt.subplots(figsize=(3.3, 3.5 if p in 'ef' else 3.1))
+            fig.subplots_adjust(left=.23 if p == 'e' else .1, right=.84 if p == 'h' else .97, top=.93,
+                                bottom=.34 if p == 'f' else .29 if p in 'cehi' else .17)
             draw(p, ax)
+            if p in 'cef':
+                legend(fig, batch_palette(B), .001, cfg, ncol=3, small=True)
             if p in 'bfhi':
                 # Individual plots include a compact figure legend; composite uses shared legends.
-                handles = [Line2D([], [], marker='o', color=c, linestyle='', markersize=3, label=k)
-                           for k, c in PALETTES['B'].items()]
-                fig.legend(handles=handles, loc='lower center', ncol=3, fontsize=5, frameon=False)
+                legend(fig, PALETTES['B'], .15 if p == 'f' else .001, cfg, ncol=3, small=True)
         if p in 'adgi':
             cax = fig.add_axes(cfg['colorbar_position'].get(p, cfg['colorbar_position']['default']))
             cb = fig.colorbar(plt.cm.ScalarMappable(norm=colors.Normalize(0, 1), cmap='viridis'), cax=cax,
                               orientation='horizontal', ticks=[0, 1])
             cb.outline.set_visible(False)
-            cax.tick_params(labelsize=5)
-            cax.set_xlabel('Pseudotime', fontsize=6, labelpad=1)
+            cax.tick_params(labelsize=max(5, cfg['font_size']-2))
+            cax.set_xlabel('Pseudotime', fontsize=max(5, cfg['font_size']-1), labelpad=1)
         stem = out / f'{prefix}_Figure2{p}'
         save(fig, stem, cfg)
         base = 'modules/03_scTour/figures/' + stem.name
@@ -241,10 +268,12 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
             stage_medians = A.obs.groupby('celltype', observed=True).ptime.median().reindex(PALETTES['A'])
             if not np.all(np.diff(stage_medians.to_numpy()) > 0):
                 validity = '真实A模型未恢复单调的颗粒细胞成熟顺序，异常完整保留；不能将该面板解释为发育趋势复现成功。'
+        elif p == 'h':
+            validity = '八个400epochs真实模型对同序全细胞的排序与95%参考相关；单seed。B1/B5的幼年与成年终末阶段局部错序完整保留，不能用高全局相关代替阶段准确性。'
         entries.append({'id': f'scTour-2{p}', 'title_cn': TITLES[p], 'meaning': TITLES[p],
                         'dataset': 'GSE95315' if p == 'a' else 'GSE104323',
                         'reference': 'https://doi.org/10.1186/s13059-023-02988-9',
-                        'analysis_script': 'modules/03_scTour/scripts/run_sctour.py',
+                        'analysis_script': 'modules/03_scTour/scripts/run_subsampling.py' if p == 'h' else 'modules/03_scTour/scripts/run_sctour.py',
                         'plot_script': 'modules/03_scTour/scripts/plot_figure2.py',
                         'png': base+'.png', 'pdf': base+'.pdf', 'svg': base+'.svg',
                         'status': 'PARTIAL', 'validity': validity})
@@ -261,14 +290,18 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
                    'f': (1, 2), 'g': (2, 2), 'h': (1, 3), 'i': (2, 3)}
         for p, position in mapping.items():
             ax = fig.add_subplot(gs[position])
+            if p == 'h':
+                box = ax.get_position()
+                ax.set_position([box.x0, box.y0, box.width*.8, box.height])
             draw(p, ax)
-        legend(fig, PALETTES['A'], .722)
-        legend(fig, PALETTES['B'], .025)
+        legend(fig, PALETTES['A'], .722, cfg)
+        legend(fig, PALETTES['B'], .035, cfg)
+        legend(fig, batch_palette(B), .001, cfg, ncol=6, small=True)
         cax = fig.add_axes(cfg['colorbar_position']['composite'])
         cb = fig.colorbar(plt.cm.ScalarMappable(norm=colors.Normalize(0, 1), cmap='viridis'), cax=cax,
                           orientation='horizontal', ticks=[0, 1])
         cb.outline.set_visible(False)
-        cax.set_xlabel('Pseudotime', fontsize=6)
+        cax.set_xlabel('Pseudotime', fontsize=max(5, cfg['font_size']-1))
         save(fig, out / 'scTour_Figure2_Reproduction', cfg)
         base = 'modules/03_scTour/figures/scTour_Figure2_Reproduction'
         entries.append({'id':'scTour-Figure2', 'title_cn':'scTour Figure 2 a–i 完整真实重算组合图',
@@ -282,7 +315,7 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
     manifest = out / 'figure_manifest.json'
     if manifest.exists():
         previous = json.loads(manifest.read_text(encoding='utf-8'))
-        keep = [e for e in previous if '/diagnostics/' in e['png'] or panel != 'all']
+        keep = previous
         entries = [e for e in keep if e['id'] not in {n['id'] for n in entries}] + entries
     for entry in entries:
         if entry['id'] in {f'scTour-2{p}' for p in 'abcdefghi'}:

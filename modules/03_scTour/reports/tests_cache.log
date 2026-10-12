@@ -1,6 +1,10 @@
+ percent  seed  epochs  n_cells_inferred  training_seconds  manual_reverse  rho_before_alignment  rho_aligned  pvalue_aligned
+      20     0     400                 3                 0           False                   1.0          1.0             0.0
+      95     0     400                 3                 0           False                   1.0          1.0             0.0
+test_numeric_and_na_cell_ids_in_metrics (test_sctour_cache.TestOldCache.test_numeric_and_na_cell_ids_in_metrics) ... ok
 test_same_counts_changed_annotations_are_rejected (test_sctour_cache.TestOldCache.test_same_counts_changed_annotations_are_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.177s
+Ran 2 tests in 1.032s
 
 OK

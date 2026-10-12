@@ -1,0 +1,58 @@
+ percent  seed  epochs  n_cells_inferred  training_seconds  manual_reverse  rho_before_alignment  rho_aligned  pvalue_aligned
+      20     0     400                 3                 0           False                   1.0          1.0             0.0
+      95     0     400                 3                 0           False                   1.0          1.0             0.0
+test_numeric_and_na_cell_ids_in_metrics (test_sctour_cache.TestOldCache.test_numeric_and_na_cell_ids_in_metrics) ... ok
+test_same_counts_changed_annotations_are_rejected (test_sctour_cache.TestOldCache.test_same_counts_changed_annotations_are_rejected) ... ok
+test_actual_saved_inference (test_sctour_data.TestCounts.test_actual_saved_inference) ... ok
+test_integer_counts_accepted (test_sctour_data.TestCounts.test_integer_counts_accepted) ... ok
+test_invalid_input_rejected (test_sctour_data.TestCounts.test_invalid_input_rejected) ... ok
+test_mex_string_ids_and_metadata_alignment (test_sctour_data.TestCounts.test_mex_string_ids_and_metadata_alignment) ... ... storing 'cell_type' as categorical
+ok
+test_h_has_exactly_prescribed_eight_rows (test_sctour_plotting.TestFigureBoundaries.test_h_has_exactly_prescribed_eight_rows) ... ok
+test_incomplete_i_cannot_be_plotted (test_sctour_plotting.TestFigureBoundaries.test_incomplete_i_cannot_be_plotted) ... ok
+test_partial_grid_cannot_produce_h (test_sctour_plotting.TestFigureBoundaries.test_partial_grid_cannot_produce_h) ... ok
+test_subsampling_cell_order_and_fraction_checked (test_sctour_plotting.TestFigureBoundaries.test_subsampling_cell_order_and_fraction_checked) ... ok
+test_empty_stages_are_not_assessed (test_sctour_runner.TestCheckpointRestore.test_empty_stages_are_not_assessed) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\work\sctour\.venv\Lib\site-packages\sctour\predict.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model, map_location=torch.device('cpu'))
+Running using GPU.
+Prepared 60 cells, 50 HVGs; no model was trained
+{
+  "status": "RUN_OK",
+  "smoke": true,
+  "input_sha256": "adb6cb92c5b5eeb4403d73ee756450406b39f361a23422e752ebbb7e5fb901f9",
+  "n_cells_inferred": 200,
+  "hvg": 500,
+  "percent": 0.8,
+  "epochs": 3,
+  "training_seconds": 0.18595260009169579,
+  "random_state": 0,
+  "manual_reverse": false,
+  "automatic_time_reverse": true,
+  "developmental_median_rho_before": null,
+  "developmental_direction_assessment": "NOT_ASSESSED",
+  "developmental_medians_strictly_increasing": null,
+  "ptime_median_by_celltype": {
+    "nIPC": 0.5596964955329895,
+    "Neuroblast_1": 0.5593136548995972,
+    "Neuroblast_2": 0.5613954067230225,
+    "Granule-immature": 0.5503727197647095,
+    "Granule-mature": 0.5402359366416931
+  },
+  "roundtrip_max_ptime_difference": null,
+  "final_train_loss": null,
+  "final_validation_loss": null,
+  "reason": "\u5b8c\u6210\u771f\u5b9e\u8ba1\u7b97\uff1b\u4e0e\u539f\u56fe\u9010\u9879\u6bd4\u8f83\u53ca\u7a33\u5065\u6027\u8bc4\u4f30\u51b3\u5b9a\u6700\u7ec8\u590d\u73b0\u72b6\u6001\u3002"
+}
+ok
+test_restore_rejects_mismatched_ids_and_counts (test_sctour_runner.TestCheckpointRestore.test_restore_rejects_mismatched_ids_and_counts) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\work\sctour\.venv\Lib\site-packages\sctour\predict.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model, map_location=torch.device('cpu'))
+Running using GPU.
+C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\work\sctour\.venv\Lib\site-packages\sctour\predict.py:81: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model, map_location=torch.device('cpu'))
+Running using GPU.
+ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 16.575s
+
+OK

@@ -1,0 +1,28 @@
+{
+  "status": "PARTIAL",
+  "smoke": false,
+  "input_sha256": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+  "n_cells_inferred": 15174,
+  "hvg": 2000,
+  "percent": 0.4,
+  "epochs": 400,
+  "training_seconds": 1731.7986597998533,
+  "random_state": 0,
+  "manual_reverse": false,
+  "automatic_time_reverse": false,
+  "developmental_median_rho_before": 0.9999999999999999,
+  "developmental_direction_assessment": "ASSESSED",
+  "developmental_medians_strictly_increasing": true,
+  "ptime_median_by_celltype": {
+    "nIPC": 0.07327227294445038,
+    "Neuroblast": 0.24461346864700317,
+    "Immature-Pyr": 0.4596374034881592,
+    "Immature-GC": 0.45466625690460205,
+    "GC-juv": 0.8499133586883545,
+    "GC-adult": 0.9849171042442322
+  },
+  "roundtrip_max_ptime_difference": 0.0,
+  "final_train_loss": 624.0228194461426,
+  "final_validation_loss": 624.5140991210938,
+  "reason": "完成真实计算；与原图逐项比较及稳健性评估决定最终复现状态。"
+}

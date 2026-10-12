@@ -12,6 +12,8 @@
 
 官方实现让编码器/解码器使用 CUDA，ODE 求解部分使用 CPU。GPU 可用时自动使用 GPU，否则 CPU；不把 CPU 中的 ODE 运算写成全 GPU。保存环境、实际训练比例、种子、loss、耗时、原时间和方向校正，使用官方 `save_model` 与 `predict.load_model` 检查时间推断往返误差。
 
+`ptime_before_manual`已经包含官方基于检出基因数的automatic方向校正，仅表示没有做额外manual reverse；同理，抽样指标`rho_before_alignment`也不是未经校正encoder时间的相关。`ptime`与`rho_aligned`保留进一步生物学方向审查后的结果；阶段并非严格反向时不会为了相关或外观强制翻转。
+
 ## 原始数据与论文配置 / Source data
 
 | 数据 | 原始细胞 | 论文谱系细胞 | 基因筛选 | HVG | 原始空间 | 潜空间混合 |
@@ -48,6 +50,8 @@ $Mod = './modules/03_scTour'
 正式运行输出 `inferred.h5ad`、`model.pth`、`loss.tsv`、`train_cells.tsv`、`validation_cells.tsv`、`inference.tsv.gz`、配置、环境与摘要。模型、QC/full对象及大结果留在 `work/`，GitHub 只保存登记、代码、图件及精简结果。`objects/README.md` 解释重建与保存路径。
 
 `--load model.pth` 用于原输入的恢复：必须提供同序细胞、同序基因、相同 counts、相同 QC 和训练配置；入口在推断前核对它们。不同数据的预测应使用官方 `sct.predict` 新数据 API，不把恢复训练对象的时间直接赋给新输入。`run_subsampling.py` 的自定义 `--fractions` 必须包含95，或输出目录已有完成的95%参考。缓存会核对配置和输入；换数据、seed、HVG或超参数时使用新输出目录。
+
+训练/验证划分沿用官方`split_index`：训练数量为`ceil(n_cells*percent)`，验证从其余细胞独立抽取，数量为`min(floor(n_train*0.1), n_cells-n_train)`。因此95%模型的验证比例受剩余细胞数限制，其他比例通常有相当于训练数量10%的独立验证细胞。实际ID及人数保存于`train_cells.tsv`、`validation_cells.tsv`和`results/run_comparison.tsv`，不把验证细胞计入训练百分比。
 
 ## 单图修改 / Redraw one panel
 

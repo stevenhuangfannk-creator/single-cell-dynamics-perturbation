@@ -4,8 +4,18 @@
   "audit_status": "RUN_OK",
   "scientific_status": "PARTIAL",
   "snapshot_complete": false,
-  "completed_training_percentages_audited": [1, 5, 10, 20, 95],
-  "not_yet_completed_training_percentages": [40, 60, 80],
+  "completed_training_percentages_audited": [
+    1,
+    5,
+    10,
+    20,
+    40,
+    60,
+    95
+  ],
+  "not_yet_completed_training_percentages": [
+    80
+  ],
   "reference_model": "B_95",
   "reference_role": "Technical model-ordering reference; its self-correlation is not independent evidence",
   "work_source_root_relative_to_repository_on_this_host": "../../work/sctour/subsamples/",
@@ -14,12 +24,36 @@
     "count_matrix_loaded": false,
     "checkpoint_loaded": false,
     "figures_redrawn": false,
-    "inference_columns_read": ["cell_id", "celltype", "ptime_before_manual", "ptime"],
-    "flag_sources": ["run_summary.json", "inferred.h5ad uns metadata only"],
+    "inference_columns_read": [
+      "cell_id",
+      "celltype",
+      "batch",
+      "ptime_before_manual",
+      "ptime",
+      "exported X_umap_pca/X_umap_latent/X_TNODE/X_VF coordinates for finiteness only"
+    ],
+    "flag_sources": [
+      "run_summary.json",
+      "inferred.h5ad uns metadata only"
+    ],
     "calculation": "Standard-library gzip/CSV reading; average ranks for ties, then Pearson correlation of rank vectors; statistics.median within each ordered stage",
-    "p_values_or_confidence_intervals_reported": false
+    "p_values_or_confidence_intervals_reported": false,
+    "additional_lightweight_sources": [
+      "config_used.json",
+      "train_cells.tsv",
+      "validation_cells.tsv",
+      "loss.tsv"
+    ],
+    "actual_count_matrix_recheck_deferred_cn": "训练队列与约0.5GiB可用RAM限制下，不读取counts数据；只确认B40的HDF5 CSR形状为15174×2000。新摘要记录input_sha256，B20/B95的早期摘要缺少该字段；不以摘要中的哈希字段代替独立counts逐值检查。",
+    "actual_train_tensor_recheck": "Not rerun; persisted split IDs are checked for cardinality, unique membership and train/validation disjointness. Original runner verification against actual loader tensors is reused."
   },
-  "stage_order": ["nIPC", "Neuroblast", "Immature-GC", "GC-juv", "GC-adult"],
+  "stage_order": [
+    "nIPC",
+    "Neuroblast",
+    "Immature-GC",
+    "GC-juv",
+    "GC-adult"
+  ],
   "stage_scope_cn": "仅评估颗粒细胞谱系五阶段；Immature-Pyr属于另一个分支，不强行纳入单一成熟顺序。全局Spearman使用全部15,174个同序细胞。",
   "statistical_unit_cn": "同一公开B数据上的模型技术比较；每个比例只有seed0。细胞不是独立供者或干预实验重复，本报告不以15,174细胞伪造生物学重复、误差条或准确率。",
   "models": [
@@ -43,11 +77,66 @@
       },
       "stage_order_spearman": 0.9,
       "stage_medians_strictly_increasing": false,
-      "nonincreasing_adjacent_stage_pairs": [["GC-juv", "GC-adult"]],
+      "nonincreasing_adjacent_stage_pairs": [
+        [
+          "GC-juv",
+          "GC-adult"
+        ]
+      ],
       "manual_reverse": false,
       "automatic_time_reverse": false,
       "flags_match_saved_hdf5_uns": true,
-      "max_abs_ptime_minus_ptime_before_manual": 0.0
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 1,
+        "config_percent": 0.01,
+        "summary_percent": 0.01,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 152,
+        "n_actual_validation_cells": 15,
+        "expected_train_cells_ceil_n_percent": 152,
+        "actual_training_fraction": 0.010017134572294714,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.0004979586,
+          0.9999808
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 1.4171600337675727e-08,
+        "saved_summary_strict_monotonicity_field": false,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
     },
     {
       "model": "B_5",
@@ -69,11 +158,66 @@
       },
       "stage_order_spearman": 0.9,
       "stage_medians_strictly_increasing": false,
-      "nonincreasing_adjacent_stage_pairs": [["GC-juv", "GC-adult"]],
+      "nonincreasing_adjacent_stage_pairs": [
+        [
+          "GC-juv",
+          "GC-adult"
+        ]
+      ],
       "manual_reverse": false,
       "automatic_time_reverse": false,
       "flags_match_saved_hdf5_uns": true,
-      "max_abs_ptime_minus_ptime_before_manual": 0.0
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 5,
+        "config_percent": 0.05,
+        "summary_percent": 0.05,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 759,
+        "n_actual_validation_cells": 75,
+        "expected_train_cells_ceil_n_percent": 759,
+        "actual_training_fraction": 0.05001977066034006,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.0016083852,
+          0.9990707
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 3.746643062463306e-08,
+        "saved_summary_strict_monotonicity_field": false,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
     },
     {
       "model": "B_10",
@@ -99,7 +243,57 @@
       "manual_reverse": false,
       "automatic_time_reverse": true,
       "flags_match_saved_hdf5_uns": true,
-      "max_abs_ptime_minus_ptime_before_manual": 0.0
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 10,
+        "config_percent": 0.1,
+        "summary_percent": 0.1,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 1518,
+        "n_actual_validation_cells": 151,
+        "expected_train_cells_ceil_n_percent": 1518,
+        "actual_training_fraction": 0.10003954132068012,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.0044150352,
+          0.99389994
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 2.4708557089248018e-08,
+        "saved_summary_strict_monotonicity_field": true,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
     },
     {
       "model": "B_20",
@@ -125,7 +319,209 @@
       "manual_reverse": false,
       "automatic_time_reverse": false,
       "flags_match_saved_hdf5_uns": true,
-      "max_abs_ptime_minus_ptime_before_manual": 0.0
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 20,
+        "config_percent": 0.2,
+        "summary_percent": 0.2,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": null,
+        "n_actual_train_cells": 3035,
+        "n_actual_validation_cells": 303,
+        "expected_train_cells_ceil_n_percent": 3035,
+        "actual_training_fraction": 0.2000131804402267,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.0014007024,
+          0.999146
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 3.503173828800499e-08,
+        "saved_summary_strict_monotonicity_field": null,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": null,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
+    },
+    {
+      "model": "B_40",
+      "source_inference_table": "B_40/inference.tsv.gz",
+      "source_summary": "B_40/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9929416446473273,
+      "rho_after_manual_vs_B95_after_manual": 0.9929416446473273,
+      "stage_ptime_medians": {
+        "nIPC": 0.07327227,
+        "Neuroblast": 0.24461347,
+        "Immature-GC": 0.45466626,
+        "GC-juv": 0.849913355,
+        "GC-adult": 0.9849171
+      },
+      "stage_order_spearman": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 40,
+        "config_percent": 0.4,
+        "summary_percent": 0.4,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 6070,
+        "n_actual_validation_cells": 607,
+        "expected_train_cells_ceil_n_percent": 6070,
+        "actual_training_fraction": 0.4000263608804534,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.007337011,
+          0.99944705
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 4.244232187922137e-09,
+        "saved_summary_strict_monotonicity_field": true,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
+    },
+    {
+      "model": "B_60",
+      "source_inference_table": "B_60/inference.tsv.gz",
+      "source_summary": "B_60/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9962505361822268,
+      "rho_after_manual_vs_B95_after_manual": 0.9962505361822268,
+      "stage_ptime_medians": {
+        "nIPC": 0.077066205,
+        "Neuroblast": 0.2403617,
+        "Immature-GC": 0.40393144,
+        "GC-juv": 0.794046665,
+        "GC-adult": 0.979051
+      },
+      "stage_order_spearman": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": null,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 60,
+        "config_percent": 0.6,
+        "summary_percent": 0.6,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 9105,
+        "n_actual_validation_cells": 910,
+        "expected_train_cells_ceil_n_percent": 9105,
+        "actual_training_fraction": 0.6000395413206802,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.003990411,
+          0.99932885
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 2.460388182079498e-08,
+        "saved_summary_strict_monotonicity_field": true,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      }
     },
     {
       "model": "B_95",
@@ -152,40 +548,156 @@
       "automatic_time_reverse": true,
       "flags_match_saved_hdf5_uns": true,
       "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 95,
+        "config_percent": 0.95,
+        "summary_percent": 0.95,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": null,
+        "n_actual_train_cells": 14416,
+        "n_actual_validation_cells": 758,
+        "expected_train_cells_ceil_n_percent": 14416,
+        "actual_training_fraction": 0.9500461315407934,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          9.417534e-05,
+          0.99352044
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 2.7007293734726545e-08,
+        "saved_summary_strict_monotonicity_field": null,
+        "independent_stage_rho_matches_saved_summary": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": null,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      },
       "reference_self_comparison": true
     }
   ],
   "time_semantics_audit": {
     "repository_runner": "modules/03_scTour/scripts/run_sctour.py",
-    "runner_lines_at_audit": [88, 89],
+    "runner_lines_at_audit": [
+      88,
+      89
+    ],
     "repository_correlation_script": "modules/03_scTour/scripts/run_subsampling.py",
-    "correlation_script_lines_at_audit": [64, 69, 70],
+    "correlation_script_lines_at_audit": [
+      66,
+      71,
+      72
+    ],
     "installed_package_source": "sctour/train.py",
-    "installed_package_lines": [349, 367],
+    "installed_package_lines": [
+      349,
+      367
+    ],
     "rho_before_alignment_is_raw_uncorrected_encoder_time": false,
     "definition_cn": "ptime_before_manual直接来自官方trainer.get_time()，已经包含官方基于基因检出数的automatic_time_reverse处理。rho_before_alignment比较的是各模型官方自动方向处理后、人工反向之前的时间；rho_aligned比较人工反向之后的ptime。",
-    "current_manual_adjustment_cn": "本快照五个模型manual_reverse均False，因此两类相关一致且ptime与ptime_before_manual逐值相同；B10/B95的官方自动反向标记为True。",
+    "current_manual_adjustment_cn": "本快照7个模型manual_reverse均False，因此两类相关一致且ptime与ptime_before_manual逐值相同；B10/B95的官方自动反向标记为True。",
     "documentation_review": [
       {
         "path": "modules/03_scTour/reports/REPRODUCTION_CN.md",
         "line_at_audit": 56,
         "existing_phrase": "报告校正前和生物学方向校正后的相关",
-        "recommendation_cn": "明确为官方自动处理后、人工方向校正前后的相关，避免读成完全未校正的编码器时间。"
+        "recommendation_cn": "明确为官方自动处理后、人工方向校正前后的相关，避免读成完全未校正的编码器时间。",
+        "resolution_status": "RESOLVED",
+        "clarified_at_current_line": 58,
+        "resolution_evidence_cn": "h以95%训练为参考计算全部同序细胞的Spearman；`ptime_before_manual`和`rho_before_alignment`已经包含官方基于检出基因数的automatic方向校正，仅表示尚未执行本仓库额外的manual reverse，不是未经校正的encoder原始时间。`ptime`与`rho_aligned`是在这一基础上按可靠生物学阶段核查并在满足严格反向条件时手动校正的结果。相关系数是模型排序一致性，不是独立实验因果验证。单seed没有人为添加误差条，也不从不同细胞冒充生物学重复。",
+        "existing_phrase_is_prior_snapshot_not_current_text": true
       },
       {
         "path": "modules/03_scTour/README_CN.md",
         "line_at_audit": 13,
         "existing_phrase": "原时间和方向校正",
-        "recommendation_cn": "明确保存的是官方get_time时间、人工调整后时间及两类方向标记；没有单独保存未经官方自动反向的编码器sigmoid输出。"
+        "recommendation_cn": "明确保存的是官方get_time时间、人工调整后时间及两类方向标记；没有单独保存未经官方自动反向的编码器sigmoid输出。",
+        "resolution_status": "RESOLVED",
+        "clarified_at_current_line": 15,
+        "resolution_evidence_cn": "`ptime_before_manual`已经包含官方基于检出基因数的automatic方向校正，仅表示没有做额外manual reverse；同理，抽样指标`rho_before_alignment`也不是未经校正encoder时间的相关。`ptime`与`rho_aligned`保留进一步生物学方向审查后的结果；阶段并非严格反向时不会为了相关或外观强制翻转。",
+        "existing_phrase_is_prior_snapshot_not_current_text": true
       }
-    ]
+    ],
+    "source_sha256_at_audit": {
+      "modules/03_scTour/scripts/run_sctour.py": "9fef45bac6a252e1dc41feed5d4df3ce2486ef92ad68859d76f7209cb0ba8570",
+      "modules/03_scTour/scripts/run_subsampling.py": "f78456f3cb42a68f26558f9f0aeabcc4db31aabbe600826bcffc030251c46854"
+    }
   },
   "conclusions_cn": [
     "全部已审计模型均对同序15,174细胞推断，细胞ID唯一且类别标签一致；没有发现表格比较的错序。",
     "B1/B5的全局Spearman分别约0.9018/0.9261，但GC-juv中位时间高于GC-adult，严格阶段次序检查失败；全局相关高与局部阶段反例可以共存。",
-    "B10/B20/B95五阶段中位数严格递增，说明当前阶段摘要通过该检查，不等于每个细胞的真实发育时间准确。",
+    "B10/B20/B40/B60/B95五阶段中位数严格递增，说明当前阶段摘要通过该检查，不等于每个细胞的真实发育时间准确。",
     "各比例均只有一个seed、共用同一数据；相关是技术排序一致性，不是跨供者稳健性或真实谱系追踪证据。",
-    "B40/B60/B80在本快照尚无完成摘要，不填造统计结果；待实际完成后再追加审计。"
+    "B80在本快照尚无完成摘要，不填造统计结果；待实际完成后再追加审计。"
   ],
-  "precision_note_cn": "中位数由导出TSV中的十进制时间独立计算，可能与float32对象内中位数有末位舍入差异；未将这种差异解释为生物学变化。"
+  "precision_note_cn": "中位数由导出TSV中的十进制时间独立计算，可能与float32对象内中位数有末位舍入差异；未将这种差异解释为生物学变化。",
+  "source_annotation_independent_check": {
+    "source_metadata_relative_to_repository_on_this_host": "../../work/sctour/GSE104323_metadata_barcodes_24185cells.txt.gz",
+    "source_metadata_sha256": "3e2587ceb8c556632462481328c0337fd3eaf2b683972de107818e60a8554ff4",
+    "metadata_read_to_gzip_eof_without_crc_error": true,
+    "raw_metadata_physical_data_rows": 24216,
+    "all_empty_padding_rows_excluded": 31,
+    "raw_metadata_nonempty_rows": 24185,
+    "raw_metadata_nonempty_unique_ids": 24185,
+    "selected_source_cells": 15174,
+    "source_selected_labels_before_nIPC_merge": {
+      "Neuroblast": 1381,
+      "GC-adult": 2613,
+      "nIPC": 353,
+      "GC-juv": 3420,
+      "Immature-GC": 2419,
+      "nIPC-perin": 468,
+      "Immature-Pyr": 4520
+    },
+    "reference_inference_label_counts": {
+      "nIPC": 821,
+      "Neuroblast": 1381,
+      "Immature-GC": 2419,
+      "Immature-Pyr": 4520,
+      "GC-juv": 3420,
+      "GC-adult": 2613
+    },
+    "reference_ids_exactly_equal_expected_selected_source_set": true,
+    "all_reference_cell_labels_equal_source_labels_after_explicit_nIPC_perin_merge": true,
+    "all_reference_batches_match_original_library_prefix_in_cell_id": true,
+    "reference_original_library_batch_count": 11,
+    "raw_count_header_cells": 24185,
+    "reference_order_exactly_matches_selected_raw_count_header": true,
+    "applies_to_completed_models_with_identical_ids_and_labels": [
+      1,
+      5,
+      10,
+      20,
+      40,
+      60,
+      95
+    ],
+    "count_values_read": false,
+    "scope_cn": "只读原始counts表第一行细胞ID和完整注释表，不读count数据。原始注释表包含31个全空padding行；排除后24,185个非空唯一ID，与预处理dropna(how=all)一致。"
+  }
 }

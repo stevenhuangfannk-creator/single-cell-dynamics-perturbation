@@ -46,8 +46,8 @@
     "pdf_text_audit": {
       "auditable": true,
       "minimum_required_pt": 5,
-      "minimum_found_pt": 9.0,
-      "text_run_count": 1,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 12,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -88,15 +88,15 @@
     "pdf_text_audit": {
       "auditable": true,
       "minimum_required_pt": 5,
-      "minimum_found_pt": 6.0,
-      "text_run_count": 12,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 23,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
     },
     "png_pixels": [
       1980,
-      1860
+      2100
     ],
     "png_dpi": [
       599.9988,
@@ -110,14 +110,14 @@
       "auditable": true,
       "minimum_required_pt": 5,
       "minimum_found_pt": 5.0,
-      "text_run_count": 7,
+      "text_run_count": 18,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
     },
     "png_pixels": [
       1980,
-      1860
+      2100
     ],
     "png_dpi": [
       599.9988,

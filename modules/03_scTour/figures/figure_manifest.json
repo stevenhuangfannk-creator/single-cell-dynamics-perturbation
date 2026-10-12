@@ -120,21 +120,6 @@
     "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel b --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
   },
   {
-    "id": "scTour-2c",
-    "title_cn": "相同 PCA UMAP 上的样本批次",
-    "meaning": "相同 PCA UMAP 上的样本批次",
-    "dataset": "GSE104323",
-    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
-    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
-    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
-    "png": "modules/03_scTour/figures/scTour_Figure2c.png",
-    "pdf": "modules/03_scTour/figures/scTour_Figure2c.pdf",
-    "svg": "modules/03_scTour/figures/scTour_Figure2c.svg",
-    "status": "PARTIAL",
-    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
-    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel c --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
-  },
-  {
     "id": "scTour-2d",
     "title_cn": "PCA UMAP 上的发育拟时序",
     "meaning": "PCA UMAP 上的发育拟时序",
@@ -150,21 +135,6 @@
     "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel d --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
   },
   {
-    "id": "scTour-2e",
-    "title_cn": "拟时序排序及批次和细胞类型",
-    "meaning": "拟时序排序及批次和细胞类型",
-    "dataset": "GSE104323",
-    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
-    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
-    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
-    "png": "modules/03_scTour/figures/scTour_Figure2e.png",
-    "pdf": "modules/03_scTour/figures/scTour_Figure2e.pdf",
-    "svg": "modules/03_scTour/figures/scTour_Figure2e.svg",
-    "status": "PARTIAL",
-    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
-    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel e --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
-  },
-  {
     "id": "scTour-2g",
     "title_cn": "潜空间中的官方向量场流线",
     "meaning": "潜空间中的官方向量场流线",
@@ -178,21 +148,6 @@
     "status": "PARTIAL",
     "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
     "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel g --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
-  },
-  {
-    "id": "scTour-2f",
-    "title_cn": "scTour 潜空间及批次 inset",
-    "meaning": "scTour 潜空间及批次 inset",
-    "dataset": "GSE104323",
-    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
-    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
-    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
-    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel f --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures",
-    "png": "modules/03_scTour/figures/scTour_Figure2f.png",
-    "pdf": "modules/03_scTour/figures/scTour_Figure2f.pdf",
-    "svg": "modules/03_scTour/figures/scTour_Figure2f.svg",
-    "status": "PARTIAL",
-    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。"
   },
   {
     "id": "scTour-2i",
@@ -223,5 +178,50 @@
     "status": "PARTIAL",
     "validity": "真实A模型未恢复单调的颗粒细胞成熟顺序，异常完整保留；不能将该面板解释为发育趋势复现成功。",
     "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --a-path work/sctour/full_A20/inferred.h5ad --panel a --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
+  },
+  {
+    "id": "scTour-2c",
+    "title_cn": "相同 PCA UMAP 上的样本批次",
+    "meaning": "相同 PCA UMAP 上的样本批次",
+    "dataset": "GSE104323",
+    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
+    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
+    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
+    "png": "modules/03_scTour/figures/scTour_Figure2c.png",
+    "pdf": "modules/03_scTour/figures/scTour_Figure2c.pdf",
+    "svg": "modules/03_scTour/figures/scTour_Figure2c.svg",
+    "status": "PARTIAL",
+    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
+    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel c --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
+  },
+  {
+    "id": "scTour-2e",
+    "title_cn": "拟时序排序及批次和细胞类型",
+    "meaning": "拟时序排序及批次和细胞类型",
+    "dataset": "GSE104323",
+    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
+    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
+    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
+    "png": "modules/03_scTour/figures/scTour_Figure2e.png",
+    "pdf": "modules/03_scTour/figures/scTour_Figure2e.pdf",
+    "svg": "modules/03_scTour/figures/scTour_Figure2e.svg",
+    "status": "PARTIAL",
+    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
+    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel e --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
+  },
+  {
+    "id": "scTour-2f",
+    "title_cn": "scTour 潜空间及批次 inset",
+    "meaning": "scTour 潜空间及批次 inset",
+    "dataset": "GSE104323",
+    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
+    "analysis_script": "modules/03_scTour/scripts/run_sctour.py",
+    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
+    "png": "modules/03_scTour/figures/scTour_Figure2f.png",
+    "pdf": "modules/03_scTour/figures/scTour_Figure2f.pdf",
+    "svg": "modules/03_scTour/figures/scTour_Figure2f.svg",
+    "status": "PARTIAL",
+    "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
+    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel f --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
   }
 ]

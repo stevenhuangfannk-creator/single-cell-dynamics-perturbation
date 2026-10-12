@@ -5,8 +5,8 @@
     "ready": true,
     "strict": false,
     "counts": {
-      "PASS": 18,
-      "WARN": 2,
+      "PASS": 17,
+      "WARN": 3,
       "FAIL": 0
     }
   },
@@ -28,8 +28,8 @@
     },
     {
       "check_id": "FONT-SIZE",
-      "level": "PASS",
-      "message": "All detected text sizes are at least 5 pt (minimum 5 pt)",
+      "level": "WARN",
+      "message": "No explicit text sizes found; verify readability at final physical size",
       "evidence": []
     },
     {

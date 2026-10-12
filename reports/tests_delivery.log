@@ -83,9 +83,16 @@ test_enrichment_uses_network_background_and_full_family (tests.test_oe_results.T
 test_figure_index_points_to_real_outputs (tests.test_oe_results.TestOERealResults.test_figure_index_points_to_real_outputs) ... ok
 test_null_control_and_complete_finite_results (tests.test_oe_results.TestOERealResults.test_null_control_and_complete_finite_results) ... ok
 test_reused_KO_matches_official_module (tests.test_oe_results.TestOERealResults.test_reused_KO_matches_official_module) ... ok
+test_literal_na_id_survives_read_and_export_roundtrip (tests.test_oe_csv.TestNetworkCSV.test_literal_na_id_survives_read_and_export_roundtrip) ... ok
+test_literal_na_target_is_excluded_from_response_count (tests.test_oe_csv.TestNetworkCSV.test_literal_na_target_is_excluded_from_response_count) ... ok
+test_numeric_ids_keep_leading_zeros_and_numeric_weights (tests.test_oe_csv.TestNetworkCSV.test_numeric_ids_keep_leading_zeros_and_numeric_weights) ... ok
+ percent  seed  epochs  n_cells_inferred  training_seconds  manual_reverse  rho_before_alignment  rho_aligned  pvalue_aligned
+      20     0     400                 3                 0           False                   1.0          1.0             0.0
+      95     0     400                 3                 0           False                   1.0          1.0             0.0
+test_numeric_and_na_cell_ids_in_metrics (tests.test_sctour_cache.TestOldCache.test_numeric_and_na_cell_ids_in_metrics) ... ok
 test_same_counts_changed_annotations_are_rejected (tests.test_sctour_cache.TestOldCache.test_same_counts_changed_annotations_are_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.672s
+Ran 26 tests in 16.539s
 
 OK

@@ -56,10 +56,12 @@ def subsample(config, input_path, output, fractions):
     import pandas as pd
     from scipy.stats import spearmanr
     columns = ['cell_id', 'ptime_before_manual', 'ptime']
-    reference = pd.read_csv(out / 'B_95' / 'inference.tsv.gz', sep='\t', usecols=columns, index_col=0)
+    reference = pd.read_csv(out / 'B_95' / 'inference.tsv.gz', sep='\t', usecols=columns,
+                            dtype={'cell_id': str}, keep_default_na=False).set_index('cell_id')
     rows = []
     for frac in fractions:
-        data = pd.read_csv(out / f'B_{frac:g}' / 'inference.tsv.gz', sep='\t', usecols=columns, index_col=0)
+        data = pd.read_csv(out / f'B_{frac:g}' / 'inference.tsv.gz', sep='\t', usecols=columns,
+                           dtype={'cell_id': str}, keep_default_na=False).set_index('cell_id')
         assert np.array_equal(data.index, reference.index), 'cell order mismatch'
         raw = spearmanr(reference.ptime_before_manual, data.ptime_before_manual)
         aligned = spearmanr(reference.ptime, data.ptime)
