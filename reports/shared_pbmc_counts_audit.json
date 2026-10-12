@@ -1,0 +1,20 @@
+{
+  "cells": 480,
+  "genes": 600,
+  "nnz": 127139,
+  "count_sum": 229246.0,
+  "zero_genes": 0,
+  "library_size_min": 103.0,
+  "library_size_median": 454.0,
+  "library_size_max": 1307.0,
+  "targets": {
+    "SPI1": {
+      "detected_cells": 304,
+      "detection_fraction": 0.6333333333333333
+    },
+    "CEBPB": {
+      "detected_cells": 319,
+      "detection_fraction": 0.6645833333333333
+    }
+  }
+}
