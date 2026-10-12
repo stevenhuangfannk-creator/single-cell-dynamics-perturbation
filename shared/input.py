@@ -58,8 +58,8 @@ def read_input(path, counts_layer='counts', metadata=None, gene_id='symbol'):
         features_path = next((p for p in (path / 'features.tsv', path / 'features.tsv.gz', path / 'genes.tsv', path / 'genes.tsv.gz') if p.exists()), None)
         if features_path is None:
             raise FileNotFoundError('features.tsv(.gz) or genes.tsv(.gz) missing')
-        features = pd.read_csv(features_path, sep='\t', header=None)
-        barcodes = pd.read_csv(locate('barcodes.tsv'), sep='\t', header=None)
+        features = pd.read_csv(features_path, sep='\t', header=None, dtype=str, keep_default_na=False)
+        barcodes = pd.read_csv(locate('barcodes.tsv'), sep='\t', header=None, dtype=str, keep_default_na=False)
         if matrix.shape != (len(barcodes), len(features)):
             raise ValueError('10x axes do not match barcodes and features')
         var = pd.DataFrame({'gene_id': features.iloc[:, 0].astype(str).values}, index=features.iloc[:, 1 if gene_id == 'symbol' and features.shape[1] > 1 else 0].astype(str).values)
@@ -69,7 +69,8 @@ def read_input(path, counts_layer='counts', metadata=None, gene_id='symbol'):
     else:
         raise ValueError('Supported inputs: h5ad or 10x/Seurat-export MEX directory')
     if metadata:
-        meta = pd.read_csv(metadata, sep='\t', index_col=0)
+        meta = pd.read_csv(metadata, sep='\t', converters={0: str})
+        meta = meta.set_index(meta.columns[0])
         if not meta.index.is_unique or not result.obs_names.isin(meta.index).all():
             raise ValueError('Metadata identifiers are duplicated or missing input cells')
         overlap = set(meta.columns) & set(result.obs.columns)

@@ -70,7 +70,7 @@ B95的b–f可把最后一条的 `--panel g` 分别改为b、c、d、e、f。`--
 
 支持 `point_size/point_alpha/stream_density/stream_linewidth/stream_arrowsize/font_size/legend_size/output_dpi`。`colorbar_position` 保存default、i和composite的 `[left,bottom,width,height]` 画布相对坐标，可单独调色条位置。每个图导出 PNG600、PDF、SVG；组合图文件名为 `scTour_Figure2_Reproduction`。UMAP 纵横比例固定相等，禁止用拉伸或搬移细胞去拟合原图。官方高维邻域投影同时使用 `zs_key='X_TNODE'`、`vf_key='X_VF'`、`use_rep_neigh='X_TNODE'`、`E_key`、`t_key='ptime'`；`X_VF[:,:2]` 从未被当作 UMAP 位移。
 
-在上述单图命令中改 `--panel`，并使用下表输入参数。推断对象旁必须有 `config_used.json`；h需要全部八个比例的400-epoch摘要及推断表。没有完成的面板会报错，不生成占位图或清除已有索引。
+在上述单图命令中改 `--panel`，并使用下表输入参数。推断对象旁必须有 `config_used.json` 和完成的400-epoch `run_summary.json`；Smoke对象不能用于Figure2。h需要全部八个比例的摘要及推断表，核对真实比例、全部同序细胞及一致标签；i必须是完成的20%正式模型。没有完成的面板会报错，不生成占位图或清除已有索引。
 
 | 面板 | 输入参数 |
 |---|---|
@@ -94,9 +94,11 @@ B95的b–f可把最后一条的 `--panel g` 分别改为b、c、d、e、f。`--
 Copy-Item shared/pi_input.example.yaml work/my_input.yaml
 # 先修改 work/my_input.yaml 的真实路径、counts_layer 和元数据字段，再运行：
 $SharedPy = './work/shared-env/Scripts/python.exe'
-& $SharedPy shared/prepare_input.py --config work/my_input.yaml --output work/my_input --assess-pi
-& $Py "$Mod/scripts/prepare_custom.py" --input-path work/my_input/validated_counts.h5ad --output work/my_sctour/prepared --celltype-key cell_type --batch-key batch --celltypes Fibroblast --hvg 2000
+& $SharedPy shared/prepare_input.py --config work/my_input.yaml --output work/my_input --assess-pi --export-mex
+& $Py "$Mod/scripts/prepare_custom.py" --input-path work/my_input/mex --output work/my_sctour/prepared --celltype-key cell_type --batch-key batch --celltypes Fibroblast --hvg 2000
 ```
+
+这里使用共享入口导出的原始MEX和元数据作为跨环境桥，避免新AnnData/Pandas的nullable-string编码无法被scTour旧版本读取。矩阵、基因、细胞及注释按字符串ID核对，保留`001`等前导零及字面基因名`NA`；整数counts仅在数值完全不变时转为模型需要的float32。公开A数据已实际通过这一跨环境桥。已有兼容的旧格式counts h5ad也可直接传给 `prepare_custom.py`。
 
 复制论文配置至自己的配置文件，令 `hvg` 与上一步一致，并检查 `pca_components` 小于输入维度。`stage_order` 只填写有独立生物学证据的阶段；也可设 `[]`，此时阶段方向输出 `NOT_ASSESSED`、相关和单调性为null，不做手动反转。随后先用 `--smoke` 检查接口，再决定是否开展正式分析。Figure2绘图脚本的A/B配色对应论文类别；新数据需据实际类别修改 `PALETTES` 和排序条带，不把 PI 类别套进神经发生标签。未覆盖的类别会显式报错。
 

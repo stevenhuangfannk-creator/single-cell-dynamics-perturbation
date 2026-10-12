@@ -67,6 +67,40 @@ class InputContract(unittest.TestCase):
             self.assertEqual(list(restored.var_names), ['G1', 'G2'])
             self.assertEqual(validate_counts(restored)['count_sum'], 6)
 
+    def test_export_roundtrip_preserves_leading_zero_ids_and_numeric_metadata(self):
+        for cells, genes in [(['002', '001'], ['001', '010']), (['002', 'NA'], ['001', 'NA'])]:
+            with self.subTest(cells=cells), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory)
+                source = self.counts()
+                source.obs_names = cells
+                source.var_names = genes
+                source.obs['batch'] = [2, 1]
+                source.obs['quality'] = [2.5, np.nan]
+                export_mex(source, path)
+                source.obs.iloc[::-1].to_csv(path / 'metadata.tsv', sep='\t')
+                restored = read_input(path, metadata=path / 'metadata.tsv')
+                self.assertEqual(list(restored.obs_names), cells)
+                self.assertEqual(list(restored.var_names), genes)
+                np.testing.assert_array_equal(restored.X.toarray(), source.X.toarray())
+                pd.testing.assert_frame_equal(restored.obs, source.obs)
+                self.assertEqual(validate_counts(restored, targets=[genes[1]])['targets'][genes[1]]['detected_cells'], 1)
+
+    def test_10x_features_preserve_leading_zero_ids_and_symbols(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)
+            source = self.counts()
+            mmwrite(path / 'matrix.mtx', source.X.T)
+            for second in ['010', 'NA']:
+                (path / 'features.tsv').write_text(f'0001\t001\tGene Expression\n{second}\t{second}\tGene Expression\n')
+                (path / 'barcodes.tsv').write_text(f'002\n{second}\n')
+                for gene_id, expected in [('symbol', ['001', second]), ('id', ['0001', second])]:
+                    with self.subTest(gene_id=gene_id, second=second):
+                        restored = read_input(path, gene_id=gene_id)
+                        self.assertEqual(list(restored.var_names), expected)
+                        self.assertEqual(list(restored.var['gene_id']), ['0001', second])
+                        self.assertEqual(list(restored.obs_names), ['002', second])
+                        np.testing.assert_array_equal(restored.X.toarray(), source.X.toarray())
+
     def test_pi_assessment_is_not_time_inference(self):
         data = self.counts()
         for key, values in {'cell_type': ['Monocyte', 'Monocyte'], 'condition': ['Healthy', 'PI'], 'batch': ['B1', 'B2'], 'donor': ['D1', 'D2']}.items():

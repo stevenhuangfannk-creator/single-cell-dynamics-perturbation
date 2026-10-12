@@ -1,0 +1,191 @@
+{
+  "audit_date": "2026-10-12",
+  "audit_type": "Independent completed-run statistical snapshot",
+  "audit_status": "RUN_OK",
+  "scientific_status": "PARTIAL",
+  "snapshot_complete": false,
+  "completed_training_percentages_audited": [1, 5, 10, 20, 95],
+  "not_yet_completed_training_percentages": [40, 60, 80],
+  "reference_model": "B_95",
+  "reference_role": "Technical model-ordering reference; its self-correlation is not independent evidence",
+  "work_source_root_relative_to_repository_on_this_host": "../../work/sctour/subsamples/",
+  "scope": {
+    "training_executed": false,
+    "count_matrix_loaded": false,
+    "checkpoint_loaded": false,
+    "figures_redrawn": false,
+    "inference_columns_read": ["cell_id", "celltype", "ptime_before_manual", "ptime"],
+    "flag_sources": ["run_summary.json", "inferred.h5ad uns metadata only"],
+    "calculation": "Standard-library gzip/CSV reading; average ranks for ties, then Pearson correlation of rank vectors; statistics.median within each ordered stage",
+    "p_values_or_confidence_intervals_reported": false
+  },
+  "stage_order": ["nIPC", "Neuroblast", "Immature-GC", "GC-juv", "GC-adult"],
+  "stage_scope_cn": "仅评估颗粒细胞谱系五阶段；Immature-Pyr属于另一个分支，不强行纳入单一成熟顺序。全局Spearman使用全部15,174个同序细胞。",
+  "statistical_unit_cn": "同一公开B数据上的模型技术比较；每个比例只有seed0。细胞不是独立供者或干预实验重复，本报告不以15,174细胞伪造生物学重复、误差条或准确率。",
+  "models": [
+    {
+      "model": "B_1",
+      "source_inference_table": "B_1/inference.tsv.gz",
+      "source_summary": "B_1/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9018189393514771,
+      "rho_after_manual_vs_B95_after_manual": 0.9018189393514771,
+      "stage_ptime_medians": {
+        "nIPC": 0.017200746,
+        "Neuroblast": 0.26030564,
+        "Immature-GC": 0.5155198,
+        "GC-juv": 0.99132763,
+        "GC-adult": 0.9799525
+      },
+      "stage_order_spearman": 0.9,
+      "stage_medians_strictly_increasing": false,
+      "nonincreasing_adjacent_stage_pairs": [["GC-juv", "GC-adult"]],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0
+    },
+    {
+      "model": "B_5",
+      "source_inference_table": "B_5/inference.tsv.gz",
+      "source_summary": "B_5/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9261481997790175,
+      "rho_after_manual_vs_B95_after_manual": 0.9261481997790175,
+      "stage_ptime_medians": {
+        "nIPC": 0.025807848,
+        "Neuroblast": 0.26901212,
+        "Immature-GC": 0.53787917,
+        "GC-juv": 0.973077975,
+        "GC-adult": 0.97219974
+      },
+      "stage_order_spearman": 0.9,
+      "stage_medians_strictly_increasing": false,
+      "nonincreasing_adjacent_stage_pairs": [["GC-juv", "GC-adult"]],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0
+    },
+    {
+      "model": "B_10",
+      "source_inference_table": "B_10/inference.tsv.gz",
+      "source_summary": "B_10/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9585804421806912,
+      "rho_after_manual_vs_B95_after_manual": 0.9585804421806912,
+      "stage_ptime_medians": {
+        "nIPC": 0.032738626,
+        "Neuroblast": 0.32249743,
+        "Immature-GC": 0.5941907,
+        "GC-juv": 0.9254911,
+        "GC-adult": 0.9488863
+      },
+      "stage_order_spearman": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": true,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0
+    },
+    {
+      "model": "B_20",
+      "source_inference_table": "B_20/inference.tsv.gz",
+      "source_summary": "B_20/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9815482870312411,
+      "rho_after_manual_vs_B95_after_manual": 0.9815482870312411,
+      "stage_ptime_medians": {
+        "nIPC": 0.04043762,
+        "Neuroblast": 0.22950968,
+        "Immature-GC": 0.48213765,
+        "GC-juv": 0.923748935,
+        "GC-adult": 0.97864693
+      },
+      "stage_order_spearman": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0
+    },
+    {
+      "model": "B_95",
+      "source_inference_table": "B_95/inference.tsv.gz",
+      "source_summary": "B_95/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 1.0,
+      "rho_after_manual_vs_B95_after_manual": 1.0,
+      "stage_ptime_medians": {
+        "nIPC": 0.059540927,
+        "Neuroblast": 0.27885413,
+        "Immature-GC": 0.45326418,
+        "GC-juv": 0.85441225,
+        "GC-adult": 0.9471167
+      },
+      "stage_order_spearman": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": true,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "reference_self_comparison": true
+    }
+  ],
+  "time_semantics_audit": {
+    "repository_runner": "modules/03_scTour/scripts/run_sctour.py",
+    "runner_lines_at_audit": [88, 89],
+    "repository_correlation_script": "modules/03_scTour/scripts/run_subsampling.py",
+    "correlation_script_lines_at_audit": [64, 69, 70],
+    "installed_package_source": "sctour/train.py",
+    "installed_package_lines": [349, 367],
+    "rho_before_alignment_is_raw_uncorrected_encoder_time": false,
+    "definition_cn": "ptime_before_manual直接来自官方trainer.get_time()，已经包含官方基于基因检出数的automatic_time_reverse处理。rho_before_alignment比较的是各模型官方自动方向处理后、人工反向之前的时间；rho_aligned比较人工反向之后的ptime。",
+    "current_manual_adjustment_cn": "本快照五个模型manual_reverse均False，因此两类相关一致且ptime与ptime_before_manual逐值相同；B10/B95的官方自动反向标记为True。",
+    "documentation_review": [
+      {
+        "path": "modules/03_scTour/reports/REPRODUCTION_CN.md",
+        "line_at_audit": 56,
+        "existing_phrase": "报告校正前和生物学方向校正后的相关",
+        "recommendation_cn": "明确为官方自动处理后、人工方向校正前后的相关，避免读成完全未校正的编码器时间。"
+      },
+      {
+        "path": "modules/03_scTour/README_CN.md",
+        "line_at_audit": 13,
+        "existing_phrase": "原时间和方向校正",
+        "recommendation_cn": "明确保存的是官方get_time时间、人工调整后时间及两类方向标记；没有单独保存未经官方自动反向的编码器sigmoid输出。"
+      }
+    ]
+  },
+  "conclusions_cn": [
+    "全部已审计模型均对同序15,174细胞推断，细胞ID唯一且类别标签一致；没有发现表格比较的错序。",
+    "B1/B5的全局Spearman分别约0.9018/0.9261，但GC-juv中位时间高于GC-adult，严格阶段次序检查失败；全局相关高与局部阶段反例可以共存。",
+    "B10/B20/B95五阶段中位数严格递增，说明当前阶段摘要通过该检查，不等于每个细胞的真实发育时间准确。",
+    "各比例均只有一个seed、共用同一数据；相关是技术排序一致性，不是跨供者稳健性或真实谱系追踪证据。",
+    "B40/B60/B80在本快照尚无完成摘要，不填造统计结果；待实际完成后再追加审计。"
+  ],
+  "precision_note_cn": "中位数由导出TSV中的十进制时间独立计算，可能与float32对象内中位数有末位舍入差异；未将这种差异解释为生物学变化。"
+}

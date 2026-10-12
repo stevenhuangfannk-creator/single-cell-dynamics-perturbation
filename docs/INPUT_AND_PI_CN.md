@@ -4,9 +4,13 @@
 
 ## 原始计数要求 / Raw counts
 
+MEX的字面ID `NA`保留为字符串；metadata其他列仍按原规则解析缺失值和数值。
+
 Python/AnnData 按细胞×基因管理；R/scTenifold 输入按基因×细胞管理。必须追溯到原始非负整数 counts；数值为整数是必要检查，不能单凭整数性证明数据确为原始 counts。归一化、log、scale 数据不能交给 NB 模型冒充原始 counts。
 
 基因和细胞 ID 必须唯一，metadata 必须按 ID 对齐。工具拒绝重复名称，避免静默修改靶基因。10x 的重复 symbol 可显式选择 `gene_id: id` 使用唯一 feature ID，但靶点也必须改成同一 ID 系统。多组学 MEX 只保留 `Gene Expression`；此筛选须结合原始 feature 表审查。
+
+MEX的gene ID、cell ID及metadata首列ID始终按字符串读取，包括`001`这类含前导零的ID；其他metadata数值列保持数值类型。导出/重新读取后仍按ID对齐，不以文件行号猜测身份。
 
 ## 安装与运行 / Run
 

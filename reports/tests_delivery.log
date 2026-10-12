@@ -1,0 +1,91 @@
+test_10x_features_preserve_leading_zero_ids_and_symbols (tests.test_input.InputContract.test_10x_features_preserve_leading_zero_ids_and_symbols) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+ok
+test_audited_export_roundtrip_preserves_axes_counts_and_ids (tests.test_input.InputContract.test_audited_export_roundtrip_preserves_axes_counts_and_ids) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+ok
+test_export_roundtrip_preserves_leading_zero_ids_and_numeric_metadata (tests.test_input.InputContract.test_export_roundtrip_preserves_leading_zero_ids_and_numeric_metadata) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+ok
+test_h5ad_requires_explicit_counts_layer (tests.test_input.InputContract.test_h5ad_requires_explicit_counts_layer) ... ok
+test_mex_axes_and_metadata_alignment (tests.test_input.InputContract.test_mex_axes_and_metadata_alignment) ... C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\shared\input.py:57: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  matrix = mmread(locate('matrix.mtx')).tocsr().T.tocsr()
+ok
+test_pi_assessment_is_not_time_inference (tests.test_input.InputContract.test_pi_assessment_is_not_time_inference) ... ok
+test_reject_duplicates_empty_and_missing_target (tests.test_input.InputContract.test_reject_duplicates_empty_and_missing_target) ... ok
+test_reject_invalid_values (tests.test_input.InputContract.test_reject_invalid_values) ... ok
+test_bounded_screen_has_expected_axes (tests.test_knk_results.KnkResultTests.test_bounded_screen_has_expected_axes) ... ok
+test_dr_fc_is_squared_network_distance_not_expression_fc (tests.test_knk_results.KnkResultTests.test_dr_fc_is_squared_network_distance_not_expression_fc) ... ok
+test_figure_manifest_outputs (tests.test_knk_results.KnkResultTests.test_figure_manifest_outputs) ... ok
+test_generic_smoke_has_real_resource_checks (tests.test_knk_results.KnkResultTests.test_generic_smoke_has_real_resource_checks) ... ok
+test_ko_changes_only_target_outgoing_row (tests.test_knk_results.KnkResultTests.test_ko_changes_only_target_outgoing_row) ... ok
+test_negative_control (tests.test_knk_results.KnkResultTests.test_negative_control) ... ok
+test_ora_background_and_statistics (tests.test_knk_results.KnkResultTests.test_ora_background_and_statistics) ... ok
+test_raw_input_provenance_and_target_selection (tests.test_knk_results.KnkResultTests.test_raw_input_provenance_and_target_selection) ... ok
+test_unstable_runs_preserved (tests.test_knk_results.KnkResultTests.test_unstable_runs_preserved) ... ok
+test_enrichment_uses_network_background_and_full_family (tests.test_oe_results.TestOERealResults.test_enrichment_uses_network_background_and_full_family) ... ok
+test_figure_index_points_to_real_outputs (tests.test_oe_results.TestOERealResults.test_figure_index_points_to_real_outputs) ... ok
+test_null_control_and_complete_finite_results (tests.test_oe_results.TestOERealResults.test_null_control_and_complete_finite_results) ... ok
+test_reused_KO_matches_official_module (tests.test_oe_results.TestOERealResults.test_reused_KO_matches_official_module) ... ok
+test_same_counts_changed_annotations_are_rejected (tests.test_sctour_cache.TestOldCache.test_same_counts_changed_annotations_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.672s
+
+OK

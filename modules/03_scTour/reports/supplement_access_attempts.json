@@ -15,5 +15,23 @@
     "bytes": 1817,
     "zip_header": false,
     "head": "\n\n\n\n<html>\n  <head>\n    <meta name=\"viewport\" cont"
+  },
+  {
+    "file": "S2_publisher_retry.xlsx",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1186%2Fs13059-023-02988-9/MediaObjects/13059_2023_2988_MOESM3_ESM.xlsx",
+    "attempt_time_utc": "2026-10-12T13:03:24.719747+00:00",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)>"
+  },
+  {
+    "file": "supplementary_archive_retry.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10290357/supplementaryFiles",
+    "attempt_time_utc": "2026-10-12T13:03:25.169589+00:00",
+    "error": "The read operation timed out"
+  },
+  {
+    "file": "oa_record_correct_host.xml",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC10290357",
+    "attempt_time_utc": "2026-10-12T13:13:22.263262+00:00",
+    "error": "HTTP Error 404: Not Found"
   }
 ]
