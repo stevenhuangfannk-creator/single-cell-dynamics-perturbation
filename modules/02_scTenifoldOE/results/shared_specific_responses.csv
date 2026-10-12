@@ -1,0 +1,17 @@
+group,gene
+Shared,HLA-DPA1
+Shared,HLA-DPB1
+Shared,HLA-DQB1
+Shared,HLA-DRB1
+Shared,HLA-DRB5
+Shared,IFITM3
+Shared,PRELID1
+KO specific,CTSD
+KO specific,DYNLT1
+KO specific,HNRNPC
+KO specific,NAP1L1
+KO specific,PPT1
+KO specific,RBP7
+KO specific,S100A12
+OE specific,CALM2
+OE specific,TIMP1

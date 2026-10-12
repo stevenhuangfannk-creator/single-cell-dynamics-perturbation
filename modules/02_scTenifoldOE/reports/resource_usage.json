@@ -1,0 +1,12 @@
+{
+  "status": "RUN_OK",
+  "process_returncode": 0,
+  "wall_seconds_including_imports": 54.561407500179484,
+  "peak_tree_rss_mib_sampled": 750.6171875,
+  "sampling_interval_seconds": 0.1,
+  "samples": 381,
+  "scope": "Sum RSS of Python runner and its current R subprocess; shared memory may be double counted; brief peaks can be missed",
+  "cpu_count_logical": 32,
+  "host_total_ram_gib": 15.692092895507812,
+  "compute": "CPU; R nCores=1; Python only edge mutation"
+}

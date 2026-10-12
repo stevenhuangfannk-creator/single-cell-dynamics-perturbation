@@ -35,7 +35,13 @@ class TestOE(unittest.TestCase):
         with self.assertRaises(ValueError):
             OE.validate_network(self.wt, "TF")
 
-    @unittest.skipUnless(importlib.util.find_spec("virt_overexpression"), "Requires pinned optional upstream package")
+    @unittest.skipUnless(int(pd.__version__.split(".")[0]) >= 3, "Only checks the pandas 3 compatibility guard")
+    def test_pandas3_guard_explains_incompatibility(self):
+        with self.assertRaisesRegex(RuntimeError, "pandas<3"):
+            OE.apply_oe(self.wt, "TF", 2)
+
+    @unittest.skipUnless(importlib.util.find_spec("virt_overexpression") and int(pd.__version__.split(".")[0]) < 3,
+                         "Requires pinned upstream package and pandas<3; upstream is incompatible with pandas 3")
     def test_actual_upstream_only_amplifies_positive_target_row(self):
         altered = OE.apply_oe(self.wt, "TF", 2)
         self.assertEqual(altered.loc["TF", "A"], .8)

@@ -1,0 +1,13 @@
+{
+  "checked_date": "2026-10-12",
+  "module": "02_scTenifoldOE",
+  "implementation_status": "Experimental",
+  "official_scTenifoldOE_confirmed": false,
+  "search_scope": ["CRAN PACKAGES", "official Knk 2.0.0 exports", "official Net 1.4.3 exports", "public web search"],
+  "upstream": {"name": "virt_overexpression", "version": "0.1.0", "revision": "860d0ea59dc0aeb564a286efae00f562ce84e138", "url": "https://github.com/virchow-zhang/virt_overexpression", "license_declared": "MIT", "license_file_present": false},
+  "companion": {"name": "virt_knock", "version": "0.2.0", "revision": "53abe39616bce36aa0fb3db8d15cc0e689cb1b54", "url": "https://github.com/virchow-zhang/virt_knock", "license": "MIT"},
+  "data": {"source_module": "01_scTenifoldKnk", "source": "https://www.10xgenomics.com/datasets/3-k-pbm-cs-from-a-healthy-donor-1-standard-1-1-0", "species": "human", "cell_type": "CD14+ Monocytes", "cell_count": 480, "gene_count": 600, "target": "SPI1", "target_detection_fraction": 0.6333333333},
+  "background": "Same 600-gene WT; 599 non-target genes for enrichment",
+  "annotations": ["GO_Biological_Process_2025", "KEGG_2021_Human", "Reactome_2022"],
+  "annotation_checksum_record": "modules/02_scTenifoldOE/reports/pathway_provenance.json"
+}

@@ -1,0 +1,17 @@
+test_actual_upstream_only_amplifies_positive_target_row (test_oe.TestOE.test_actual_upstream_only_amplifies_positive_target_row) ... ok
+test_fallback_is_rejected (test_oe.TestOE.test_fallback_is_rejected) ... ok
+test_mismatched_axes_are_rejected (test_oe.TestOE.test_mismatched_axes_are_rejected) ... ok
+test_missing_target_is_rejected (test_oe.TestOE.test_missing_target_is_rejected) ... ok
+test_nonfinite_is_rejected (test_oe.TestOE.test_nonfinite_is_rejected) ... ok
+test_pandas3_guard_explains_incompatibility (test_oe.TestOE.test_pandas3_guard_explains_incompatibility) ... skipped 'Only checks the pandas 3 compatibility guard'
+test_enrichment_uses_network_background_and_full_family (test_oe_results.TestOERealResults.test_enrichment_uses_network_background_and_full_family) ... ok
+test_figure_index_points_to_real_outputs (test_oe_results.TestOERealResults.test_figure_index_points_to_real_outputs) ... ok
+test_null_control_and_complete_finite_results (test_oe_results.TestOERealResults.test_null_control_and_complete_finite_results) ... ok
+test_reused_KO_matches_official_module (test_oe_results.TestOERealResults.test_reused_KO_matches_official_module) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 25.434s
+
+OK (skipped=1)
+  [OE] TF: 1/3 positive incoming edges ��2
+  [OE] TF: 1/3 positive incoming edges ��1

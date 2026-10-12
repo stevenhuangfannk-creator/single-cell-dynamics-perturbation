@@ -1,0 +1,14 @@
+{
+  "status": "Experimental",
+  "target": "SPI1",
+  "cell_type": "CD14+ Monocytes",
+  "input_network_orientation": "row_source_column_target",
+  "oe_folds": [1, 1.5, 2, 3],
+  "ma_dim": 2,
+  "seed": 1,
+  "nCores": 1,
+  "empiricalNull": false,
+  "direction": null,
+  "accepted_upstream_branch": "Level 1 only",
+  "maximum_network_genes_for_default": 1000
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "library": "GO_Biological_Process_2025",
+    "source": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=GO_Biological_Process_2025",
+    "sha256": "0fc02458765cfce6c9348dce9f7a9397c6caf7c09ba318f468135d7ac60342ee",
+    "tested_pathways": 959
+  },
+  {
+    "library": "KEGG_2021_Human",
+    "source": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=KEGG_2021_Human",
+    "sha256": "566763b3402ee1f06612cc48b57e2a0f3f92a9a9e7d1871cc2da9f940e2d609a",
+    "tested_pathways": 201
+  },
+  {
+    "library": "Reactome_2022",
+    "source": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=Reactome_2022",
+    "sha256": "cfe1adc75aa3137ba74c1b35a3098e88ea1708b204e5edfd788092b7ef5c08f8",
+    "tested_pathways": 647
+  }
+]

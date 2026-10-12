@@ -1,0 +1,12 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Computing distances for 600 genes
+v Differential regulation complete: 0/600 significant genes (FDR < 0.05)
+Warning message:
+In .drStatistics(dMetric, geneList, isKO, empiricalNull, noiseLevel,  :
+  No gene differs between the two conditions beyond numerical noise; all p-values were set to 1

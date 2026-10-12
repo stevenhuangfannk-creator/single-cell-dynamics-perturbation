@@ -1,0 +1,16 @@
+[
+  {
+    "name": "virt_knock",
+    "revision": "53abe39616bce36aa0fb3db8d15cc0e689cb1b54",
+    "url": "https://codeload.github.com/virchow-zhang/virt_knock/zip/53abe39616bce36aa0fb3db8d15cc0e689cb1b54",
+    "archive_sha256": "8576b43871031016795ccce0114a9b3617d646720f6f601a772ec289e2d6ecdb",
+    "analysis_installed_core_sha256": "8f4862d2856e618bdc9dc690c4686f29bc79141a434e8ca03f348ac1fff675cf"
+  },
+  {
+    "name": "virt_overexpression",
+    "revision": "860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "url": "https://codeload.github.com/virchow-zhang/virt_overexpression/zip/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "archive_sha256": "857fe4e17e5159d944139aaf16b4106a35586720947874d9e1963d204761d50b",
+    "analysis_installed_core_sha256": "832c2cd1e54b4328748f13d5beba38e0566825db3a309bd9ad8cbf2091420dda"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "status": "RUN_OK",
+  "scientific_status": "Experimental",
+  "target": "SPI1",
+  "genes": 600,
+  "folds": [
+    1,
+    1.5,
+    2,
+    3
+  ],
+  "ma_dim": 2,
+  "seed": 1,
+  "ma_method": "scTenifoldNet::manifoldAlignment",
+  "dr_method": "scTenifoldKnk::dRegulation; empiricalNull=FALSE; direction=NULL",
+  "orientation": "row=source; column=target; no additional transposition",
+  "upstream_oe_branch": "Level 1; positive target row edges only",
+  "upstream_oe_revision": "860d0ea59dc0aeb564a286efae00f562ce84e138",
+  "wt_sha256": "a58d5cfa68fa56f7809cae4f4df933b08ee516e2bcffca408faff17841c27631",
+  "ko_sha256": "84c0155856079e40373262fc2091220fadfcfe91d1635d773352a61c306a28f1",
+  "elapsed_seconds": 29.462421200005338,
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.13.1",
+    "torch": "2.5.1+cu121",
+    "virt_overexpression": "0.1.0",
+    "virt_knock": "0.2.0"
+  }
+}

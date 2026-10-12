@@ -1,0 +1,102 @@
+[
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 21,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 50,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 33,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 21,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 27,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 27,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 14,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 41,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 36,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 6.0,
+    "text_run_count": 31,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  }
+]

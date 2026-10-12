@@ -1,0 +1,220 @@
+[
+  {
+    "number": "01",
+    "id": "OE_01",
+    "title_cn": "虚拟过表达网络",
+    "stem": "OE_Figure01_Virtual_OE_Network",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "objects/OE_2.csv",
+      "results/network_layout.csv"
+    ],
+    "interpretation": "固定布局，靶点边优先并补最强关联边，共最多70边；颜色表示PC回归权重符号，非真实因果激活/抑制。",
+    "meaning": "固定布局，靶点边优先并补最强关联边，共最多70边；颜色表示PC回归权重符号，非真实因果激活/抑制。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "02",
+    "id": "OE_02",
+    "title_cn": "WT与OE网络差异",
+    "stem": "OE_Figure02_Network_Difference",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "objects/WT.csv",
+      "objects/OE_2.csv"
+    ],
+    "interpretation": "仅SPI1行的正出边增强；负边及其他基因边权原样保留。",
+    "meaning": "仅SPI1行的正出边增强；负边及其他基因边权原样保留。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "03",
+    "id": "OE_03",
+    "title_cn": "OE扰动响应排序",
+    "stem": "OE_Figure03_Perturbation_Ranking",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/OE_2_dr.csv"
+    ],
+    "interpretation": "按无方向manifold距离排序，排除靶点；绿色FDR<0.05，灰色非显著。",
+    "meaning": "按无方向manifold距离排序，排除靶点；绿色FDR<0.05，灰色非显著。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "04",
+    "id": "OE_04",
+    "title_cn": "SPI1中心调控网络",
+    "stem": "OE_Figure04_Regulatory_Network",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "objects/OE_2.csv",
+      "results/network_layout.csv"
+    ],
+    "interpretation": "显示预先指定靶点的最强18个出边邻居；模型权重是回归关联。",
+    "meaning": "显示预先指定靶点的最强18个出边邻居；模型权重是回归关联。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "05",
+    "id": "OE_05",
+    "title_cn": "过表达强度敏感性",
+    "stem": "OE_Figure05_Strength_Sensitivity",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/sensitivity_metrics.csv"
+    ],
+    "interpretation": "同一WT下网络剂量与响应的敏感性；单次WT，无重复误差条，不等于mRNA倍数。",
+    "meaning": "同一WT下网络剂量与响应的敏感性；单次WT，无重复误差条，不等于mRNA倍数。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "06",
+    "id": "OE_06",
+    "title_cn": "KO与OE扰动比较",
+    "stem": "OE_Figure06_KO_OE_Comparison",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/KO_OE_comparison.csv"
+    ],
+    "interpretation": "相同WT、靶点、MA维数和统计规则；比较无方向距离，相关性不证明相反调控。",
+    "meaning": "相同WT、靶点、MA维数和统计规则；比较无方向距离，相关性不证明相反调控。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "07",
+    "id": "OE_07",
+    "title_cn": "KO/OE共享与特异响应",
+    "stem": "OE_Figure07_Shared_Specific_Responses",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/shared_specific_responses.csv",
+      "results/KO_dr.csv",
+      "results/OE_2_dr.csv"
+    ],
+    "interpretation": "共享/特异取决于当前WT与FDR阈值，空集合如实显示，未显著不等于无生物学作用。",
+    "meaning": "共享/特异取决于当前WT与FDR阈值，空集合如实显示，未显著不等于无生物学作用。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "08",
+    "id": "OE_08",
+    "title_cn": "KO/OE通路富集",
+    "stem": "OE_Figure08_Pathway_Enrichment",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/pathway_enrichment.csv"
+    ],
+    "interpretation": "ORA背景为当前网络所有非靶基因；按集合与数据库内BH校正，虚线q=0.05；名称换行保留完整术语，仅省略末尾Reactome R-HSA编号，完整ID见结果表。",
+    "meaning": "ORA背景为当前网络所有非靶基因；按集合与数据库内BH校正，虚线q=0.05；名称换行保留完整术语，仅省略末尾Reactome R-HSA编号，完整ID见结果表。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/enrich_compare.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "09",
+    "id": "OE_09",
+    "title_cn": "不同强度响应热图",
+    "stem": "OE_Figure09_Response_Heatmap",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "results/strength_response_heatmap.csv"
+    ],
+    "interpretation": "相同基因在强度1/1.5/2/3下的实际无方向距离；未逐行标准化。",
+    "meaning": "相同基因在强度1/1.5/2/3下的实际无方向距离；未逐行标准化。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  },
+  {
+    "number": "10",
+    "id": "OE_10",
+    "title_cn": "三状态调控网络景观",
+    "stem": "OE_Figure10_Regulatory_Landscape",
+    "status": "RUN_OK",
+    "method": "Experimental: virt_overexpression 0.1.0 (virchow-zhang) + official R manifold/DR",
+    "dataset": "10x PBMC3k; CD14+ Monocytes; 600 genes × 480 cells; shared Knk WT; SPI1",
+    "source_tables": [
+      "objects/WT.csv",
+      "objects/KO.csv",
+      "objects/OE_2.csv",
+      "results/landscape_layout.csv"
+    ],
+    "interpretation": "固定同一布局及边宽尺度的三状态SPI1最强8个出边邻居；展示网络模型，不是表达或细胞动力学景观。",
+    "meaning": "固定同一布局及边宽尺度的三状态SPI1最强8个出边邻居；展示网络模型，不是表达或细胞动力学景观。",
+    "reference": "https://github.com/virchow-zhang/virt_overexpression/tree/860d0ea59dc0aeb564a286efae00f562ce84e138",
+    "analysis_script": "modules/02_scTenifoldOE/scripts/run_oe.py",
+    "plot_script": "modules/02_scTenifoldOE/scripts/plot_oe.py",
+    "png": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.png",
+    "pdf": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.pdf",
+    "svg": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.svg",
+    "validity": "Experimental网络模拟；同一WT，无实验生物学重复；distance不含表达方向，非真实mRNA/CRISPR预测。"
+  }
+]

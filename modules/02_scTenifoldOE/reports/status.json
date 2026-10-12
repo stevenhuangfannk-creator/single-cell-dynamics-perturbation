@@ -1,0 +1,10 @@
+{
+  "module": "02_scTenifoldOE",
+  "status": "PARTIAL",
+  "calculation_status": "RUN_OK",
+  "scientific_status": "Experimental",
+  "completed": ["source/API/license audit", "published README high-level API with real counts", "shared official WT KO/OE comparison", "OE factor 1/1.5/2/3 sensitivity", "background-aware GO/KEGG/Reactome ORA", "10 figures in PNG/PDF/SVG", "independent redraw", "input/result tests", "pandas 3 failure reproduced and isolated"],
+  "not_claimed": ["official scTenifoldOE package", "experimental OE accuracy", "mRNA fold prediction", "OE response direction", "cross-donor OE stability", "cross-WT OE biological validation"],
+  "remaining": ["independent perturbation benchmark", "cross-donor/WT OE validation", "upstream missing LICENSE clarification"],
+  "figure_count": 10
+}

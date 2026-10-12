@@ -1,0 +1,112 @@
+[
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure01_Virtual_OE_Network.png",
+    "size": [
+      3468,
+      2609
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure02_Network_Difference.png",
+    "size": [
+      3779,
+      2196
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure03_Perturbation_Ranking.png",
+    "size": [
+      3879,
+      2558
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure04_Regulatory_Network.png",
+    "size": [
+      3468,
+      2609
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure05_Strength_Sensitivity.png",
+    "size": [
+      4314,
+      1888
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure06_KO_OE_Comparison.png",
+    "size": [
+      2977,
+      2403
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure07_Shared_Specific_Responses.png",
+    "size": [
+      2857,
+      1938
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure08_Pathway_Enrichment.png",
+    "size": [
+      3248,
+      5086
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure09_Response_Heatmap.png",
+    "size": [
+      3092,
+      2609
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  },
+  {
+    "file": "modules/02_scTenifoldOE/figures/OE_Figure10_Regulatory_Landscape.png",
+    "size": [
+      3468,
+      2041
+    ],
+    "dpi": [
+      599.9988,
+      599.9988
+    ]
+  }
+]

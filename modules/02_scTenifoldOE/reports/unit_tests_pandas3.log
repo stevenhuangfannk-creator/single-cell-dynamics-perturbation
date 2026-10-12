@@ -1,0 +1,11 @@
+test_actual_upstream_only_amplifies_positive_target_row (test_oe.TestOE.test_actual_upstream_only_amplifies_positive_target_row) ... skipped 'Requires pinned upstream package and pandas<3; upstream is incompatible with pandas 3'
+test_fallback_is_rejected (test_oe.TestOE.test_fallback_is_rejected) ... ok
+test_mismatched_axes_are_rejected (test_oe.TestOE.test_mismatched_axes_are_rejected) ... ok
+test_missing_target_is_rejected (test_oe.TestOE.test_missing_target_is_rejected) ... ok
+test_nonfinite_is_rejected (test_oe.TestOE.test_nonfinite_is_rejected) ... ok
+test_pandas3_guard_explains_incompatibility (test_oe.TestOE.test_pandas3_guard_explains_incompatibility) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.008s
+
+OK (skipped=1)

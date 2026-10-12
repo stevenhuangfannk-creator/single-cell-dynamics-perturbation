@@ -1,0 +1,3 @@
+comparison,spearman_distance,top20_jaccard,scope
+OE_1.5 versus OE_2,0.9999993299869904,1.0,Dose sensitivity on one shared WT; not across-seed biological validation
+OE_3 versus OE_2,0.9999993858214079,1.0,Dose sensitivity on one shared WT; not across-seed biological validation

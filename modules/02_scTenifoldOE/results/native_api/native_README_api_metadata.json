@@ -1,0 +1,21 @@
+{
+  "status": "RUN_OK",
+  "purpose": "Published README API execution; upstream provides no bundled reference dataset or numeric expected results",
+  "data_type": "real counts; already selected/QC checked by Knk module",
+  "genes": 600,
+  "cells": 480,
+  "target": "SPI1",
+  "n_nets": 3,
+  "n_samp_cells": 300,
+  "ma_dim": 2,
+  "oe_fold": 2,
+  "seed": 1,
+  "device": "cpu",
+  "positive_target_row_edges": 222,
+  "elapsed_seconds": 1.8427512999624014,
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "virt_knock": "0.2.0",
+    "virt_overexpression": "0.1.0"
+  }
+}
