@@ -1,75 +1,96 @@
 # 总复现报告与未完成清单 / Reproduction and remaining work
 
-核查日期：2026-10-12。本报告是交付过程中的实际结果快照，scTour 后续完成时须同步更新下表及模块报告。总体状态为 **PARTIAL**：已有真实软件运行、公开数据结果和可追踪图件，但没有达到独立实验验证或原论文逐点数值复现。`RUN_OK` 只说明指定计算与输出检查通过；状态定义见 [方法比较](../docs/METHOD_COMPARISON_CN.md)。
+最终核查日期：2026-10-12。三个方法的已执行范围、38张真实图件、单图重绘、中文教程及数据/环境记录已整理交付。**总体科学状态为PARTIAL**：软件运行和结果追溯通过；KO排名不稳定、OE为第三方Experimental、scTour A发育趋势失败，且S2超参数未核实，因此不宣称严格全面复现。状态定义见 [方法比较](../docs/METHOD_COMPARISON_CN.md)。
 
 ## 已执行证据 / Executed evidence
 
-| 模块 | 真实输入与已执行范围 | 当前结果与科学限制 |
+| 模块 | 真实输入与执行范围 | 结果与科学状态 |
 |---|---|---|
-| scTenifoldKnk | 官方负二项示例100基因×2,000细胞；真实 PBMC3k 中480个 CD14+ Monocytes、600基因；SPI1、SPI1+CEBPB、9候选 heat KO、负对照、三库 ORA；另有1,200基因敏感性 | 软件 `RUN_OK`，科学 `PARTIAL`。SPI1 非靶显著基因14个，联合KO排除两靶点后11个；6组主稳定性与3组更宽面板运行均保存，排名不稳定 |
-| Experimental OE | 复用同一官方 CP-WT，600基因×480细胞；SPI1 正目标行出边增强1/1.5/2/3倍；同WT KO/OE比较；真实第三方原生API另存 | 软件 `RUN_OK`，科学 `Experimental / PARTIAL`。1倍负控无显著响应；1.5/2/3倍各9个非靶响应；2倍与KO共同7个、KO特异7个、OE特异2个 |
-| scTour A | 原始 GSE95315：5,454细胞中4,007个论文颗粒谱系细胞，11,819个检出筛选基因中选500 HVGs | A20(seed0)与A90(seed0/1)均完成400 epochs，模型往返时间误差0；A20阶段中位数Spearman=0.1且非单调，生物学趋势未通过。原始counts、标签及API调用审查没有发现已证实的调用错误，根因未知 |
-| scTour B | 原始 GSE104323：24,185细胞中15,174个论文谱系细胞，15,015个筛选基因中选2,000 HVGs | B20%主模型和B95%参考模型各400 epochs已完成，全部细胞推断及模型往返检查通过；颗粒谱系阶段中位数 Spearman≈1。其他抽样比例与 h 仍在运行，整体保持 `PARTIAL` |
+| scTenifoldKnk | 官方负二项示例100基因×2,000细胞；PBMC3k原始counts中480个CD14+ Monocytes、600基因；SPI1、SPI1+CEBPB、9候选heat KO、负对照、三库ORA；1,200基因三seed扩展 | `RUN_OK / PARTIAL`。单KO14个非靶显著基因，联合KO11个；6组主稳定性与3组扩展均保存，排名不稳定 |
+| Experimental OE | 同一官方CP-WT；SPI1正目标行出边1/1.5/2/3倍；官方R MA/DR比较；第三方原生API另行验证 | `RUN_OK / PARTIAL`。1倍负控无显著响应；1.5/2/3倍各9个非靶响应；2倍与KO共享7、KO特异7、OE特异2；倍数不是mRNA表达倍数 |
+| scTour A | GSE95315原始5,454→4,007颗粒谱系细胞；11,819检出筛选基因→500HVG；PCA40、latent .2z+.8zt；A20 seed0及A90 seed0/1各400epochs | 计算`RUN_OK`、趋势`PARTIAL`。A20阶段中位数Spearman=.1、非单调；两次A90也失败。原始counts、标签及官方API审查未发现已证实调用错误，根因UNKNOWN |
+| scTour B | GSE104323原始24,185→15,174目标细胞；15,015筛选基因→2,000HVG；PCA30、latent .4z+.6zt；八比例各400epochs、seed0、全部细胞推断 | 计算`RUN_OK`、科学`PARTIAL`。B20/B95相关0.981548；B1/B5阶段非单调结果保留；高全局相关不能代替逐阶段趋势或实验验证 |
 
-PBMC 网络输入来自原始 UMI counts；处理 h5ad 只提供按 barcode 对应的标签。GEO 数据直接恢复原始表及其元数据，下载 SHA256、gzip CRC、筛选规则和排除记录见 [数据登记](../data_registry/README_CN.md)。官方模拟示例单独登记，未冒充真实样本或原论文 SERGIO 图复现。
+PBMC标签按barcode取自处理对象，网络输入为原始UMI counts。GEO直接读取原始表达表及metadata。URL、SHA256、gzip CRC、筛选/排除规则见 [数据登记](../data_registry/README_CN.md)；方法论文和官方来源见 [参考文献](../docs/REFERENCES.md)。官方模拟和tiny接口fixture没有冒充真实生物学结果。
 
-详细证据见 [KO报告](../modules/01_scTenifoldKnk/reports/REPRODUCTION_CN.md)、[OE报告](../modules/02_scTenifoldOE/reports/REPRODUCTION_CN.md)、[scTour报告](../modules/03_scTour/reports/REPRODUCTION_CN.md)、[A20独立API审查](../modules/03_scTour/reports/A20_independent_api_audit.json) 和 [scTour已完成运行表](../modules/03_scTour/results/run_comparison.tsv)。
+详见 [KO报告](../modules/01_scTenifoldKnk/reports/REPRODUCTION_CN.md)、[OE报告](../modules/02_scTenifoldOE/reports/REPRODUCTION_CN.md)、[scTour逐面板报告](../modules/03_scTour/reports/REPRODUCTION_CN.md)、[A20独立审计](../modules/03_scTour/reports/A20_independent_api_audit.json)及[B八比例独立审计](../modules/03_scTour/reports/B_subsampling_independent_audit.json)。
+
+## scTour训练与抽样 / Training and subsampling
+
+预登记A20为a来源，B20为b–g/i来源，B95仅作h的相关参考；没有按结果好坏挑模型替换A失败。每个正式模型均400epochs，模型保存重载的ptime最大误差0，完整参数、loss、训练/验证ID和全细胞推断见 [运行表](../modules/03_scTour/results/run_comparison.tsv)及各运行目录。
+
+| B训练比例 | Epochs | 训练秒数 | 相对95%的同序全细胞Spearman | 官方反向/手动反向；阶段 |
+|---|---:|---:|---:|---|
+| 1% | 400 | 349.27 | 0.901819 | False/False；非单调 |
+| 5% | 400 | 655.47 | 0.926148 | False/False；非单调 |
+| 10% | 400 | 690.24 | 0.958580 | True/False；严格递增 |
+| 20% | 400 | 2032.95 | 0.981548 | False/False；严格递增 |
+| 40% | 400 | 1731.80 | 0.992942 | False/False；严格递增 |
+| 60% | 400 | 2147.98 | 0.996251 | False/False；严格递增 |
+| 80% | 400 | 3420.00 | 0.996549 | False/False；严格递增 |
+| 95% | 400 | 1518.83 | 1.000000 | True/False；严格递增 |
+
+最小相关系数为0.901819。每个比例仅一个seed，细胞和抽样模型不充当生物学重复，没有伪造误差条。当前八比例网格覆盖1–95%，不能称已核对原文每个抽样间隔。
+
+方向先保留官方基于基因检出数的自动校正；只有可靠真实阶段严格递减且相关为负时才额外使用官方reverse_time和VF反向显示。本轮正式B网格无额外手动反转；A的非单调关系不能用整体反向修复。`ptime_before_manual`与`rho_before_alignment`均已经包含官方自动定向，仅早于本仓库额外手动校正。VF使用完整5D与官方邻域投影，未取前两维冒充UMAP运动。
 
 ## 图件与复建 / Figures and reconstruction
 
-| 图件组 | 当前有实际三格式文件的图件 | 仍未完成 |
-|---|---|---|
-| KO | 11张；PNG600dpi、PDF、SVG，完整网络与统计表支持单图重绘 | 没有用未执行的全转录组结果补图 |
-| OE | 10张；PNG600dpi、PDF、SVG，同WT剂量与KO/OE比较，页脚保留第三方来源 | 跨WT/供者稳定性与真实OE实验验证图未执行 |
-| scTour主面板 | A20的a与B20的b–g、i，共8个；各有 PNG/PDF/SVG | 抽样面板 h、完整 Figure2 组合图及最终整体QA |
-| scTour诊断 | A90 seed0的 a、B95的 b–g，共7个；保留实际异常和参考模型 | 诊断图不替代预登记20%主展示 |
-
-当前合计21张KO/OE图，加15张scTour主/诊断图；已按三个 manifest 检查三格式文件存在。当前36张图的600DPI与三格式检查通过，84项仓库完整性检查无失败，全部主图与诊断PDF通过≥5pt字体检查。图库及逐图代码入口见 [图件索引](../gallery/FIGURE_INDEX_CN.md)，最终须加入h及组合图后重建，不能把当前数量当成最终数量。
-
-KO/OE单图脚本读取已提交CSV，不重新构建网络或执行MA。scTour单图读取本地 `inferred.h5ad`、同目录配置及必要抽样结果，不重新训练。原始下载、counts、RDS、AnnData、模型权重留在被Git排除的本地工作目录；首次克隆须按模块教程下载/训练重建这些对象，不能从图像恢复模型。
-
-## 环境与资源口径 / Environments and resources
-
-| 用途 | 已实际使用的关键版本 |
+| 图件组 | 已交付真实图件 |
 |---|---|
-| 共同输入/表格环境 | Python3.13.15、NumPy2.5.4、pandas3.0.6；新建环境用 [shared-requirements.txt](../environments/shared-requirements.txt)；`shared.lock.txt`含本机安装路径，仅作版本记录 |
-| KO及OE官方比较 | R4.3.1、scTenifoldKnk2.0.0、scTenifoldNet1.4.3，R计算单核；官方包版本与源校验固定，全部R依赖尚非容器级完整锁定 |
-| OE正式Python环境 | Python3.11.11、NumPy1.26.4、pandas2.2.3、SciPy1.13.1、torch2.5.1+cu121；OE计算使用CPU；实际 `virt_overexpression0.1.0`及`virt_knock0.2.0`源码revision已固定 |
-| scTour | Python3.11.11、sctour1.0.0、Scanpy1.9.8、AnnData0.10.8、torch2.5.1+cu121；模型编码/解码使用CUDA，官方ODE仍在CPU |
+| KO | 11张：网络、单/多KO响应、三库富集、候选扰动图及稳定性 |
+| Experimental OE | 10张：网络增强、剂量、KO/OE共享/特异与通路比较；各图注明第三方来源 |
+| scTour主图 | a–i九张独立图及完整Figure2组合，共10张；a六幅横图，下部b/c、d/e、f/g、h/i四列 |
+| scTour诊断 | A90 seed0的a、B95的b–g，共7张；保留参考及异常，不替代20%主展示 |
 
-硬件为Windows11、i9-13900HX、32逻辑CPU、约15.69 GiB RAM、RTX4070 Laptop GPU（8,188 MiB），见 [硬件登记](hardware.json)。不同环境独立，pandas3导致第三方OE只读数组错误已真实复现并由wrapper拒绝；正式OE使用pandas2.2.3，未修补第三方源码。
+合计38张，均为PNG600dpi/PDF/SVG。图件索引、含义、数据、分析/绘图脚本及独立重绘命令见 [画廊](../gallery/FIGURE_INDEX_CN.md)。完整组合见 [scTour Figure 2](../modules/03_scTour/figures/scTour_Figure2_Reproduction.png)。原图比例和配色作为参照，实际UMAP几何、异常时间和分支未经人为移动或手画修正。
 
-| 运行 | 实际记录 | 不能据此声称 |
-|---|---|---|
-| KO主流程与扩展 | 主单/多KO、筛查、6组稳定性及负控34.16秒；1,200基因三seed合计55.61秒 | 没有独立进程峰值RAM记录；23.04/115.2 MB原始张量估算不等于实际峰值 |
-| OE主比较 | 含导入复跑54.56秒；Python及当前R子进程抽样RSS加总峰值750.6 MiB，0.1秒采样 | RSS可重复计共享页、遗漏短峰，不能当作精确独占内存基准；见 [资源记录](../modules/02_scTenifoldOE/reports/resource_usage.json) |
-| scTour正式训练 | A90两seed训练407.98/359.71秒；A20训练518.47秒；B20训练2,032.95秒；B95训练1,518.83秒 | 这些为各模型记录的训练时间，不含全部下载/预处理/绘图；并行应用与系统压力影响耗时，正式CPU重训未验证 |
+KO/OE读取已提交网络CSV与结果表进行单图重绘；scTour读取本地inferred.h5ad和抽样结果，不重训。原始counts、RDS、AnnData及模型权重由.gitignore排除；首次克隆须按教程下载/训练重建，不能从图像恢复模型。每个模块教程含顺序、参数、输出、环境与限制，不是任意数据一键生成固定论文图的承诺。
 
-## 科学与新数据边界 / Scientific and reuse limits
+## 验证与新数据 / Validation and new inputs
 
-KO的6组主运行除参考自比较外，非靶距离Spearman约0.073–0.251；1,200基因面板内部不同seed约0.186–0.219。其单seed显著基因和通路只能作为探索性假设。OE强度排名Spearman>0.999999、top20 Jaccard=1仅成立于一个固定WT，不能抵消KO的跨拟合不稳定性。没有匹配真实KO/OE实验、独立供者重复或外部表型benchmark；随机seed和细胞抽样不是生物学重复。
+本机共同CI检查26项通过，见 [tests_delivery.log](tests_delivery.log)。scTour独立环境12项必要回归全部通过、无skip，见 [tests_final.log](../modules/03_scTour/reports/tests_final.log)：真实A20保存对象、Smoke checkpoint恢复身份边界、MEX字符串ID/metadata对齐、缓存counts/注释、h八行及正负相关、未完成h/i拒绝与真实比例校验。软件fixture仅验证接口与拒绝边界。
 
-KO的`FC`不是表达倍数，OE边权倍数不是mRNA倍数；无方向网络距离不能推断真实上/下调。ORA按实际测量背景及所有eligible terms校正：KO背景600基因，OE背景599个非靶基因。疾病名称通路仅表示基因集重叠，不是供者诊断或因果机制。
+新增独立组合重绘入口`--panel composite`，缺少完整a–i正式输入会被拒绝；该边界的额外1项回归通过，见 [test_composite_boundary.log](../modules/03_scTour/reports/test_composite_boundary.log)，未重训模型。B原始2,000HVG × 15,174细胞的30,348,000个count项与prepared逐值一致；八模型的counts、身份和注释独立分块核验通过，证据见B八比例审计。
 
-scTour时间和潜空间VF是静态转录组模型估计，不能证明谱系转化或当作实验RNA velocity。保留官方方向与人工方向审查；缺少可靠阶段或少于两个有效阶段时应记为未评估，不人为设定发育顺序。PI/Healthy分组不能直接当作时间起点/终点，跨分支、周期和终末细胞风险仍需外部证据。
+最终 [仓库完整性审计](repository_integrity_audit.json)核对网络不变量、三格式文件、PNG600DPI和本地文档链接；[绘图预检](figure_preflight.json)包含三个绘图源码及全部38个PDF的≥5pt实际文字检查。源码WARN的原因与逐面板/组合目视审查记录见各模块报告；自动检查不替代科学准确性评价。
 
-共同输入工具已验证counts、唯一ID、轴方向、metadata对齐及审计后MEX导出往返，见 [输入验证](INPUT_VALIDATION_CN.md)；[新数据说明](../docs/INPUT_AND_PI_CN.md)提供h5ad/10x/Seurat接入。generic KO及scTour准备入口是复用路径，不表示已在用户私有数据完成模型或泛化验证。Seurat脚本尚未读取真实用户对象；用户数据须先完成同细胞类型/可信谱系、全转录组QC、供者/批次设计、目标检出和资源检查。
+[共享输入验证](INPUT_VALIDATION_CN.md)覆盖h5ad/10x MEX的counts、ID、轴向和metadata；现代AnnData nullable-string HDF5不能被旧scTour环境读取的问题已实际复现，并由共享导出MEX再旧环境准备的桥解决。公开A的4,007细胞/500HVG跨环境准备成功；`001`前导零、字面`NA`、逆序metadata及counts逐值回归通过。通用KO的80×150真实PBMC tiny单/联合KO入口通过，仅作为接口验证。真实Seurat对象尚未验证。
 
-## GitHub交付与验证 / Delivery verification
+OE的WT/KO CSV两侧也发现并修复了数字ID/字面NA改写，DR靶点排除同步保持字符串身份。三个回归在两套Python环境通过，真实R及Python→R读取保持身份/权重；600×600既有公开矩阵逐元素不变。修复前失败与实际验证见 [OE网络CSV审计](../modules/02_scTenifoldOE/reports/NETWORK_CSV_INPUT_QA_CN.md)。没有重拟合网络或修改MA/DR算法。
 
-仓库为 [single-cell-dynamics-perturbation](https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation)，登记为Private。已按输入骨架、KO、OE、保存结果检查、审计MEX桥接及通用KO验证分阶段提交上传。早期Git传输失败时使用GitHub REST Git objects发布；原本地提交保留在 `local-validation-history-20261012`。当前Git传输已恢复，`main`跟踪`origin/main`，之后使用普通commit/push。
+PI/Healthy只提供 [格式与设计审查](../docs/INPUT_AND_PI_CN.md)，没有执行用户数据正式分析。未来必须先评估同细胞类型/可信谱系、全转录组QC、目标表达检出、供者与批次设计及资源；PI与Healthy不能直接解释为时间先后。
 
-[交付审计](github_delivery.json)记录已同步阶段的`local_tree == remote_tree`和轻量Actions成功，说明该阶段文件树一致；这与commit SHA相同是不同检查。该记录目前对应较早已同步阶段，未覆盖仍在生成的全部scTour结果及本报告。最终须再次提交、发布并核对远端tree与Actions，保留实际SHA映射，不能把阶段检查当作最终完整交付证明。轻量CI不下载完整GEO、不重训模型，也不证明生物学有效性。
+## 环境与资源 / Environments and resources
 
-## 未完成清单 / Remaining work
-
-| 项目 | 当前状态与完成依据 |
+| 用途 | 实际版本与执行 |
 |---|---|
-| scTour B抽样网格及主Figure2 | A20主a已完成并保留非单调结果；其余B比例仍在运行，只接受全部真实400epoch摘要、推断对象、h/组合三格式图及QA作为完成证据 |
-| 最终图库、总报告、GitHub同步 | 待scTour真实结果确定后更新；重建索引、运行必要检查、核对最终文件树与Actions |
-| 科学准确性与稳健性 | 尚无匹配KO/OE实验、跨供者/WT验证、可靠KO目标确认或scTour独立谱系证据 |
-| 更大规模与新用户数据 | PBMC全转录组、大规模多供者分析及PI/Healthy正式结论未执行；不能直接套用当前不稳定小面板结论 |
-| 环境与上游材料 | 完整容器级R锁定、旧R依赖撤下时的所有回退、全部正式CPU重训未验证；第三方OE缺少独立LICENSE文件，许可材料待澄清 |
-| 泛化接入 | generic模型和真实Seurat对象仍需独立验证；固定论文/PBMC绘图套件不等于任意数据一键生成全部图 |
+| 共享输入 | Python3.13.15、NumPy2.5.4、pandas3.0.6；[shared-requirements.txt](../environments/shared-requirements.txt)用于新安装，shared.lock.txt含本机路径仅供追溯 |
+| KO与OE官方R比较 | R4.3.1、scTenifoldKnk2.0.0、scTenifoldNet1.4.3；固定包版本/来源，单核运行；全部R依赖尚非容器级锁定 |
+| OE正式Python | Python3.11.11、NumPy1.26.4、pandas2.2.3、SciPy1.13.1；固定virt_overexpression与virt_knock源码revision；CPU计算；pandas3上游只读数组错误已真实复现，wrapper明确拒绝 |
+| scTour | Python3.11.11、sctour1.0.0、Scanpy1.9.8、AnnData0.10.8、torch2.5.1+cu121；CUDA编码/解码、官方CPU ODE；安装脚本依赖检查通过 |
 
-自检：真实counts和模拟测试分开、失败seed保留、同WT比较一致、负控及测量背景明确、已完成图可追踪、未完成计算未标成功。当前交付支持方法运行与探索性结果复算，科学状态保持`PARTIAL`。
+硬件Windows11、i9-13900HX、32逻辑CPU、15.69GiB RAM、RTX4070 Laptop GPU8GB，见 [hardware.json](hardware.json)。11个正式模型共4,400epochs，训练计时合计3.84小时。训练时间不含全部数据下载、预处理及绘图；系统并行负载和内存压力影响明显，不能作为独占硬件benchmark。
+
+KO主流程34.16秒，1,200基因三seed55.61秒，未记录主KO独立进程峰值RAM。OE含导入主比较54.56秒，Python与R子进程抽样RSS加总峰750.6MiB；共享页可重复计数、短峰可漏。scTour早期没有进程/CUDA峰字段的运行保持null，后期分别记录Windows peak working set与Torch peak allocated。整张GPU监控包含其他应用，不称模型独占显存峰。逐模型、抽样口径和原始记录见 [资源报告](RUN_RESOURCES_CN.md)。
+
+## GitHub交付 / GitHub delivery
+
+仓库为 [single-cell-dynamics-perturbation](https://github.com/stevenhuangfannk-creator/single-cell-dynamics-perturbation)，Private。代码、真实结果、图件和日志分阶段提交。早期网络失败时使用REST Git objects；普通Git已恢复，main跟踪origin/main，原本地验证历史保留在local-validation-history-20261012，没有删除或覆盖其他项目。
+
+[交付快照](github_delivery.json)证明其中明确记录的SHA、Private设置、远端/本地相同文件树及该SHA的Actions。快照提交本身会产生新SHA；最新HEAD再以只读--no-save核查，避免审计文件递归修改自身。CI不下载GEO、不重训模型，也不能证明生物学有效性。
+
+## 未完成与失败证据 / Remaining limits and failures
+
+| 项目 | 实际边界与后续所需证据 |
+|---|---|
+| KO生物学稳定性 | 主非靶距离跨seed/抽样Spearman约.073–.251；1,200基因面板跨seed约.186–.219。结果仅探索性，需独立供者、充分网络信息与真实实验 |
+| OE可靠性 | 不存在已核实的官方scTenifoldOE；第三方Experimental。固定WT剂量排名稳定，跨WT/供者和真实OE未验证；缺独立LICENSE文件，许可材料待澄清，未复制其源码入库 |
+| scTour A趋势 | A20及两个A90正式模型均非单调；排除counts/标签错位，根因未知，完整失败保留 |
+| 论文严格参数 | S2多来源下载未获得有效文件，实际尝试日志保留；batch_size1024和重建权重各.5为官方API默认，seurat_v3与原文严格一致性未确认；原UMAP参数/权重/全部抽样ID未获得 |
+| 泛化与更大规模 | 大规模全转录组KO、跨供者benchmark、真实Seurat对象、用户PI/Healthy正式分析未执行；通用接口通过不等于全部新数据科学泛化通过 |
+| 环境范围 | 完整R容器锁定、全部正式CPU重训未验证；已验证Windows/GPU步骤，不扩称其他平台全流程验证 |
+
+KO的FC和无方向网络距离不是表达上/下调；ORA按实际测量背景校正，疾病通路名不是供者诊断。scTour可用counts而不要求spliced/unspliced，但静态转录组时间/VF预测不能证明真实谱系转化。seed/细胞抽样不是生物学重复。
+
+自检：真实counts与软件fixture分开；所有失败模型保留；同WT比较一致；负控、测量背景与多重校正明确；38图均可追溯并独立重绘；八比例模型均实际400epochs；未验证工作和科学状态没有标为REPRODUCED。

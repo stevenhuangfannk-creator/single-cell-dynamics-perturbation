@@ -1,0 +1,24 @@
+{
+  "date_local": "2026-10-12",
+  "timezone": "Asia/Shanghai",
+  "reviewers": ["module_plot_agent", "project_delivery_agent"],
+  "reviews": [
+    {
+      "figure": "scTour_Figure2h",
+      "actual_png_pixels": [1980, 1860],
+      "checked": ["eight completed training fractions", "Spearman side labels aligned", "all six cell type legend keys", "left ylabel and percent labels inside canvas", "rank axis readable"],
+      "result": "PASS"
+    },
+    {
+      "figure": "scTour_Figure2_Reproduction",
+      "actual_png_pixels": [6000, 4920],
+      "preview_pixels": [1800, 1476],
+      "full_resolution_crop_boxes": {"c_e": [0, 3150, 3100, 4530], "f_h": [2950, 1600, 6000, 3200]},
+      "checked": ["a-i mixed panel arrangement", "c/e and f/h labels clear", "h rank label clear of i", "eleven batch legend keys", "separate A and B legends", "f/i insets readable", "shared pseudotime colorbar readable", "real A nonmonotonic failure preserved"],
+      "result": "PASS"
+    }
+  ],
+  "computational_validation": "figure_layout_qa.json and main_figure_file_qa.json",
+  "scientific_status": "PARTIAL",
+  "remaining_limits": ["A developmental medians not monotonic", "B1/B5 terminal stage medians locally reversed", "one seed per B fraction", "Supplementary Table S2 not verified"]
+}

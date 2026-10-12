@@ -644,8 +644,8 @@
         "ready": true,
         "strict": false,
         "counts": {
-          "PASS": 18,
-          "WARN": 2,
+          "PASS": 17,
+          "WARN": 3,
           "FAIL": 0
         }
       },
@@ -667,8 +667,8 @@
         },
         {
           "check_id": "FONT-SIZE",
-          "level": "PASS",
-          "message": "All detected text sizes are at least 5 pt (minimum 5 pt)",
+          "level": "WARN",
+          "message": "No explicit text sizes found; verify readability at final physical size",
           "evidence": []
         },
         {
@@ -819,8 +819,8 @@
       "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2c.pdf",
       "auditable": true,
       "minimum_required_pt": 5.0,
-      "minimum_found_pt": 9.0,
-      "text_run_count": 1,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 12,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -851,8 +851,8 @@
       "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\diagnostics\\B95_scTour_Figure2e.pdf",
       "auditable": true,
       "minimum_required_pt": 5.0,
-      "minimum_found_pt": 6.0,
-      "text_run_count": 12,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 23,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -868,7 +868,7 @@
       "auditable": true,
       "minimum_required_pt": 5.0,
       "minimum_found_pt": 5.0,
-      "text_run_count": 7,
+      "text_run_count": 18,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -885,6 +885,22 @@
       "minimum_required_pt": 5.0,
       "minimum_found_pt": 5.0,
       "text_run_count": 3,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2_Reproduction.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2_Reproduction.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 72,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -931,8 +947,8 @@
       "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2c.pdf",
       "auditable": true,
       "minimum_required_pt": 5.0,
-      "minimum_found_pt": 9.0,
-      "text_run_count": 1,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 12,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -963,8 +979,8 @@
       "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2e.pdf",
       "auditable": true,
       "minimum_required_pt": 5.0,
-      "minimum_found_pt": 6.0,
-      "text_run_count": 12,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 23,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -980,7 +996,7 @@
       "auditable": true,
       "minimum_required_pt": 5.0,
       "minimum_found_pt": 5.0,
-      "text_run_count": 7,
+      "text_run_count": 18,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []
@@ -997,6 +1013,22 @@
       "minimum_required_pt": 5.0,
       "minimum_found_pt": 5.0,
       "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    }
+  },
+  {
+    "module": "03_scTour",
+    "type": "pdf",
+    "file": "modules\\03_scTour\\figures\\scTour_Figure2h.pdf",
+    "returncode": 0,
+    "report": {
+      "pdf": "C:\\Users\\13683\\Documents\\Codex\\2026-10-12\\files-pasted-by-the-user-codex\\outputs\\single-cell-dynamics-perturbation\\modules\\03_scTour\\figures\\scTour_Figure2h.pdf",
+      "auditable": true,
+      "minimum_required_pt": 5.0,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 28,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []

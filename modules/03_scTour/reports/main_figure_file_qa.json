@@ -1,5 +1,26 @@
 [
   {
+    "figure": "scTour_Figure2_Reproduction",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 72,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      6000,
+      4920
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
     "figure": "scTour_Figure2a",
     "pdf_text_audit": {
       "auditable": true,
@@ -132,6 +153,27 @@
       "minimum_required_pt": 5,
       "minimum_found_pt": 5.0,
       "text_run_count": 4,
+      "below_minimum_count": 0,
+      "below_minimum": [],
+      "warnings": []
+    },
+    "png_pixels": [
+      1980,
+      1860
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "svg_editable_text": true
+  },
+  {
+    "figure": "scTour_Figure2h",
+    "pdf_text_audit": {
+      "auditable": true,
+      "minimum_required_pt": 5,
+      "minimum_found_pt": 5.0,
+      "text_run_count": 28,
       "below_minimum_count": 0,
       "below_minimum": [],
       "warnings": []

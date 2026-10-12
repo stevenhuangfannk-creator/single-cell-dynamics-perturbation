@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\work\sctour\redraw_final_with_layout_qa.py", line 46, in <module>
+    module.plot(a_path='work/sctour/full_A20/inferred.h5ad',
+  File "C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\outputs\single-cell-dynamics-perturbation\modules\03_scTour\scripts\plot_figure2.py", line 264, in plot
+    save(fig, stem, cfg)
+  File "C:\Users\13683\Documents\Codex\2026-10-12\files-pasted-by-the-user-codex\work\sctour\redraw_final_with_layout_qa.py", line 41, in save_with_layout_qa
+    (base/'reports/figure_layout_qa.json').write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding='utf-8')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 430, in _iterencode
+    yield from _iterencode_list(o, _current_indent_level)
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Users\13683\AppData\Roaming\uv\python\cpython-3.11.11-windows-x86_64-none\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable

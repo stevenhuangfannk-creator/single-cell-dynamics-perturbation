@@ -1,0 +1,6 @@
+test_composite_requires_all_completed_panels (tests.test_sctour_plotting.TestFigureBoundaries.test_composite_requires_all_completed_panels) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.117s
+
+OK

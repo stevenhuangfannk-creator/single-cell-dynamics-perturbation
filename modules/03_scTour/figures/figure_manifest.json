@@ -223,5 +223,35 @@
     "status": "PARTIAL",
     "validity": "真实原始 counts、官方模型与邻域投影；训练比例与方向审查见报告，非原论文数值逐点一致。",
     "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --b-path work/sctour/subsamples/B_20/inferred.h5ad --panel f --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
+  },
+  {
+    "id": "scTour-2h",
+    "title_cn": "训练细胞比例的排序稳健性",
+    "meaning": "训练细胞比例的排序稳健性",
+    "dataset": "GSE104323",
+    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
+    "analysis_script": "modules/03_scTour/scripts/run_subsampling.py",
+    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
+    "png": "modules/03_scTour/figures/scTour_Figure2h.png",
+    "pdf": "modules/03_scTour/figures/scTour_Figure2h.pdf",
+    "svg": "modules/03_scTour/figures/scTour_Figure2h.svg",
+    "status": "PARTIAL",
+    "validity": "八个400epochs真实模型对同序全细胞的排序与95%参考相关；单seed。B1/B5的幼年与成年终末阶段局部错序完整保留，不能用高全局相关代替阶段准确性。",
+    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --subsample-dir work/sctour/subsamples --panel h --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures"
+  },
+  {
+    "id": "scTour-Figure2",
+    "title_cn": "scTour Figure 2 a–i 完整真实重算组合图",
+    "meaning": "联合比较原始空间、拟时序、潜空间、向量场与训练抽样稳定性。",
+    "dataset": "GSE95315 + GSE104323",
+    "reference": "https://doi.org/10.1186/s13059-023-02988-9",
+    "analysis_script": "modules/03_scTour/scripts/run_subsampling.py",
+    "plot_script": "modules/03_scTour/scripts/plot_figure2.py",
+    "redraw_command": "& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --a-path work/sctour/full_A20/inferred.h5ad --b-path work/sctour/subsamples/B_20/inferred.h5ad --subsample-dir work/sctour/subsamples --panel composite --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures",
+    "png": "modules/03_scTour/figures/scTour_Figure2_Reproduction.png",
+    "pdf": "modules/03_scTour/figures/scTour_Figure2_Reproduction.pdf",
+    "svg": "modules/03_scTour/figures/scTour_Figure2_Reproduction.svg",
+    "status": "PARTIAL",
+    "validity": "所有面板均来自实际400epochs模型；生物学偏差与原论文未确认配置逐项保留，不以视觉一致宣布严格复现。"
   }
 ]

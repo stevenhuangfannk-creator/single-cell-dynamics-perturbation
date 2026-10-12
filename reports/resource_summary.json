@@ -1,0 +1,138 @@
+{
+  "sampling": {
+    "samples": 582,
+    "first_sample_shanghai": "2026-10-12T18:08:30+08:00",
+    "last_sample_shanghai": "2026-10-12T23:26:06+08:00",
+    "nominal_sampling_interval_seconds": 30,
+    "minimum_available_ram_mib": 5.0,
+    "maximum_matched_worker_working_set_mib_sampled": 2390.7,
+    "maximum_whole_gpu_memory_mib_sampled": 7125.0,
+    "maximum_whole_gpu_utilization_percent_sampled": 100.0,
+    "scope_cn": "系统RAM和整张GPU包含用户其他应用；worker是匹配分析命令行的进程working set加总，可能重复共享页。30秒抽样可漏短峰，不能作为单模型独占生命周期峰值。"
+  },
+  "sctour_models": [
+    {
+      "run": "A20_seed0",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 518.4696540001314,
+      "total_run_seconds": 598.3270608000457,
+      "peak_process_working_set_bytes": 1324638208,
+      "torch_peak_allocated_bytes": 48850432,
+      "device": "cuda"
+    },
+    {
+      "run": "A90_seed0",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 407.9802880000789,
+      "total_run_seconds": null,
+      "peak_process_working_set_bytes": null,
+      "torch_peak_allocated_bytes": null,
+      "device": null
+    },
+    {
+      "run": "A90_seed1",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 359.70882659987547,
+      "total_run_seconds": null,
+      "peak_process_working_set_bytes": null,
+      "torch_peak_allocated_bytes": null,
+      "device": null
+    },
+    {
+      "run": "B_1",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 349.26560649997555,
+      "total_run_seconds": 512.6974222999997,
+      "peak_process_working_set_bytes": 1078550528,
+      "torch_peak_allocated_bytes": 164585472,
+      "device": "cuda"
+    },
+    {
+      "run": "B_10",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 690.2413502999116,
+      "total_run_seconds": 728.3946495000273,
+      "peak_process_working_set_bytes": 1320837120,
+      "torch_peak_allocated_bytes": 172465664,
+      "device": "cuda"
+    },
+    {
+      "run": "B_20",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 2032.9467492001131,
+      "total_run_seconds": null,
+      "peak_process_working_set_bytes": null,
+      "torch_peak_allocated_bytes": null,
+      "device": null
+    },
+    {
+      "run": "B_40",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 1731.7986597998533,
+      "total_run_seconds": 1768.5598273000214,
+      "peak_process_working_set_bytes": 1539543040,
+      "torch_peak_allocated_bytes": 172468224,
+      "device": "cuda"
+    },
+    {
+      "run": "B_5",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 655.4700423001777,
+      "total_run_seconds": 818.082039500121,
+      "peak_process_working_set_bytes": 1413939200,
+      "torch_peak_allocated_bytes": 164892672,
+      "device": "cuda"
+    },
+    {
+      "run": "B_60",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 2147.9761264999397,
+      "total_run_seconds": 2331.31055919989,
+      "peak_process_working_set_bytes": 1585872896,
+      "torch_peak_allocated_bytes": 172468224,
+      "device": "cuda"
+    },
+    {
+      "run": "B_80",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 3419.9980254999828,
+      "total_run_seconds": 3606.848881999962,
+      "peak_process_working_set_bytes": 1121587200,
+      "torch_peak_allocated_bytes": 172468224,
+      "device": "cuda"
+    },
+    {
+      "run": "B_95",
+      "smoke": false,
+      "epochs": 400,
+      "training_seconds": 1518.8275487998035,
+      "total_run_seconds": null,
+      "peak_process_working_set_bytes": null,
+      "torch_peak_allocated_bytes": null,
+      "device": null
+    },
+    {
+      "run": "smoke_A",
+      "smoke": true,
+      "epochs": 3,
+      "training_seconds": 14.272627800004557,
+      "total_run_seconds": null,
+      "peak_process_working_set_bytes": null,
+      "torch_peak_allocated_bytes": null,
+      "device": null
+    }
+  ],
+  "formal_training_seconds_sum": 13832.682877499843,
+  "formal_training_epochs_sum": 4400,
+  "limitations_cn": "训练耗时不包含全部下载、预处理、推断和绘图。未记录的早期进程峰值保持null；CUDA allocated不包含驱动和其他应用，也不等于nvidia-smi整卡显存。"
+}

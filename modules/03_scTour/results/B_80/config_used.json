@@ -1,0 +1,23 @@
+{
+  "dataset": "GSE104323",
+  "hvg": 2000,
+  "pca_components": 30,
+  "alpha_z": 0.4,
+  "alpha_predz": 0.6,
+  "percent": 0.8,
+  "nepoch": 400,
+  "batch_size": 1024,
+  "n_latent": 5,
+  "random_state": 0,
+  "loss_mode": "nb",
+  "alpha_recon_lec": 0.5,
+  "alpha_recon_lode": 0.5,
+  "stage_order": [
+    "nIPC",
+    "Neuroblast",
+    "Immature-GC",
+    "GC-juv",
+    "GC-adult"
+  ],
+  "use_gpu_requested": true
+}

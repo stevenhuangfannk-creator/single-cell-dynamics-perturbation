@@ -3,7 +3,7 @@
   "audit_type": "Independent completed-run statistical snapshot",
   "audit_status": "RUN_OK",
   "scientific_status": "PARTIAL",
-  "snapshot_complete": false,
+  "snapshot_complete": true,
   "completed_training_percentages_audited": [
     1,
     5,
@@ -11,11 +11,10 @@
     20,
     40,
     60,
+    80,
     95
   ],
-  "not_yet_completed_training_percentages": [
-    80
-  ],
+  "not_yet_completed_training_percentages": [],
   "reference_model": "B_95",
   "reference_role": "Technical model-ordering reference; its self-correlation is not independent evidence",
   "work_source_root_relative_to_repository_on_this_host": "../../work/sctour/subsamples/",
@@ -44,8 +43,13 @@
       "validation_cells.tsv",
       "loss.tsv"
     ],
-    "actual_count_matrix_recheck_deferred_cn": "训练队列与约0.5GiB可用RAM限制下，不读取counts数据；只确认B40的HDF5 CSR形状为15174×2000。新摘要记录input_sha256，B20/B95的早期摘要缺少该字段；不以摘要中的哈希字段代替独立counts逐值检查。",
-    "actual_train_tensor_recheck": "Not rerun; persisted split IDs are checked for cardinality, unique membership and train/validation disjointness. Original runner verification against actual loader tensors is reused."
+    "actual_train_tensor_recheck": "Not rerun; persisted split IDs are checked for cardinality, unique membership and train/validation disjointness. Original runner verification against actual loader tensors is reused.",
+    "count_values_read_in_bounded_chunks": true,
+    "count_source_verification_complete": true,
+    "additional_hdf5_sources": [
+      "prepared/B_train_counts.h5ad X/layers/obs/var",
+      "each inferred.h5ad X/layers/obs/var/uns"
+    ]
   },
   "stage_order": [
     "nIPC",
@@ -75,7 +79,15 @@
         "GC-juv": 0.99132763,
         "GC-adult": 0.9799525
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.017200746,
+        "Neuroblast": 0.26030564,
+        "Immature-GC": 0.5155198,
+        "GC-juv": 0.99132763,
+        "GC-adult": 0.9799525
+      },
       "stage_order_spearman": 0.9,
+      "stage_order_spearman_before_manual": 0.9,
       "stage_medians_strictly_increasing": false,
       "nonincreasing_adjacent_stage_pairs": [
         [
@@ -93,6 +105,7 @@
         "summary_percent": 0.01,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
@@ -133,9 +146,22 @@
         "stage_median_max_abs_difference_from_saved_summary": 1.4171600337675727e-08,
         "saved_summary_strict_monotonicity_field": false,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": true,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9800415024539006e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9800415024539006e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -156,7 +182,15 @@
         "GC-juv": 0.973077975,
         "GC-adult": 0.97219974
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.025807848,
+        "Neuroblast": 0.26901212,
+        "Immature-GC": 0.53787917,
+        "GC-juv": 0.973077975,
+        "GC-adult": 0.97219974
+      },
       "stage_order_spearman": 0.9,
+      "stage_order_spearman_before_manual": 0.9,
       "stage_medians_strictly_increasing": false,
       "nonincreasing_adjacent_stage_pairs": [
         [
@@ -174,6 +208,7 @@
         "summary_percent": 0.05,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
@@ -214,9 +249,22 @@
         "stage_median_max_abs_difference_from_saved_summary": 3.746643062463306e-08,
         "saved_summary_strict_monotonicity_field": false,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": true,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.980117796980153e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.980117796980153e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -237,7 +285,15 @@
         "GC-juv": 0.9254911,
         "GC-adult": 0.9488863
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.032738626,
+        "Neuroblast": 0.32249743,
+        "Immature-GC": 0.5941907,
+        "GC-juv": 0.9254911,
+        "GC-adult": 0.9488863
+      },
       "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
       "stage_medians_strictly_increasing": true,
       "nonincreasing_adjacent_stage_pairs": [],
       "manual_reverse": false,
@@ -250,6 +306,7 @@
         "summary_percent": 0.1,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
@@ -290,9 +347,22 @@
         "stage_median_max_abs_difference_from_saved_summary": 2.4708557089248018e-08,
         "saved_summary_strict_monotonicity_field": true,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": true,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9793548628198607e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9793548628198607e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -313,7 +383,15 @@
         "GC-juv": 0.923748935,
         "GC-adult": 0.97864693
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.04043762,
+        "Neuroblast": 0.22950968,
+        "Immature-GC": 0.48213765,
+        "GC-juv": 0.923748935,
+        "GC-adult": 0.97864693
+      },
       "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
       "stage_medians_strictly_increasing": true,
       "nonincreasing_adjacent_stage_pairs": [],
       "manual_reverse": false,
@@ -326,6 +404,7 @@
         "summary_percent": 0.2,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": null,
@@ -366,9 +445,22 @@
         "stage_median_max_abs_difference_from_saved_summary": 3.503173828800499e-08,
         "saved_summary_strict_monotonicity_field": null,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": null,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9797363243488917e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9797363243488917e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -389,7 +481,15 @@
         "GC-juv": 0.849913355,
         "GC-adult": 0.9849171
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.07327227,
+        "Neuroblast": 0.24461347,
+        "Immature-GC": 0.45466626,
+        "GC-juv": 0.849913355,
+        "GC-adult": 0.9849171
+      },
       "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
       "stage_medians_strictly_increasing": true,
       "nonincreasing_adjacent_stage_pairs": [],
       "manual_reverse": false,
@@ -402,6 +502,7 @@
         "summary_percent": 0.4,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
@@ -442,9 +543,22 @@
         "stage_median_max_abs_difference_from_saved_summary": 4.244232187922137e-09,
         "saved_summary_strict_monotonicity_field": true,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": true,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9786682120835906e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9786682120835906e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -465,12 +579,20 @@
         "GC-juv": 0.794046665,
         "GC-adult": 0.979051
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.077066205,
+        "Neuroblast": 0.2403617,
+        "Immature-GC": 0.40393144,
+        "GC-juv": 0.794046665,
+        "GC-adult": 0.979051
+      },
       "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
       "stage_medians_strictly_increasing": true,
       "nonincreasing_adjacent_stage_pairs": [],
       "manual_reverse": false,
       "automatic_time_reverse": false,
-      "flags_match_saved_hdf5_uns": null,
+      "flags_match_saved_hdf5_uns": true,
       "max_abs_ptime_minus_ptime_before_manual": 0.0,
       "lightweight_completed_run_verification": {
         "configured_training_percentage": 60,
@@ -478,6 +600,7 @@
         "summary_percent": 0.6,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
@@ -518,9 +641,120 @@
         "stage_median_max_abs_difference_from_saved_summary": 2.460388182079498e-08,
         "saved_summary_strict_monotonicity_field": true,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": true,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9800415024539006e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9800415024539006e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
+      }
+    },
+    {
+      "model": "B_80",
+      "source_inference_table": "B_80/inference.tsv.gz",
+      "source_summary": "B_80/run_summary.json",
+      "n_cells": 15174,
+      "epochs": 400,
+      "seed": 0,
+      "unique_cell_ids": true,
+      "same_ordered_cell_ids_and_labels_as_B95": true,
+      "rho_before_manual_vs_B95_before_manual": 0.9965489058639511,
+      "rho_after_manual_vs_B95_after_manual": 0.9965489058639511,
+      "stage_ptime_medians": {
+        "nIPC": 0.07707367,
+        "Neuroblast": 0.22247238,
+        "Immature-GC": 0.3340087,
+        "GC-juv": 0.791954115,
+        "GC-adult": 0.97144026
+      },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.07707367,
+        "Neuroblast": 0.22247238,
+        "Immature-GC": 0.3340087,
+        "GC-juv": 0.791954115,
+        "GC-adult": 0.97144026
+      },
+      "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
+      "stage_medians_strictly_increasing": true,
+      "nonincreasing_adjacent_stage_pairs": [],
+      "manual_reverse": false,
+      "automatic_time_reverse": false,
+      "flags_match_saved_hdf5_uns": true,
+      "max_abs_ptime_minus_ptime_before_manual": 0.0,
+      "lightweight_completed_run_verification": {
+        "configured_training_percentage": 80,
+        "config_percent": 0.8,
+        "summary_percent": 0.8,
+        "percent_and_epoch_configuration_match": true,
+        "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
+        "smoke": false,
+        "summary_scientific_status": "PARTIAL",
+        "input_sha256_from_summary": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+        "n_actual_train_cells": 12140,
+        "n_actual_validation_cells": 1214,
+        "expected_train_cells_ceil_n_percent": 12140,
+        "actual_training_fraction": 0.8000527217609068,
+        "actual_split_sizes_match_official_rule": true,
+        "actual_train_validation_ids_unique_in_input_and_disjoint": true,
+        "completed_loss_rows": 400,
+        "epoch_numbers_zero_through_399": true,
+        "all_loss_values_finite": true,
+        "all_exported_numeric_inference_values_finite": true,
+        "finite_inference_columns_checked": [
+          "ptime_before_manual",
+          "ptime",
+          "X_umap_pca_1",
+          "X_umap_pca_2",
+          "X_umap_latent_1",
+          "X_umap_latent_2",
+          "X_TNODE_1",
+          "X_TNODE_2",
+          "X_TNODE_3",
+          "X_TNODE_4",
+          "X_TNODE_5",
+          "X_VF_1",
+          "X_VF_2",
+          "X_VF_3",
+          "X_VF_4",
+          "X_VF_5"
+        ],
+        "nonfinite_inference_examples": [],
+        "ptime_before_and_after_within_0_1": true,
+        "ptime_range": [
+          0.01392554,
+          0.99895597
+        ],
+        "stage_median_max_abs_difference_from_saved_summary": 4.473663328674604e-08,
+        "saved_summary_strict_monotonicity_field": true,
+        "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
+        "independent_monotonicity_matches_saved_summary_when_field_available": true,
+        "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
+        "roundtrip_result_independently_rerun": false
+      },
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9796600298226394e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9796600298226394e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
       }
     },
     {
@@ -541,7 +775,15 @@
         "GC-juv": 0.85441225,
         "GC-adult": 0.9471167
       },
+      "stage_ptime_before_manual_medians": {
+        "nIPC": 0.059540927,
+        "Neuroblast": 0.27885413,
+        "Immature-GC": 0.45326418,
+        "GC-juv": 0.85441225,
+        "GC-adult": 0.9471167
+      },
       "stage_order_spearman": 1.0,
+      "stage_order_spearman_before_manual": 1.0,
       "stage_medians_strictly_increasing": true,
       "nonincreasing_adjacent_stage_pairs": [],
       "manual_reverse": false,
@@ -554,6 +796,7 @@
         "summary_percent": 0.95,
         "percent_and_epoch_configuration_match": true,
         "seed_matches_config_and_is_zero": true,
+        "configured_stage_order_matches_audited_stage_order": true,
         "smoke": false,
         "summary_scientific_status": "PARTIAL",
         "input_sha256_from_summary": null,
@@ -594,11 +837,24 @@
         "stage_median_max_abs_difference_from_saved_summary": 2.7007293734726545e-08,
         "saved_summary_strict_monotonicity_field": null,
         "independent_stage_rho_matches_saved_summary": true,
+        "manual_reverse_matches_independent_strict_before_stage_condition": true,
+        "ptime_manual_transform_max_absolute_error": 0.0,
+        "ptime_manual_transform_matches_saved_flag": true,
         "independent_monotonicity_matches_saved_summary_when_field_available": null,
         "recorded_checkpoint_roundtrip_max_ptime_difference": 0.0,
         "roundtrip_result_independently_rerun": false
       },
-      "reference_self_comparison": true
+      "reference_self_comparison": true,
+      "hdf5_independent_identity_check": {
+        "same_ordered_cell_and_gene_ids_as_prepared": true,
+        "X_and_counts_layer_same_CSR_arrays_as_prepared": true,
+        "annotations_and_batches_match_exported_TSV_exactly": true,
+        "original_labels_age_and_QC_n_genes_preserved_from_prepared": true,
+        "ptime_before_manual_max_abs_difference_from_exported_TSV": 2.9798889134013962e-08,
+        "ptime_max_abs_difference_from_exported_TSV": 2.9798889134013962e-08,
+        "ptime_finite_and_within_0_1": true,
+        "full_count_matrix_loaded": false
+      }
     }
   ],
   "time_semantics_audit": {
@@ -620,7 +876,7 @@
     ],
     "rho_before_alignment_is_raw_uncorrected_encoder_time": false,
     "definition_cn": "ptime_before_manual直接来自官方trainer.get_time()，已经包含官方基于基因检出数的automatic_time_reverse处理。rho_before_alignment比较的是各模型官方自动方向处理后、人工反向之前的时间；rho_aligned比较人工反向之后的ptime。",
-    "current_manual_adjustment_cn": "本快照7个模型manual_reverse均False，因此两类相关一致且ptime与ptime_before_manual逐值相同；B10/B95的官方自动反向标记为True。",
+    "current_manual_adjustment_cn": "本快照8个模型manual_reverse均False，因此两类相关一致且ptime与ptime_before_manual逐值相同；B10/B95的官方自动反向标记为True。",
     "documentation_review": [
       {
         "path": "modules/03_scTour/reports/REPRODUCTION_CN.md",
@@ -651,9 +907,9 @@
   "conclusions_cn": [
     "全部已审计模型均对同序15,174细胞推断，细胞ID唯一且类别标签一致；没有发现表格比较的错序。",
     "B1/B5的全局Spearman分别约0.9018/0.9261，但GC-juv中位时间高于GC-adult，严格阶段次序检查失败；全局相关高与局部阶段反例可以共存。",
-    "B10/B20/B40/B60/B95五阶段中位数严格递增，说明当前阶段摘要通过该检查，不等于每个细胞的真实发育时间准确。",
+    "B10/B20/B40/B60/B80/B95五阶段中位数严格递增，说明当前阶段摘要通过该检查，不等于每个细胞的真实发育时间准确。",
     "各比例均只有一个seed、共用同一数据；相关是技术排序一致性，不是跨供者稳健性或真实谱系追踪证据。",
-    "B80在本快照尚无完成摘要，不填造统计结果；待实际完成后再追加审计。"
+    "完整八比例均有实际400epochs完成结果；B1/B5的末端阶段反例仍保留，完整网格不等于所有生物学趋势均通过。"
   ],
   "precision_note_cn": "中位数由导出TSV中的十进制时间独立计算，可能与float32对象内中位数有末位舍入差异；未将这种差异解释为生物学变化。",
   "source_annotation_independent_check": {
@@ -695,9 +951,62 @@
       20,
       40,
       60,
+      80,
       95
     ],
     "count_values_read": false,
     "scope_cn": "只读原始counts表第一行细胞ID和完整注释表，不读count数据。原始注释表包含31个全空padding行；排除后24,185个非空唯一ID，与预处理dropna(how=all)一致。"
+  },
+  "source_count_independent_check": {
+    "source_relative_to_repository_on_this_host": "../../work/sctour/GSE104323_10X_expression_data_V2.tab.gz",
+    "source_sha256_independently_recomputed": "06046d4591e36a4b4bf4ceb6e9dd3212e639291e49438ec2d2500602241e9910",
+    "prepared_relative_to_repository_on_this_host": "../../work/sctour/prepared/B_train_counts.h5ad",
+    "prepared_sha256_independently_recomputed": "3add9f73d379ba07db2f8336a1bcf8fde2157a65b68433812a7e91f9eda49fd5",
+    "source_raw_gene_rows": 27933,
+    "source_raw_cells": 24185,
+    "selected_gene_rows_checked": 2000,
+    "selected_cell_columns_checked": 15174,
+    "count_entries_checked_including_zero": 30348000,
+    "nonzero_count_entries_checked": 5081261,
+    "all_selected_source_counts_match_prepared": true,
+    "all_model_X_and_counts_layers_match_prepared": true,
+    "all_counts_finite_nonnegative_and_integer": true,
+    "source_read_to_gzip_eof_without_crc_error": true,
+    "method": "Per-gene SHA256 over ordered little-endian (uint32 cell index, uint64 nonzero integer count) pairs; implicit zero entries excluded consistently. Model/prepared CSR data, indices and indptr compared directly in 262144-element chunks.",
+    "HDF5_source_count_read_row_chunk": 64,
+    "models_checked": [
+      1,
+      5,
+      10,
+      20,
+      40,
+      60,
+      80,
+      95
+    ],
+    "full_count_matrix_loaded": false,
+    "training_or_checkpoint_loading_executed": false
+  },
+  "exported_evidence_independent_match": {
+    "models": [
+      1,
+      5,
+      10,
+      20,
+      40,
+      60,
+      80,
+      95
+    ],
+    "all_summary_config_split_loss_environment_files_match_work_originals_byte_for_byte": true,
+    "run_comparison_numeric_fields_and_status_match_original_summaries": true
+  },
+  "full_grid_export_metrics_independent_match": {
+    "source_relative_to_repository_on_this_host": "../../work/sctour/subsamples/robustness.tsv",
+    "all_eight_rows_same_before_and_after_manual_spearman_as_independent_calculation": true,
+    "max_tolerance": 1e-12,
+    "software_exported_pvalue_aligned_present": true,
+    "inferential_pvalues_used_for_independent_scientific_interpretation": false,
+    "pvalue_boundary_cn": "软件导出pvalue_aligned，通常在15174个同队列细胞下下溢为0；它不提供独立生物学重复或真实谱系准确性的证据，本独立报告不解释该p值。"
   }
 }

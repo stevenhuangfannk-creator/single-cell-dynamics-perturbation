@@ -555,7 +555,7 @@
       "details": {
         "pixels": [
           1980,
-          1860
+          2100
         ],
         "dpi": [
           599.9988,
@@ -574,7 +574,7 @@
       "details": {
         "pixels": [
           1980,
-          1860
+          2100
         ],
         "dpi": [
           599.9988,
@@ -607,25 +607,6 @@
       "details": "PDF and SVG headers validated"
     },
     {
-      "check": "scTour-2c PNG 600 DPI",
-      "passed": true,
-      "details": {
-        "pixels": [
-          1980,
-          1860
-        ],
-        "dpi": [
-          599.9988,
-          599.9988
-        ]
-      }
-    },
-    {
-      "check": "scTour-2c vector exports",
-      "passed": true,
-      "details": "PDF and SVG headers validated"
-    },
-    {
       "check": "scTour-2d PNG 600 DPI",
       "passed": true,
       "details": {
@@ -645,25 +626,6 @@
       "details": "PDF and SVG headers validated"
     },
     {
-      "check": "scTour-2e PNG 600 DPI",
-      "passed": true,
-      "details": {
-        "pixels": [
-          1980,
-          1860
-        ],
-        "dpi": [
-          599.9988,
-          599.9988
-        ]
-      }
-    },
-    {
-      "check": "scTour-2e vector exports",
-      "passed": true,
-      "details": "PDF and SVG headers validated"
-    },
-    {
       "check": "scTour-2g PNG 600 DPI",
       "passed": true,
       "details": {
@@ -679,25 +641,6 @@
     },
     {
       "check": "scTour-2g vector exports",
-      "passed": true,
-      "details": "PDF and SVG headers validated"
-    },
-    {
-      "check": "scTour-2f PNG 600 DPI",
-      "passed": true,
-      "details": {
-        "pixels": [
-          1980,
-          1860
-        ],
-        "dpi": [
-          599.9988,
-          599.9988
-        ]
-      }
-    },
-    {
-      "check": "scTour-2f vector exports",
       "passed": true,
       "details": "PDF and SVG headers validated"
     },
@@ -736,6 +679,101 @@
     },
     {
       "check": "scTour-2a vector exports",
+      "passed": true,
+      "details": "PDF and SVG headers validated"
+    },
+    {
+      "check": "scTour-2c PNG 600 DPI",
+      "passed": true,
+      "details": {
+        "pixels": [
+          1980,
+          1860
+        ],
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      }
+    },
+    {
+      "check": "scTour-2c vector exports",
+      "passed": true,
+      "details": "PDF and SVG headers validated"
+    },
+    {
+      "check": "scTour-2e PNG 600 DPI",
+      "passed": true,
+      "details": {
+        "pixels": [
+          1980,
+          2100
+        ],
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      }
+    },
+    {
+      "check": "scTour-2e vector exports",
+      "passed": true,
+      "details": "PDF and SVG headers validated"
+    },
+    {
+      "check": "scTour-2f PNG 600 DPI",
+      "passed": true,
+      "details": {
+        "pixels": [
+          1980,
+          2100
+        ],
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      }
+    },
+    {
+      "check": "scTour-2f vector exports",
+      "passed": true,
+      "details": "PDF and SVG headers validated"
+    },
+    {
+      "check": "scTour-2h PNG 600 DPI",
+      "passed": true,
+      "details": {
+        "pixels": [
+          1980,
+          1860
+        ],
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      }
+    },
+    {
+      "check": "scTour-2h vector exports",
+      "passed": true,
+      "details": "PDF and SVG headers validated"
+    },
+    {
+      "check": "scTour-Figure2 PNG 600 DPI",
+      "passed": true,
+      "details": {
+        "pixels": [
+          6000,
+          4920
+        ],
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      }
+    },
+    {
+      "check": "scTour-Figure2 vector exports",
       "passed": true,
       "details": "PDF and SVG headers validated"
     },

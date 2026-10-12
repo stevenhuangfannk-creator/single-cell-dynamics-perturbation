@@ -4,6 +4,8 @@
 
 运行状态与实际数值以 [复现报告](reports/REPRODUCTION_CN.md)、`results/*/run_summary.json` 和 [图件索引](../../gallery/FIGURE_INDEX_CN.md) 为准。`RUN_OK` 表示软件执行及对象验证通过；`PARTIAL` 表示真实计算已完成但严格原图逐点复现条件尚不足。Smoke Test 仅验 API，不支持发育结论。
 
+本轮已完成11个正式400-epoch模型、完整八训练比例及Figure 2 a–i/组合图，另保存独立Smoke结果。全套10个主图通过PNG600、PDF≥5pt、SVG文字及实际布局/目视检查；A模型非单调结果、B1/B5终末阶段错序与未核实S2参数保留，模块仍为`PARTIAL`。
+
 ## 方法与证据边界 / Method
 
 输入是细胞 × 基因的表达矩阵。NB/ZINB 模式要求 `.X` 为非负整数 counts；官方软件还提供 MSE 模式。本仓库的训练入口限定原始 counts 的 NB/ZINB，正式数据使用 NB，并保留 `layers['counts']`；归一化 MSE 流程没有在这里执行验证。scTour 不需要 spliced/unspliced；不要人为伪造这些矩阵。
@@ -82,6 +84,7 @@ B95的b–f可把最后一条的 `--panel g` 分别改为b、c、d、e、f。`--
 | b–g | `--b-path work/sctour/subsamples/B_20/inferred.h5ad` |
 | h | `--subsample-dir work/sctour/subsamples` |
 | i | `--subsample-dir work/sctour/subsamples`，读取其中 `B_20/inferred.h5ad` |
+| composite | 同时提供a、b–g和h的输入参数；只重绘组合图，要求完整a–i结果 |
 
 图 a 的时间和方向来自 A 模型，b/c/d 使用同一 B PCA UMAP，f/g 使用同一 B 潜空间 UMAP，i 使用独立20%模型的完整细胞推断。e/h 是真实细胞排序条带。inset 不重新计算坐标。
 

@@ -45,6 +45,14 @@ class TestFigureBoundaries(unittest.TestCase):
                 self.invoke(root, 'h')
             self.assertFalse((root/'figures/figure_manifest.json').exists())
 
+    def test_composite_requires_all_completed_panels(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.fake_run(root, 95)
+            with self.assertRaisesRegex(ValueError, 'Composite requires'):
+                self.invoke(root, 'composite')
+            self.assertFalse((root/'figures/figure_manifest.json').exists())
+
     def test_subsampling_cell_order_and_fraction_checked(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

@@ -203,8 +203,10 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
         available.append('h')
     if I is not None:
         available.append('i')
-    requested = available if panel == 'all' else [panel]
-    if not requested:
+    if panel == 'composite' and set(available) != set('abcdefghi'):
+        raise ValueError('Composite requires completed formal results for all panels a-i')
+    requested = available if panel == 'all' else [] if panel == 'composite' else [panel]
+    if not requested and panel != 'composite':
         raise ValueError('Provide at least one actual inference object; no figures or manifest were changed')
     if any(p not in available for p in requested):
         raise ValueError(f'No actual inference for requested panels: {set(requested)-set(available)}')
@@ -245,7 +247,7 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
             legend(fig, PALETTES['A'], .01, cfg)
         else:
             fig, ax = plt.subplots(figsize=(3.3, 3.5 if p in 'ef' else 3.1))
-            fig.subplots_adjust(left=.23 if p == 'e' else .1, right=.84 if p == 'h' else .97, top=.93,
+            fig.subplots_adjust(left=.23 if p == 'e' else .15 if p == 'h' else .1, right=.84 if p == 'h' else .97, top=.93,
                                 bottom=.34 if p == 'f' else .29 if p in 'cehi' else .17)
             draw(p, ax)
             if p in 'cef':
@@ -280,9 +282,9 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
     if prefix != 'scTour':
         # Diagnostic redraw uses preserved filenames and does not replace the main figure index.
         return
-    if panel == 'all' and A is not None and B is not None and set(available) == set('abcdefghi'):
+    if panel in ['all', 'composite'] and A is not None and B is not None and set(available) == set('abcdefghi'):
         fig = plt.figure(figsize=(10, 8.2))
-        gs = fig.add_gridspec(3, 4, height_ratios=[1.05, 1.45, 1.45], hspace=.21, wspace=.22,
+        gs = fig.add_gridspec(3, 4, height_ratios=[1.05, 1.45, 1.45], hspace=.21, wspace=.35,
                              left=.04, right=.99, top=.96, bottom=.1)
         top = gs[0, :].subgridspec(1, 6, wspace=.13)
         draw('a', [fig.add_subplot(top[0, j]) for j in range(6)])
@@ -309,7 +311,7 @@ def plot(a_path, b_path, output, config, panel='all', subsample_dir=None, prefix
                         'dataset':'GSE95315 + GSE104323', 'reference':'https://doi.org/10.1186/s13059-023-02988-9',
                         'analysis_script':'modules/03_scTour/scripts/run_subsampling.py',
                         'plot_script':'modules/03_scTour/scripts/plot_figure2.py',
-                        'redraw_command': '& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --a-path work/sctour/full_A20/inferred.h5ad --b-path work/sctour/subsamples/B_20/inferred.h5ad --subsample-dir work/sctour/subsamples --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures',
+                        'redraw_command': '& ./work/sctour/.venv/Scripts/python.exe ./modules/03_scTour/scripts/plot_figure2.py --a-path work/sctour/full_A20/inferred.h5ad --b-path work/sctour/subsamples/B_20/inferred.h5ad --subsample-dir work/sctour/subsamples --panel composite --config modules/03_scTour/config/plot.json --output modules/03_scTour/figures',
                         'png':base+'.png', 'pdf':base+'.pdf', 'svg':base+'.svg', 'status':'PARTIAL',
                         'validity':'所有面板均来自实际400epochs模型；生物学偏差与原论文未确认配置逐项保留，不以视觉一致宣布严格复现。'})
     manifest = out / 'figure_manifest.json'
@@ -342,7 +344,7 @@ if __name__ == '__main__':
     p.add_argument('--b-path')
     p.add_argument('--output', required=True)
     p.add_argument('--config', required=True)
-    p.add_argument('--panel', default='all', choices=['all'] + list('abcdefghi'))
+    p.add_argument('--panel', default='all', choices=['all', 'composite'] + list('abcdefghi'))
     p.add_argument('--subsample-dir')
     p.add_argument('--prefix', default='scTour')
     plot(**vars(p.parse_args()))
