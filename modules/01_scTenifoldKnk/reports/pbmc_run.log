@@ -1,0 +1,254 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+'as(<dgTMatrix>, "dgCMatrix")' is deprecated.
+Use 'as(., "CsparseMatrix")' instead.
+See help("Deprecated") and help("Matrix-deprecated").
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (400 cells each)
+Networks ========>----------------------   25% | ETA:  4s
+Networks ===========>-------------------   38% | ETA:  3s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 10.8%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 15/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Computing distances for 600 genes
+v Differential regulation complete: 13/600 significant genes (FDR < 0.05)
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (400 cells each)
+Networks ========>----------------------   25% | ETA:  3s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 10.8%)
+i Step 5/5: Perturbing 9 genes transcriptome-wide (heat alignment)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (240 cells each)
+Networks ==========================>----   88% | ETA:  0s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 7.9%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 13/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (240 cells each)
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 11.4%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 12/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (240 cells each)
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 15.3%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 24/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (400 cells each)
+Networks ===========>-------------------   38% | ETA:  2s
+Networks ===============>---------------   50% | ETA:  2s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 7.3%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 19/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 600 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 8 gene regulatory networks (400 cells each)
+Networks ===========>-------------------   38% | ETA:  2s
+Networks ==========================>----   88% | ETA:  0s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 8 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 600 x 600 x 8 (K=3)
+v [X] CP decomposition complete (norm explained: 9%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 600 genes
+v Differential regulation complete: 11/600 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+i Manifold alignment: 600 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Computing distances for 600 genes
+v Differential regulation complete: 0/600 significant genes (FDR < 0.05)
+Warning message:
+In .drStatistics(dMetric, geneList, isKO, empiricalNull, noiseLevel,  :
+  No gene differs between the two conditions beyond numerical noise; all p-values were set to 1
+$status
+[1] "PARTIAL"
+
+$run_status
+[1] "RUN_OK"
+
+$dataset
+[1] "10x PBMC3k"
+
+$cell_type
+[1] "CD14+ Monocytes"
+
+$cells
+[1] 480
+
+$genes
+[1] 600
+
+$parameters
+$parameters$qc
+[1] FALSE
+
+$parameters$nc_nNet
+[1] 8
+
+$parameters$nc_nCells
+[1] 400
+
+$parameters$nc_nComp
+[1] 3
+
+$parameters$nc_q
+[1] 0.9
+
+$parameters$nc_lambda
+[1] 0
+
+$parameters$td_K
+[1] 3
+
+$parameters$td_maxIter
+[1] 1000
+
+$parameters$td_maxError
+[1] 1e-05
+
+$parameters$ma_nDim
+[1] 2
+
+$parameters$dr_direction
+[1] TRUE
+
+$parameters$dr_directionRegressLibSize
+[1] TRUE
+
+$parameters$nCores
+[1] 1
+
+$parameters$seed
+[1] 1
+
+
+$edge_convention
+[1] "WT[row regulator, column target]; official final transpose retained"
+
+$total_nonzero_edges
+[1] 319727
+
+$single_target_outgoing_edges
+[1] 567
+
+$significant_non_target
+[1] 14
+
+$multi_significant_non_targets
+[1] 11
+
+$screen_targets
+[1] "SPI1"  "CEBPB" "IRF8"  "IRF1"  "STAT1" "JUN"   "FOS"   "REL"   "CEBPD"
+
+$screen_dimensions
+[1]   9 600
+
+$negative_control_all_p_one
+[1] TRUE
+
+$tensor_raw_bytes
+[1] 23040000
+
+$elapsed_sec
+[1] 34.16
+
+$scope
+[1] "Bounded real-data validation on selected 600-gene network and 9 candidate knockouts; not original paper replication or full-transcriptome biological validation"
+

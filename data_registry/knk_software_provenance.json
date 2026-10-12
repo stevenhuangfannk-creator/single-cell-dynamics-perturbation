@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-10-12",
+  "installed_from": "CRAN pinned source tarballs",
+  "scTenifoldKnk_commit": "e003c72d3a153ec07512271c1ae0fbeeadc319ca",
+  "scTenifoldNet_commit": "3103a53216c347a3d4c9660d63b03c2ca99b47a1",
+  "source_tarballs": [
+    {
+      "file": "scTenifoldKnk_2.0.0.tar.gz",
+      "url": "https://cloud.r-project.org/src/contrib/scTenifoldKnk_2.0.0.tar.gz",
+      "bytes": 133268,
+      "sha256": "8102fbc4c7fa80f220639da0775de7abbe278b016a65da552b760f0493412796",
+      "md5": "b83586c28adcf57225963df5911071de"
+    },
+    {
+      "file": "scTenifoldNet_1.4.3.tar.gz",
+      "url": "https://cloud.r-project.org/src/contrib/scTenifoldNet_1.4.3.tar.gz",
+      "bytes": 44302,
+      "sha256": "89eb7f7bda1d7c64a9696263663198262f5a2ec9aeed6fcad6997223661f8c6b",
+      "md5": "78b614b5aac290af675fae71f7f06bb1"
+    }
+  ]
+}

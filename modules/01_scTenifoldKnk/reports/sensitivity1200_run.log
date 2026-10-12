@@ -1,0 +1,98 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+'as(<dgTMatrix>, "dgCMatrix")' is deprecated.
+Use 'as(., "CsparseMatrix")' instead.
+See help("Deprecated") and help("Matrix-deprecated").
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 1200 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 10 gene regulatory networks (400 cells each)
+Networks ===>---------------------------   10% | ETA: 14s
+Networks ======>------------------------   20% | ETA: 11s
+Networks ============>------------------   40% | ETA:  8s
+Networks ==================>------------   60% | ETA:  5s
+Networks ===========================>---   90% | ETA:  1s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 10 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 1200 x 1200 x 10 (K=3)
+CP decomposition >------------------------------    1% | ETA:  2m
+CP decomposition ==============================>  100% | ETA:  0s
+v [X] CP decomposition complete (norm explained: 11.7%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 1200 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 1200 genes
+v Differential regulation complete: 43/1200 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 1200 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 10 gene regulatory networks (400 cells each)
+Networks ===>---------------------------   10% | ETA: 10s
+Networks =========>---------------------   30% | ETA:  8s
+Networks ==================>------------   60% | ETA:  5s
+Networks ===========================>---   90% | ETA:  1s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 10 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 1200 x 1200 x 10 (K=3)
+v [X] CP decomposition complete (norm explained: 11.3%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 1200 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 1200 genes
+v Differential regulation complete: 41/1200 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+
+-- scTenifoldKnk Pipeline ------------------------------------------------------
+i Step 2/7: CPM normalization
+i CPM normalization: 1200 genes x 480 cells
+v CPM normalization complete
+i Step 3/7: Building gene regulatory networks
+i Building 10 gene regulatory networks (400 cells each)
+Networks ======>------------------------   20% | ETA:  8s
+Networks =========>---------------------   30% | ETA:  7s
+Networks ==================>------------   60% | ETA:  4s
+Networks ========================>------   80% | ETA:  2s
+Networks ==============================>  100% | ETA:  0s
+v Network construction complete: 10 networks
+i Step 4/7: Tensor decomposition
+i [X] Tensor: 1200 x 1200 x 10 (K=3)
+CP decomposition >------------------------------    1% | ETA:  2m
+CP decomposition =>-----------------------------    3% | ETA:  2m
+CP decomposition ==============================>  100% | ETA:  0s
+v [X] CP decomposition complete (norm explained: 9.1%)
+i Step 5/7: Simulating SPI1 knockout
+i Step 6/7: Manifold alignment
+i Manifold alignment: 1200 shared genes, d=2
+v Manifold alignment complete: 2 dimensions
+i Step 7/7: Differential regulation analysis
+i Computing distances for 1200 genes
+v Differential regulation complete: 45/1200 significant genes (FDR < 0.05)
+v scTenifoldKnk pipeline complete
+  seed genes networks cells common_non_target_genes spearman_to_600
+1    1  1200       10   400                     599      0.35225275
+2    2  1200       10   400                     599      0.14840688
+3    3  1200       10   400                     599      0.09798248
+  top30_jaccard_to_600 significant_non_target elapsed_sec
+1           0.03448276                     42       19.17
+2           0.00000000                     40       16.46
+3           0.00000000                     44       19.98
+          seed1     seed2     seed3
+seed1 1.0000000 0.2189375 0.1856082
+seed2 0.2189375 1.0000000 0.1977986
+seed3 0.1856082 0.1977986 1.0000000

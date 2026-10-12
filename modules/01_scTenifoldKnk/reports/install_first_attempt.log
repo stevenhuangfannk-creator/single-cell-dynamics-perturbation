@@ -1,0 +1,144 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+also installing the dependencies 'rjson', 'WriteXLS', 'enrichR'
+
+trying URL 'https://cloud.r-project.org/src/contrib/rjson_0.2.23.tar.gz'
+Content type 'application/x-gzip' length 79159 bytes (77 KB)
+==================================================
+downloaded 77 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/WriteXLS_6.8.0.tar.gz'
+Content type 'application/x-gzip' length 796568 bytes (777 KB)
+==================================================
+downloaded 777 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/enrichR_3.4.tar.gz'
+Content type 'application/x-gzip' length 302040 bytes (294 KB)
+==================================================
+downloaded 294 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/scTenifoldNet_1.4.3.tar.gz'
+Content type 'application/x-gzip' length 44302 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/scTenifoldKnk_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 133268 bytes (130 KB)
+==================================================
+downloaded 130 KB
+
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* installing *source* package 'rjson' ...
+** package 'rjson' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+Error in system(paste(MAKE, p1(paste("-f", shQuote(makefiles))), "compilers"),  : 
+  'make' not found
+* removing 'C:/Users/13683/Documents/Codex/2026-10-12/files-pasted-by-the-user-codex/work/knk/Rlib/rjson'
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* installing *source* package 'WriteXLS' ...
+** package 'WriteXLS' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** help
+*** installing help indices
+** building package indices
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from temporary location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from final location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package keeps a record of temporary installation path
+* DONE (WriteXLS)
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* installing *source* package 'scTenifoldNet' ...
+** package 'scTenifoldNet' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** help
+*** installing help indices
+** building package indices
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from temporary location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from final location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package keeps a record of temporary installation path
+* DONE (scTenifoldNet)
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+ERROR: dependency 'rjson' is not available for package 'enrichR'
+* removing 'C:/Users/13683/Documents/Codex/2026-10-12/files-pasted-by-the-user-codex/work/knk/Rlib/enrichR'
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+ERROR: dependency 'enrichR' is not available for package 'scTenifoldKnk'
+* removing 'C:/Users/13683/Documents/Codex/2026-10-12/files-pasted-by-the-user-codex/work/knk/Rlib/scTenifoldKnk'
+
+The downloaded source packages are in
+	'C:\Users\13683\AppData\Local\Temp\RtmpcFlD3B\downloaded_packages'
+Warning messages:
+1: In install.packages(c("scTenifoldNet", "scTenifoldKnk"), lib = "work/knk/Rlib",  :
+  installation of package 'rjson' had non-zero exit status
+2: In install.packages(c("scTenifoldNet", "scTenifoldKnk"), lib = "work/knk/Rlib",  :
+  installation of package 'enrichR' had non-zero exit status
+3: In install.packages(c("scTenifoldNet", "scTenifoldKnk"), lib = "work/knk/Rlib",  :
+  installation of package 'scTenifoldKnk' had non-zero exit status

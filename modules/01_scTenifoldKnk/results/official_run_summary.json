@@ -1,0 +1,19 @@
+{
+  "status": "RUN_OK",
+  "input": [100, 2000],
+  "qc_counts": [100, 1000],
+  "qc_network_genes": 100,
+  "knockout": "ng10",
+  "nc_nNet": 10,
+  "nc_nCells": 500,
+  "td_K": 3,
+  "ma_nDim": 2,
+  "seed": 1,
+  "nCores": 1,
+  "significant_including_target": 6,
+  "screen_dimension": [100, 100],
+  "identical_WT_same_seed": true,
+  "elapsed_sec": 0.92,
+  "scTenifoldKnk": "2.0.0",
+  "scTenifoldNet": "1.4.3"
+}

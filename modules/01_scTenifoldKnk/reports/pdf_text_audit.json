@@ -1,0 +1,112 @@
+[
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure01.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 34,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure02.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 34,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure03.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 34,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure04.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 36,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure05.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 24,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure06.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 19,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure07.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 60,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure08.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 47,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure09.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 51,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure10.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 58,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  },
+  {
+    "pdf": "outputs\\single-cell-dynamics-perturbation\\modules\\01_scTenifoldKnk\\figures\\Knk_Figure11.pdf",
+    "auditable": true,
+    "minimum_required_pt": 5.0,
+    "minimum_found_pt": 7.0,
+    "text_run_count": 42,
+    "below_minimum_count": 0,
+    "below_minimum": [],
+    "warnings": []
+  }
+]

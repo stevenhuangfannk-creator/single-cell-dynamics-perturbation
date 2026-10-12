@@ -1,0 +1,19 @@
+{
+  "status": "NOT_RUN_TEMPLATE",
+  "input_format": "10x_MEX_or_exported_Seurat_counts_or_AnnData_counts",
+  "counts_path": "REPLACE_WITH_COUNTS_FILE",
+  "genes_path": "REPLACE_WITH_UNIQUE_GENE_SYMBOLS",
+  "cells_path": "REPLACE_WITH_UNIQUE_CELL_IDS",
+  "metadata_path": "REPLACE_WITH_CELL_METADATA",
+  "cell_type_key": "cell_type",
+  "cell_type": "Macrophage",
+  "condition_key": "condition",
+  "wild_type_condition": "Healthy",
+  "donor_key": "donor",
+  "single_target": "REPLACE_AFTER_EXPRESSION_AND_NETWORK_AUDIT",
+  "minimum_recommended_cells": 500,
+  "planned_gene_panel": 3000,
+  "nc_nNet": 10,
+  "nCores": 1,
+  "notes": "Configuration blueprint only. Do not infer time from PI vs Healthy. Build within cell type; retain donor-aware validation and experimental evidence boundaries."
+}

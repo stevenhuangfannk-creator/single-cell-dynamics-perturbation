@@ -1,0 +1,4 @@
+"seed","genes","networks","cells","common_non_target_genes","spearman_to_600","top30_jaccard_to_600","significant_non_target","elapsed_sec"
+1,1200,10,400,599,0.35225275124092,0.0344827586206897,42,19.17
+2,1200,10,400,599,0.148406876566853,0,40,16.46
+3,1200,10,400,599,0.0979824791598037,0,44,19.98

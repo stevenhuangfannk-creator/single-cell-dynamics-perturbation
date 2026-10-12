@@ -1,0 +1,60 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.3/plyr_1.8.9.zip'
+Content type 'application/zip' length 1168316 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+package 'plyr' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\13683\AppData\Local\Temp\RtmpEVJSBl\downloaded_packages
+trying URL 'https://cloud.r-project.org/src/contrib/scTenifoldKnk_2.0.0.tar.gz'
+Content type 'application/x-gzip' length 133268 bytes (130 KB)
+==================================================
+downloaded 130 KB
+
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+* installing *source* package 'scTenifoldKnk' ...
+** package 'scTenifoldKnk' successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** help
+*** installing help indices
+** building package indices
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from temporary location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package can be loaded from final location
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+** testing if installed package keeps a record of temporary installation path
+* DONE (scTenifoldKnk)
+
+The downloaded source packages are in
+	'C:\Users\13683\AppData\Local\Temp\RtmpEVJSBl\downloaded_packages'

@@ -1,0 +1,32 @@
+{
+  "status": "RUN_OK",
+  "method": "One-sided hypergeometric ORA; BH separately per library and contrast; all eligible terms including zero overlap; query=BH<0.05 non-target genes; measured background=600 network genes",
+  "background_genes": 600,
+  "term_size_min": 3,
+  "term_size_max": 300,
+  "libraries": [
+    {
+      "library": "GO_Biological_Process_2025",
+      "url": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=GO_Biological_Process_2025",
+      "bytes": 1355235,
+      "sha256": "0fc02458765cfce6c9348dce9f7a9397c6caf7c09ba318f468135d7ac60342ee",
+      "terms": 5343
+    },
+    {
+      "library": "KEGG_2021_Human",
+      "url": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=KEGG_2021_Human",
+      "bytes": 209631,
+      "sha256": "566763b3402ee1f06612cc48b57e2a0f3f92a9a9e7d1871cc2da9f940e2d609a",
+      "terms": 320
+    },
+    {
+      "library": "Reactome_2022",
+      "url": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=Reactome_2022",
+      "bytes": 778913,
+      "sha256": "cfe1adc75aa3137ba74c1b35a3098e88ea1708b204e5edfd788092b7ef5c08f8",
+      "terms": 1818
+    }
+  ],
+  "evaluated_rows": 3626,
+  "significant_rows": 82
+}
