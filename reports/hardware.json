@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-10-12T17:55:20.0624507+08:00",
+  "cpu": "13th Gen Intel(R) Core(TM) i9-13900HX",
+  "logical_cpus": 32,
+  "ram_gb": 15.692,
+  "initial_free_disk_gb": 236.178,
+  "os": "Microsoft Windows 11 家庭版 中文版",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU, 596.08, 8188 MiB"
+}
