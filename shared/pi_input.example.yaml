@@ -1,0 +1,11 @@
+# 只审查数据，不进行疾病差异或动力学推断。
+input: data/pi_healthy.h5ad
+counts_layer: counts
+metadata: null
+gene_id: symbol
+min_cells: 100
+targets: []
+cell_type_key: cell_type
+condition_key: condition
+batch_key: batch
+donor_key: donor

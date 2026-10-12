@@ -1,0 +1,26 @@
+# 原始数据、模型及中间对象通过数据登记和脚本重建。
+data/
+work/
+.venv/
+__pycache__/
+*.pyc
+*.h5ad
+*.h5
+*.rds
+*.RData
+*.pt
+*.pth
+*.ckpt
+*.loom
+*.npz
+*.npy
+*.tar.gz
+*.zip
+*.mtx*
+*.log
+!modules/**/reports/*.log
+!reports/*.log
+!environments/*.lock.txt
+.Rhistory
+.Rproj.user/
+
